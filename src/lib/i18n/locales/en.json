@@ -73,7 +73,8 @@
       "pending": "Pending approval",
       "sessionsThisMonth": "Sessions this month",
       "estimatedIncome": "Estimated income",
-      "recentSignups": "Signups last 7 days"
+      "recentSignups": "Signups last 7 days",
+      "staleClients": "No data update (30d)"
     },
     "client": {
       "backToList": "← Back to list",

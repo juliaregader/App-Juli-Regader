@@ -73,7 +73,8 @@
       "pending": "Pendientes de aprobar",
       "sessionsThisMonth": "Sesiones este mes",
       "estimatedIncome": "Ingresos estimados",
-      "recentSignups": "Altas últimos 7 días"
+      "recentSignups": "Altas últimos 7 días",
+      "staleClients": "Sin actualizar datos (30d)"
     },
     "client": {
       "backToList": "← Volver al listado",

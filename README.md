@@ -11,7 +11,8 @@ asesoramiento profesional de la sesión.
 
 ## Estado del proyecto
 
-**Fase 6 — Panel de administrador**, en curso de construcción por fases:
+**Fase 7 — Pulido, accesibilidad y despliegue**, en curso de construcción por
+fases:
 
 - [x] Fase 0 — Scaffolding, marca, i18n, tema claro/oscuro, layout base
 - [x] Fase 1 — Autenticación (Supabase Auth) y roles (cliente/admin)
@@ -19,7 +20,7 @@ asesoramiento profesional de la sesión.
 - [x] Fase 3 — Dashboard, gráficos, KPIs y personalización del panel
 - [x] Fase 4 — Estrategia de inversión y herramientas educativas
 - [x] Fase 5 — Exportación a Excel con fórmulas
-- [ ] Fase 6 — Panel de administrador
+- [x] Fase 6 — Panel de administrador
 - [ ] Fase 7 — Pulido, accesibilidad y despliegue
 
 ## Stack técnico
@@ -88,11 +89,11 @@ Supabase.
   código requiere configurar un proveedor SMTP externo (el correo gratuito de
   Supabase no permite editar plantillas).
 - Todo usuario nuevo queda en estado `pending` y **no puede usar la app** hasta
-  que el admin lo apruebe. Por ahora esa aprobación se hace manualmente en la
-  tabla `profiles` desde el SQL Editor o el Table Editor de Supabase (cambiando
-  `status` a `approved`); un panel de aprobación dedicado llega en la Fase 6.
+  que el admin lo apruebe desde el panel de administrador (listado de clientes
+  con botones de aprobar/rechazar).
 - El **primer administrador** (Julià) debe promocionarse a sí mismo tras
-  registrarse, ejecutando en el SQL Editor:
+  registrarse, ejecutando en el SQL Editor (los siguientes admins, si los
+  hubiera, ya no lo necesitan):
 
   ```sql
   update public.profiles
@@ -112,12 +113,15 @@ src/
     brand/           Logo e isotipo
     charts/          Gráficos Recharts reutilizables (línea, barras, donut)
     dashboard/        KpiCard, InfoTooltip, CustomizePanel
+    export/          Botón de exportación a Excel
     layout/          AppShell, RootLayout, MainNav, Disclaimer
     tools/           Calculadoras educativas (interés compuesto, FIRE, deuda, 50/30/20)
     ui/              Componentes de interfaz reutilizables
   lib/
+    admin/           Tipos y hooks del panel de administrador
     auth/            AuthProvider, useProfile, guards de ruta por rol
     dashboard/       Preferencias de personalización del panel
+    export/          Generación del libro Excel (ExcelJS)
     i18n/            Configuración i18next + locales (es, ca, en)
     format/          Formateo de divisas por locale
     query/           Cliente de TanStack Query
@@ -132,11 +136,12 @@ src/
     strategy/        Constructor de estrategia de inversión
     tools/           Página de herramientas educativas
     glossary/        Glosario financiero
-    admin/           Panel de administrador (placeholder, Fase 6)
+    admin/           Panel de administrador: clientes, ficha de cliente, agenda
   router.tsx         Rutas y protección por sesión/rol
 
 supabase/
-  migrations/        Migraciones SQL (perfiles, roles, RLS, modelo patrimonial, estrategia, objetivos)
+  migrations/        Migraciones SQL (perfiles, roles, RLS, modelo patrimonial,
+                     estrategia, objetivos, citas y notas de admin)
 ```
 
 ## Despliegue en Vercel

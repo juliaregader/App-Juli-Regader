@@ -2,7 +2,12 @@ import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import { useAppointments, useClientProfiles, useUpdateClientStatus } from "@/lib/admin/queries";
+import {
+  useAppointments,
+  useClientProfiles,
+  useLastUpdateByClient,
+  useUpdateClientStatus,
+} from "@/lib/admin/queries";
 
 function StatusBadge({ status }: { status: string }) {
   const { t } = useTranslation();
@@ -22,6 +27,7 @@ export function AdminHome() {
   const { t } = useTranslation();
   const { data: clients, isLoading } = useClientProfiles();
   const { data: appointments } = useAppointments();
+  const { data: lastUpdateByClient } = useLastUpdateByClient();
   const updateStatus = useUpdateClientStatus();
   const [search, setSearch] = useState("");
 
@@ -45,14 +51,22 @@ export function AdminHome() {
       .filter((a) => a.status === "confirmed" || a.status === "completed")
       .reduce((sum, a) => sum + a.amount, 0);
 
+    const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+    const staleClients = (clients ?? []).filter((c) => {
+      if (c.status !== "approved") return false;
+      const lastUpdate = lastUpdateByClient?.get(c.id);
+      return !lastUpdate || new Date(lastUpdate) < thirtyDaysAgo;
+    }).length;
+
     return {
       activeClients,
       pending,
       recentSignups,
       sessionsThisMonth: monthAppointments.length,
       estimatedIncome,
+      staleClients,
     };
-  }, [clients, appointments]);
+  }, [clients, appointments, lastUpdateByClient]);
 
   return (
     <div className="flex flex-col gap-6">
@@ -63,7 +77,7 @@ export function AdminHome() {
         <p className="mt-1 text-sm text-content-muted">{t("admin.homeBody")}</p>
       </section>
 
-      <section className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      <section className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
         {[
           { label: t("admin.metrics.activeClients"), value: metrics.activeClients },
           { label: t("admin.metrics.pending"), value: metrics.pending },
@@ -73,6 +87,7 @@ export function AdminHome() {
             value: `${metrics.estimatedIncome.toFixed(0)} €`,
           },
           { label: t("admin.metrics.recentSignups"), value: metrics.recentSignups },
+          { label: t("admin.metrics.staleClients"), value: metrics.staleClients },
         ].map((metric) => (
           <div key={metric.label} className="rounded-2xl border border-border bg-surface p-4 shadow-soft">
             <p className="text-xs text-content-muted">{metric.label}</p>

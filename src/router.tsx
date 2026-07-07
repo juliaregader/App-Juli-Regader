@@ -8,6 +8,8 @@ import {
   RequireSession,
 } from "@/lib/auth/ProtectedRoute";
 import { AdminHome } from "@/pages/admin/AdminHome";
+import { Appointments } from "@/pages/admin/Appointments";
+import { ClientDetail } from "@/pages/admin/ClientDetail";
 import { PendingApproval } from "@/pages/auth/PendingApproval";
 import { SignIn } from "@/pages/auth/SignIn";
 import { Home } from "@/pages/Home";
@@ -98,6 +100,22 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute requireRole="admin">
             <AdminHome />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/admin/clients/:id",
+        element: (
+          <ProtectedRoute requireRole="admin">
+            <ClientDetail />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/admin/appointments",
+        element: (
+          <ProtectedRoute requireRole="admin">
+            <Appointments />
           </ProtectedRoute>
         ),
       },

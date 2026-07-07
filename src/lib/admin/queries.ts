@@ -20,6 +20,28 @@ export function useClientProfiles() {
   });
 }
 
+/** Última fecha de snapshot de patrimonio por cliente (para detectar clientes inactivos). */
+export function useLastUpdateByClient() {
+  return useQuery({
+    queryKey: ["admin", "last-update-by-client"],
+    queryFn: async (): Promise<Map<string, string>> => {
+      const { data, error } = await supabase
+        .from("net_worth_snapshots")
+        .select("profile_id, snapshot_date")
+        .order("snapshot_date", { ascending: false });
+      if (error) throw error;
+
+      const lastByClient = new Map<string, string>();
+      for (const row of data as { profile_id: string; snapshot_date: string }[]) {
+        if (!lastByClient.has(row.profile_id)) {
+          lastByClient.set(row.profile_id, row.snapshot_date);
+        }
+      }
+      return lastByClient;
+    },
+  });
+}
+
 export function useUpdateClientStatus() {
   const queryClient = useQueryClient();
 

@@ -73,7 +73,8 @@
       "pending": "Pendents d'aprovar",
       "sessionsThisMonth": "Sessions aquest mes",
       "estimatedIncome": "Ingressos estimats",
-      "recentSignups": "Altes últims 7 dies"
+      "recentSignups": "Altes últims 7 dies",
+      "staleClients": "Sense actualitzar dades (30d)"
     },
     "client": {
       "backToList": "← Tornar al llistat",
