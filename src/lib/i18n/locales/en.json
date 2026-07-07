@@ -28,6 +28,11 @@
     "disclaimerTitle": "Legal notice",
     "disclaimer": "This tool is exclusively for educational and personal organization purposes. It does not constitute financial, tax or investment advice. Decisions are the sole responsibility of the user."
   },
+  "paywall": {
+    "title": "Locked content",
+    "body": "Book your 1-hour session and unlock full access to the platform for €229.",
+    "cta": "Book and unlock"
+  },
   "auth": {
     "title": "Sign in to your account",
     "subtitle": "No passwords: we'll send a sign-in link to your email.",

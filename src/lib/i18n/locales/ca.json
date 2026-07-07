@@ -28,6 +28,11 @@
     "disclaimerTitle": "Avís legal",
     "disclaimer": "Aquesta eina té una finalitat exclusivament educativa i d'organització personal. No constitueix assessorament financer, fiscal ni d'inversió. Les decisions són responsabilitat exclusiva de l'usuari."
   },
+  "paywall": {
+    "title": "Contingut bloquejat",
+    "body": "Reserva la teva sessió d'1 hora i desbloqueja l'accés complet a la plataforma per 229€.",
+    "cta": "Reservar i desbloquejar"
+  },
   "auth": {
     "title": "Accedeix al teu compte",
     "subtitle": "Sense contrasenyes: t'enviem un enllaç d'accés al teu email.",

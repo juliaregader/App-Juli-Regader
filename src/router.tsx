@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import { RootLayout } from "@/components/layout/RootLayout";
+import { PaywallGate } from "@/components/paywall/PaywallGate";
 import {
   LandingRoute,
   OnboardingRoute,
@@ -37,7 +38,9 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: (
           <ProtectedRoute>
-            <Home />
+            <PaywallGate>
+              <Home />
+            </PaywallGate>
           </ProtectedRoute>
         ),
       },
@@ -77,7 +80,9 @@ export const router = createBrowserRouter([
         path: "/strategy",
         element: (
           <ProtectedRoute>
-            <Strategy />
+            <PaywallGate>
+              <Strategy />
+            </PaywallGate>
           </ProtectedRoute>
         ),
       },
@@ -85,7 +90,9 @@ export const router = createBrowserRouter([
         path: "/goals",
         element: (
           <ProtectedRoute>
-            <Goals />
+            <PaywallGate>
+              <Goals />
+            </PaywallGate>
           </ProtectedRoute>
         ),
       },
@@ -93,7 +100,9 @@ export const router = createBrowserRouter([
         path: "/tools",
         element: (
           <ProtectedRoute>
-            <Tools />
+            <PaywallGate>
+              <Tools />
+            </PaywallGate>
           </ProtectedRoute>
         ),
       },
@@ -101,7 +110,9 @@ export const router = createBrowserRouter([
         path: "/glossary",
         element: (
           <ProtectedRoute>
-            <Glossary />
+            <PaywallGate>
+              <Glossary />
+            </PaywallGate>
           </ProtectedRoute>
         ),
       },

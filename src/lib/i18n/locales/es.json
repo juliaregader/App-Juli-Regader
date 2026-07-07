@@ -28,6 +28,11 @@
     "disclaimerTitle": "Aviso legal",
     "disclaimer": "Esta herramienta tiene una finalidad exclusivamente educativa y de organización personal. No constituye asesoramiento financiero, fiscal ni de inversión. Las decisiones son responsabilidad exclusiva del usuario."
   },
+  "paywall": {
+    "title": "Contenido bloqueado",
+    "body": "Reserva tu sesión de 1 hora y desbloquea el acceso completo a la plataforma por 229€.",
+    "cta": "Reservar y desbloquear"
+  },
   "auth": {
     "title": "Accede a tu cuenta",
     "subtitle": "Sin contraseñas: te enviamos un enlace de acceso a tu email.",
