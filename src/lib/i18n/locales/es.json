@@ -91,6 +91,20 @@
       "assetBreakdownTitle": "Distribución de activos",
       "assetsLabel": "Activos",
       "liabilitiesLabel": "Pasivos"
+    },
+    "customize": {
+      "button": "Personalizar",
+      "title": "Mostrar/ocultar tarjetas",
+      "cards": {
+        "netWorth": "Patrimonio neto",
+        "cashFlow": "Cash-flow mensual",
+        "savingsRate": "Tasa de ahorro",
+        "emergencyFund": "Fondo de emergencia",
+        "debtToAssets": "Deuda / Activos",
+        "debtToIncome": "Deuda / Ingresos",
+        "assetsVsLiabilities": "Activos vs. pasivos",
+        "assetBreakdown": "Distribución de activos"
+      }
     }
   },
   "onboarding": {

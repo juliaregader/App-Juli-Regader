@@ -4,8 +4,10 @@ import { useTranslation } from "react-i18next";
 import { AssetBreakdownChart } from "@/components/charts/AssetBreakdownChart";
 import { AssetsVsLiabilitiesChart } from "@/components/charts/AssetsVsLiabilitiesChart";
 import { NetWorthChart } from "@/components/charts/NetWorthChart";
+import { CustomizePanel } from "@/components/dashboard/CustomizePanel";
 import { KpiCard } from "@/components/dashboard/KpiCard";
 import { useProfile } from "@/lib/auth/useProfile";
+import { useDashboardPreferences } from "@/lib/dashboard/preferences";
 import { formatCurrency } from "@/lib/format/currency";
 import {
   useAssetBreakdown,
@@ -31,6 +33,7 @@ export function Dashboard() {
   const { t } = useTranslation();
   const { data: profile } = useProfile();
   const currency = profile?.base_currency ?? "EUR";
+  const { isVisible } = useDashboardPreferences();
 
   const { data: history, isLoading: historyLoading } = useNetWorthHistory();
   const { data: cashFlow } = useMonthlyCashFlow();
@@ -69,84 +72,104 @@ export function Dashboard() {
 
   return (
     <div className="flex flex-col gap-6">
-      <section className="rounded-2xl border border-brand-300 bg-brand-100/40 p-6 shadow-soft dark:bg-brand-950/40">
-        <div className="flex items-center gap-1.5">
-          <p className="text-sm text-content-muted">{t("dashboard.kpis.netWorth.label")}</p>
-        </div>
-        <p className="mt-1 font-display text-3xl font-bold tabular-nums text-content">
-          {formatCurrency(latest?.net_worth ?? 0, currency)}
-        </p>
-        <div className="mt-4">
-          <NetWorthChart
-            history={history ?? []}
-            currency={currency}
-            seriesLabel={t("dashboard.kpis.netWorth.label")}
-          />
-        </div>
-      </section>
+      <div className="flex justify-end">
+        <CustomizePanel />
+      </div>
+
+      {isVisible("netWorth") ? (
+        <section className="rounded-2xl border border-brand-300 bg-brand-100/40 p-6 shadow-soft dark:bg-brand-950/40">
+          <div className="flex items-center gap-1.5">
+            <p className="text-sm text-content-muted">{t("dashboard.kpis.netWorth.label")}</p>
+          </div>
+          <p className="mt-1 font-display text-3xl font-bold tabular-nums text-content">
+            {formatCurrency(latest?.net_worth ?? 0, currency)}
+          </p>
+          <div className="mt-4">
+            <NetWorthChart
+              history={history ?? []}
+              currency={currency}
+              seriesLabel={t("dashboard.kpis.netWorth.label")}
+            />
+          </div>
+        </section>
+      ) : null}
 
       <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <KpiCard
-          label={t("dashboard.kpis.cashFlow.label")}
-          value={formatCurrency(cashFlow?.cashFlow ?? 0, currency)}
-          tooltip={t("dashboard.kpis.cashFlow.tooltip")}
-        />
-        <KpiCard
-          label={t("dashboard.kpis.savingsRate.label")}
-          value={formatPercent(cashFlow?.savingsRate ?? null)}
-          tooltip={t("dashboard.kpis.savingsRate.tooltip")}
-        />
-        <KpiCard
-          label={t("dashboard.kpis.emergencyFund.label")}
-          value={
-            emergencyFundMonths != null
-              ? t("dashboard.kpis.emergencyFund.months", {
-                  count: Math.round(emergencyFundMonths * 10) / 10,
-                })
-              : "—"
-          }
-          tooltip={t("dashboard.kpis.emergencyFund.tooltip")}
-        />
-        <KpiCard
-          label={t("dashboard.kpis.debtToAssets.label")}
-          value={formatRatio(debtRatios?.debtToAssets ?? null)}
-          tooltip={t("dashboard.kpis.debtToAssets.tooltip")}
-        />
-        <KpiCard
-          label={t("dashboard.kpis.debtToIncome.label")}
-          value={formatRatio(debtRatios?.debtToIncome ?? null)}
-          tooltip={t("dashboard.kpis.debtToIncome.tooltip")}
-        />
+        {isVisible("cashFlow") ? (
+          <KpiCard
+            label={t("dashboard.kpis.cashFlow.label")}
+            value={formatCurrency(cashFlow?.cashFlow ?? 0, currency)}
+            tooltip={t("dashboard.kpis.cashFlow.tooltip")}
+          />
+        ) : null}
+        {isVisible("savingsRate") ? (
+          <KpiCard
+            label={t("dashboard.kpis.savingsRate.label")}
+            value={formatPercent(cashFlow?.savingsRate ?? null)}
+            tooltip={t("dashboard.kpis.savingsRate.tooltip")}
+          />
+        ) : null}
+        {isVisible("emergencyFund") ? (
+          <KpiCard
+            label={t("dashboard.kpis.emergencyFund.label")}
+            value={
+              emergencyFundMonths != null
+                ? t("dashboard.kpis.emergencyFund.months", {
+                    count: Math.round(emergencyFundMonths * 10) / 10,
+                  })
+                : "—"
+            }
+            tooltip={t("dashboard.kpis.emergencyFund.tooltip")}
+          />
+        ) : null}
+        {isVisible("debtToAssets") ? (
+          <KpiCard
+            label={t("dashboard.kpis.debtToAssets.label")}
+            value={formatRatio(debtRatios?.debtToAssets ?? null)}
+            tooltip={t("dashboard.kpis.debtToAssets.tooltip")}
+          />
+        ) : null}
+        {isVisible("debtToIncome") ? (
+          <KpiCard
+            label={t("dashboard.kpis.debtToIncome.label")}
+            value={formatRatio(debtRatios?.debtToIncome ?? null)}
+            tooltip={t("dashboard.kpis.debtToIncome.tooltip")}
+          />
+        ) : null}
       </section>
 
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <div className="rounded-2xl border border-border bg-surface p-6 shadow-soft">
-          <h2 className="font-display text-base font-semibold text-content">
-            {t("dashboard.charts.assetsVsLiabilitiesTitle")}
-          </h2>
-          <div className="mt-4">
-            <AssetsVsLiabilitiesChart
-              totalAssets={latest?.total_assets ?? 0}
-              totalLiabilities={latest?.total_liabilities ?? 0}
-              currency={currency}
-              assetsLabel={t("dashboard.charts.assetsLabel")}
-              liabilitiesLabel={t("dashboard.charts.liabilitiesLabel")}
-            />
+        {isVisible("assetsVsLiabilities") ? (
+          <div className="rounded-2xl border border-border bg-surface p-6 shadow-soft">
+            <h2 className="font-display text-base font-semibold text-content">
+              {t("dashboard.charts.assetsVsLiabilitiesTitle")}
+            </h2>
+            <div className="mt-4">
+              <AssetsVsLiabilitiesChart
+                totalAssets={latest?.total_assets ?? 0}
+                totalLiabilities={latest?.total_liabilities ?? 0}
+                currency={currency}
+                assetsLabel={t("dashboard.charts.assetsLabel")}
+                liabilitiesLabel={t("dashboard.charts.liabilitiesLabel")}
+              />
+            </div>
           </div>
-        </div>
+        ) : null}
 
-        <div className="rounded-2xl border border-border bg-surface p-6 shadow-soft">
-          <h2 className="font-display text-base font-semibold text-content">
-            {t("dashboard.charts.assetBreakdownTitle")}
-          </h2>
-          <div className="mt-4">
-            <AssetBreakdownChart
-              data={assetBreakdown ?? []}
-              currency={currency}
-              categoryLabels={categoryLabels}
-            />
+        {isVisible("assetBreakdown") ? (
+          <div className="rounded-2xl border border-border bg-surface p-6 shadow-soft">
+            <h2 className="font-display text-base font-semibold text-content">
+              {t("dashboard.charts.assetBreakdownTitle")}
+            </h2>
+            <div className="mt-4">
+              <AssetBreakdownChart
+                data={assetBreakdown ?? []}
+                currency={currency}
+                categoryLabels={categoryLabels}
+              />
+            </div>
           </div>
-        </div>
+        ) : null}
       </section>
     </div>
   );

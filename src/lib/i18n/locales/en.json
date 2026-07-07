@@ -91,6 +91,20 @@
       "assetBreakdownTitle": "Asset distribution",
       "assetsLabel": "Assets",
       "liabilitiesLabel": "Liabilities"
+    },
+    "customize": {
+      "button": "Customize",
+      "title": "Show/hide cards",
+      "cards": {
+        "netWorth": "Net worth",
+        "cashFlow": "Monthly cash flow",
+        "savingsRate": "Savings rate",
+        "emergencyFund": "Emergency fund",
+        "debtToAssets": "Debt / Assets",
+        "debtToIncome": "Debt / Income",
+        "assetsVsLiabilities": "Assets vs. liabilities",
+        "assetBreakdown": "Asset distribution"
+      }
     }
   },
   "onboarding": {

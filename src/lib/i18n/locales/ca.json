@@ -91,6 +91,20 @@
       "assetBreakdownTitle": "Distribució d'actius",
       "assetsLabel": "Actius",
       "liabilitiesLabel": "Passius"
+    },
+    "customize": {
+      "button": "Personalitzar",
+      "title": "Mostrar/amagar targetes",
+      "cards": {
+        "netWorth": "Patrimoni net",
+        "cashFlow": "Cash-flow mensual",
+        "savingsRate": "Taxa d'estalvi",
+        "emergencyFund": "Fons d'emergència",
+        "debtToAssets": "Deute / Actius",
+        "debtToIncome": "Deute / Ingressos",
+        "assetsVsLiabilities": "Actius vs. passius",
+        "assetBreakdown": "Distribució d'actius"
+      }
     }
   },
   "onboarding": {
