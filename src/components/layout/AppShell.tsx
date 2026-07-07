@@ -5,7 +5,6 @@ import { Disclaimer } from "@/components/layout/Disclaimer";
 import { MainNav } from "@/components/layout/MainNav";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { SignOutButton } from "@/components/ui/SignOutButton";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function AppShell({ children }: { children: ReactNode }) {
   return (
@@ -18,7 +17,6 @@ export function AppShell({ children }: { children: ReactNode }) {
           </div>
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
-            <ThemeToggle />
             <SignOutButton />
           </div>
         </div>

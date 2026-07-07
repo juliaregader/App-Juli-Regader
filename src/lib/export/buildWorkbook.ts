@@ -97,7 +97,7 @@ function quote(sheetName: string): string {
 
 export async function buildWorkbook(data: ExportData, labels: ExportLabels): Promise<ExcelJS.Workbook> {
   const workbook = new ExcelJS.Workbook();
-  workbook.creator = "Julià Regader";
+  workbook.creator = "JuliusCapital";
   workbook.created = new Date();
 
   const currency = data.baseCurrency;

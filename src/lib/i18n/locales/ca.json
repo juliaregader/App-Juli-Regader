@@ -1,15 +1,11 @@
 {
   "app": {
-    "name": "Julià Regader",
+    "name": "JuliusCapital",
     "tagline": "Entén. Organitza. Decideix.",
     "description": "Educació financera i organització patrimonial personal."
   },
   "common": {
-    "language": "Idioma",
-    "theme": "Tema",
-    "themeLight": "Clar",
-    "themeDark": "Fosc",
-    "themeSystem": "Sistema"
+    "language": "Idioma"
   },
   "languages": {
     "es": "Español",

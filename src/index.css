@@ -29,37 +29,8 @@
   --chart-negative: #e34948;
 }
 
-:root[data-theme="dark"] {
-  --color-surface: #0b1420;
-  --color-surface-subtle: #0e1a2a;
-  --color-surface-raised: #101d2e;
-  --color-border: #1f2d3d;
-  --color-content: #eef2f6;
-  --color-content-muted: #94a2b3;
-
-  --chart-series-1: #3987e5;
-  --chart-series-2: #199e70;
-  --chart-series-3: #c98500;
-  --chart-series-4: #008300;
-  --chart-negative: #e66767;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --color-surface: #0b1420;
-    --color-surface-subtle: #0e1a2a;
-    --color-surface-raised: #101d2e;
-    --color-border: #1f2d3d;
-    --color-content: #eef2f6;
-    --color-content-muted: #94a2b3;
-
-    --chart-series-1: #3987e5;
-    --chart-series-2: #199e70;
-    --chart-series-3: #c98500;
-    --chart-series-4: #008300;
-    --chart-negative: #e66767;
-  }
-}
+/* La app usa siempre el tema claro: no hay modo oscuro ni se sigue la
+   preferencia del sistema operativo. */
 
 body {
   background-color: var(--color-surface-subtle);

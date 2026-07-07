@@ -1,4 +1,4 @@
-import { Languages } from "lucide-react";
+import { Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import { supportedLanguages, type SupportedLanguage } from "@/lib/i18n";
@@ -8,7 +8,7 @@ export function LanguageSwitcher() {
 
   return (
     <label className="flex items-center gap-1.5 text-sm text-content-muted">
-      <Languages className="size-4" aria-hidden="true" />
+      <Globe className="size-4" aria-hidden="true" />
       <span className="sr-only">{t("common.language")}</span>
       <select
         value={i18n.resolvedLanguage}

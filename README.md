@@ -1,4 +1,4 @@
-# Julià Regader — App de educación y organización patrimonial
+# JuliusCapital — App de educación y organización patrimonial
 
 Web-app de acompañamiento a las sesiones de educación financiera de Julià Regader.
 Permite a cada cliente organizar y visualizar su propia situación patrimonial
