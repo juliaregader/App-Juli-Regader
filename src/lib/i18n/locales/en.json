@@ -29,19 +29,16 @@
   },
   "auth": {
     "title": "Sign in to your account",
-    "subtitle": "No passwords: we'll send a one-time code to your email.",
+    "subtitle": "No passwords: we'll send a sign-in link to your email.",
     "fullNameLabel": "Full name",
     "emailLabel": "Email",
-    "sendCode": "Send code",
-    "codeSentTo": "We've sent a 6-digit code to {{email}}.",
-    "codeLabel": "Access code",
-    "verifyCode": "Verify code",
+    "sendLink": "Send sign-in link",
+    "linkSentTo": "We've sent a link to {{email}}. Open it from this same device to sign in.",
     "useAnotherEmail": "Use another email",
     "signOut": "Sign out",
     "errors": {
       "fullNameRequired": "Enter your full name.",
-      "emailInvalid": "Enter a valid email.",
-      "codeLength": "The code is 6 digits long."
+      "emailInvalid": "Enter a valid email."
     },
     "pending": {
       "title": "Your account is pending approval",

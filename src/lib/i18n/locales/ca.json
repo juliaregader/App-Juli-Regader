@@ -29,19 +29,16 @@
   },
   "auth": {
     "title": "Accedeix al teu compte",
-    "subtitle": "Sense contrasenyes: t'enviem un codi d'un sol ús al teu email.",
+    "subtitle": "Sense contrasenyes: t'enviem un enllaç d'accés al teu email.",
     "fullNameLabel": "Nom complet",
     "emailLabel": "Email",
-    "sendCode": "Enviar codi",
-    "codeSentTo": "T'hem enviat un codi de 6 dígits a {{email}}.",
-    "codeLabel": "Codi d'accés",
-    "verifyCode": "Verificar codi",
+    "sendLink": "Enviar enllaç d'accés",
+    "linkSentTo": "T'hem enviat un enllaç a {{email}}. Obre'l des d'aquest mateix dispositiu per entrar.",
     "useAnotherEmail": "Fer servir un altre email",
     "signOut": "Tancar sessió",
     "errors": {
       "fullNameRequired": "Escriu el teu nom complet.",
-      "emailInvalid": "Introdueix un email vàlid.",
-      "codeLength": "El codi té 6 dígits."
+      "emailInvalid": "Introdueix un email vàlid."
     },
     "pending": {
       "title": "El teu compte està pendent d'aprovació",

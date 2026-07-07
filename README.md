@@ -81,8 +81,12 @@ Supabase.
 
 ### Flujo de acceso
 
-- El login es **sin contraseña**: el usuario introduce su nombre y email, recibe
-  un código de 6 dígitos por email y lo introduce para entrar (Supabase Auth OTP).
+- El login es **sin contraseña**: el usuario introduce su nombre y email y
+  recibe un enlace de acceso por email (Supabase Auth magic link); al abrirlo
+  desde el mismo dispositivo, entra automáticamente. Se usa enlace en vez de
+  código de un solo uso porque personalizar la plantilla para mostrar un
+  código requiere configurar un proveedor SMTP externo (el correo gratuito de
+  Supabase no permite editar plantillas).
 - Todo usuario nuevo queda en estado `pending` y **no puede usar la app** hasta
   que el admin lo apruebe. Por ahora esa aprobación se hace manualmente en la
   tabla `profiles` desde el SQL Editor o el Table Editor de Supabase (cambiando
@@ -95,6 +99,9 @@ Supabase.
   set role = 'admin', status = 'approved'
   where id = (select id from auth.users where email = 'TU_EMAIL_AQUI');
   ```
+- En **Authentication → URL Configuration** del panel de Supabase, añade la URL
+  de desarrollo (`http://localhost:5173`) y la de producción en Vercel a
+  **Site URL** / **Redirect URLs**, o el enlace de acceso no redirigirá bien.
 
 ## Estructura del proyecto
 

@@ -29,19 +29,16 @@
   },
   "auth": {
     "title": "Accede a tu cuenta",
-    "subtitle": "Sin contraseñas: te enviamos un código de un solo uso a tu email.",
+    "subtitle": "Sin contraseñas: te enviamos un enlace de acceso a tu email.",
     "fullNameLabel": "Nombre completo",
     "emailLabel": "Email",
-    "sendCode": "Enviar código",
-    "codeSentTo": "Te hemos enviado un código de 6 dígitos a {{email}}.",
-    "codeLabel": "Código de acceso",
-    "verifyCode": "Verificar código",
+    "sendLink": "Enviar enlace de acceso",
+    "linkSentTo": "Te hemos enviado un enlace a {{email}}. Ábrelo desde este mismo dispositivo para entrar.",
     "useAnotherEmail": "Usar otro email",
     "signOut": "Cerrar sesión",
     "errors": {
       "fullNameRequired": "Escribe tu nombre completo.",
-      "emailInvalid": "Introduce un email válido.",
-      "codeLength": "El código tiene 6 dígitos."
+      "emailInvalid": "Introduce un email válido."
     },
     "pending": {
       "title": "Tu cuenta está pendiente de aprobación",
