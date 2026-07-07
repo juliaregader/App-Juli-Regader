@@ -12,12 +12,9 @@
     "ca": "Català",
     "en": "English"
   },
-  "home": {
-    "adminNotice": "Gestiona tus clientes, visitas y métricas de negocio desde el panel de administrador."
-  },
   "nav": {
-    "dashboard": "Panel",
-    "wealth": "Mis datos",
+    "why": "Por qué organizarte",
+    "wealth": "Simulador",
     "strategy": "Estrategia",
     "goals": "Objetivos",
     "tools": "Herramientas",
@@ -28,25 +25,23 @@
     "disclaimerTitle": "Aviso legal",
     "disclaimer": "Esta herramienta tiene una finalidad exclusivamente educativa y de organización personal. No constituye asesoramiento financiero, fiscal ni de inversión. Las decisiones son responsabilidad exclusiva del usuario."
   },
-  "paywall": {
-    "title": "Contenido bloqueado",
-    "body": "Reserva tu sesión de 1 hora y desbloquea el acceso completo a la plataforma por 229€.",
-    "cta": "Reservar y desbloquear"
+  "emailGate": {
+    "title": "Antes de empezar",
+    "body": "Déjanos tu nombre y email para guardar tus datos y poder retomarlos cuando quieras.",
+    "cta": "Empezar"
   },
   "auth": {
     "title": "Accede a tu cuenta",
     "subtitle": "Sin contraseñas: te enviamos un enlace de acceso a tu email.",
     "fullNameLabel": "Nombre completo",
     "emailLabel": "Email",
-    "phoneLabel": "Teléfono",
     "sendLink": "Enviar enlace de acceso",
     "linkSentTo": "Te hemos enviado un enlace a {{email}}. Ábrelo desde este mismo dispositivo para entrar.",
     "useAnotherEmail": "Usar otro email",
     "signOut": "Cerrar sesión",
     "errors": {
       "fullNameRequired": "Escribe tu nombre completo.",
-      "emailInvalid": "Introduce un email válido.",
-      "phoneInvalid": "Introduce un teléfono válido."
+      "emailInvalid": "Introduce un email válido."
     },
     "pending": {
       "title": "Tu cuenta está pendiente de aprobación",
@@ -59,22 +54,16 @@
   },
   "admin": {
     "homeTitle": "Panel de administrador",
-    "homeBody": "Listado de clientes, sus visitas y las métricas de negocio.",
-    "clientsTitle": "Clientes",
+    "homeBody": "Listado de leads, sus visitas y las métricas de negocio.",
+    "clientsTitle": "Leads",
     "appointmentsLink": "Ver agenda de visitas",
     "searchPlaceholder": "Buscar por nombre…",
-    "noClients": "Todavía no hay clientes registrados.",
-    "unnamedClient": "Cliente sin nombre",
-    "approve": "Aprobar",
-    "reject": "Rechazar",
-    "status": {
-      "pending": "Pendiente",
-      "approved": "Aprobado",
-      "rejected": "Rechazado"
-    },
+    "noClients": "Todavía no hay leads registrados.",
+    "unnamedClient": "Sin nombre",
+    "block": "Bloquear",
+    "unblock": "Desbloquear",
     "metrics": {
-      "activeClients": "Clientes activos",
-      "pending": "Pendientes de aprobar",
+      "totalLeads": "Leads totales",
       "sessionsThisMonth": "Sesiones este mes",
       "estimatedIncome": "Ingresos estimados",
       "recentSignups": "Altas últimos 7 días",
@@ -89,11 +78,9 @@
       "addNote": "Añadir nota",
       "noNotes": "Todavía no hay notas.",
       "clientSince": "Cliente desde",
-      "paidLabel": "Acceso a la plataforma",
-      "paid": "Pagado",
-      "unpaid": "Pendiente de pago",
-      "markPaid": "Marcar como pagado",
-      "markUnpaid": "Marcar como no pagado"
+      "contactLabel": "Contacto",
+      "noEmail": "Sin email",
+      "noPhone": "Sin teléfono"
     },
     "appointments": {
       "title": "Agenda de visitas",
@@ -397,34 +384,52 @@
     "hero": {
       "eyebrow": "Educación financiera personalizada",
       "title": "Entiende tu economía. Organiza tu patrimonio.",
-      "subtitle": "Sesiones individuales con Julià Regader + una plataforma para organizar y visualizar tu situación financiera entre sesión y sesión.",
-      "ctaPrimary": "Empezar ahora",
-      "ctaSecondary": "Ver precio"
+      "subtitle": "Herramientas gratuitas para organizar y visualizar tu situación financiera, y sesiones individuales con Julià Regader cuando quieras ir más allá.",
+      "ctaPrimary": "Probar las herramientas",
+      "ctaSecondary": "Reservar sesión"
+    },
+    "why": {
+      "title": "¿Por qué organizar tu patrimonio?",
+      "subtitle": "La mayoría de decisiones financieras se toman sin una visión de conjunto. Organizar tus datos es el primer paso para tomarlas con criterio.",
+      "points": {
+        "clarity": {
+          "title": "Visión de conjunto",
+          "body": "Reúne ingresos, gastos, activos y deudas en un solo lugar y entiende de un vistazo tu situación real."
+        },
+        "decisions": {
+          "title": "Decisiones con criterio",
+          "body": "Define tu estrategia y tus objetivos con datos delante, no de memoria ni por intuición."
+        },
+        "progress": {
+          "title": "Seguimiento real",
+          "body": "Comprueba si tu patrimonio avanza en la dirección correcta, mes a mes."
+        }
+      }
     },
     "howItWorks": {
       "title": "Cómo funciona",
       "steps": {
-        "signup": {
-          "title": "1. Regístrate",
-          "body": "Deja tu nombre, email y teléfono. Sin compromiso, gratis."
+        "explore": {
+          "title": "1. Explora gratis",
+          "body": "Usa el simulador, la estrategia, los objetivos y las calculadoras sin registrarte."
         },
         "data": {
-          "title": "2. Cuéntanos tu situación",
+          "title": "2. Organiza tus datos",
           "body": "Rellena tus ingresos, gastos, activos y pasivos en un asistente guiado."
         },
         "book": {
           "title": "3. Reserva tu sesión",
-          "body": "Elige el momento que mejor te venga para hablar conmigo."
+          "body": "Si quieres ir más allá, reserva una hora individual con Julià."
         },
-        "access": {
-          "title": "4. Accede a la plataforma",
-          "body": "Al completar el pago, desbloqueas tu panel completo para siempre."
+        "talk": {
+          "title": "4. Habla con Julià",
+          "body": "Revisa tu situación real y define un plan de acción personalizado."
         }
       }
     },
     "features": {
-      "title": "Qué incluye la plataforma",
-      "subtitle": "Todo esto se desbloquea con el plan de 229€.",
+      "title": "Herramientas gratuitas",
+      "subtitle": "Pruébalas ahora mismo, sin registro ni tarjeta.",
       "items": {
         "dashboard": {
           "title": "Panel financiero",
@@ -445,32 +450,26 @@
         "glossary": {
           "title": "Glosario financiero",
           "body": "Conceptos explicados en términos sencillos y generales."
-        },
-        "session": {
-          "title": "1 hora contigo",
-          "body": "Una sesión individual de educación financiera con Julià."
         }
       }
     },
     "pricing": {
-      "title": "Un único plan, sin sorpresas",
-      "subtitle": "Pago único: tu sesión y el acceso completo a la plataforma.",
-      "oneTime": "pago único",
+      "title": "¿Quieres ir más allá?",
+      "subtitle": "Reserva una sesión individual de educación financiera con Julià.",
+      "oneTime": "por sesión de 1 hora",
       "included": {
-        "session": "1 hora de sesión individual con Julià",
-        "platform": "Acceso completo a la plataforma para siempre",
-        "dashboard": "Panel, estrategia, objetivos y herramientas educativas",
-        "export": "Exportación de tus datos a Excel"
+        "review": "Revisión personalizada de tu situación financiera",
+        "plan": "Plan de acción adaptado a tus objetivos",
+        "questions": "Resuelve tus dudas en directo",
+        "followUp": "Seguimiento de tus decisiones"
       },
-      "cta": "Reservar mi plaza",
+      "cta": "Reservar mi sesión",
       "legalNote": "Esta plataforma es una herramienta de organización y educación personal. No constituye asesoramiento financiero, fiscal ni de inversión."
     }
   },
   "booking": {
     "title": "Reserva tu sesión",
-    "subtitle": "Elige el momento que mejor te venga para tu sesión individual de 1 hora con Julià. Al confirmar el pago (229€) tendrás acceso completo a la plataforma.",
-    "paidBanner": "Ya tienes acceso completo a la plataforma.",
-    "goToDashboard": "Ir al panel",
+    "subtitle": "Elige el momento que mejor te venga para tu sesión individual de 1 hora con Julià (80€).",
     "form": {
       "date": "Fecha y hora preferida",
       "notes": "¿Algo que debamos saber? (opcional)",

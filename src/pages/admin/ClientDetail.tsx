@@ -7,7 +7,6 @@ import {
   useClientNetWorth,
   useClientProfile,
   useCreateAdminNote,
-  useUpdateClientPaidStatus,
 } from "@/lib/admin/queries";
 import { formatCurrency } from "@/lib/format/currency";
 
@@ -18,7 +17,6 @@ export function ClientDetail() {
   const { data: netWorth } = useClientNetWorth(id);
   const { data: notes } = useAdminNotes(id);
   const createNote = useCreateAdminNote();
-  const updatePaidStatus = useUpdateClientPaidStatus();
   const [noteText, setNoteText] = useState("");
 
   if (!client) return null;
@@ -29,11 +27,6 @@ export function ClientDetail() {
     if (!id || !noteText.trim()) return;
     createNote.mutate({ clientId: id, note: noteText.trim() });
     setNoteText("");
-  };
-
-  const handleTogglePaid = () => {
-    if (!id) return;
-    updatePaidStatus.mutate({ id, hasPaid: !client.has_paid });
   };
 
   return (
@@ -59,17 +52,9 @@ export function ClientDetail() {
           </div>
 
           <div className="rounded-xl border border-border bg-surface-subtle p-4">
-            <p className="text-sm text-content-muted">{t("admin.client.paidLabel")}</p>
-            <p className="mt-1 text-sm font-semibold text-content">
-              {client.has_paid ? t("admin.client.paid") : t("admin.client.unpaid")}
-            </p>
-            <button
-              type="button"
-              onClick={handleTogglePaid}
-              className="mt-2 rounded-lg bg-brand-900 px-3 py-1.5 text-xs font-semibold text-white transition-opacity hover:opacity-90"
-            >
-              {client.has_paid ? t("admin.client.markUnpaid") : t("admin.client.markPaid")}
-            </button>
+            <p className="text-sm text-content-muted">{t("admin.client.contactLabel")}</p>
+            <p className="mt-1 text-sm text-content">{client.email || t("admin.client.noEmail")}</p>
+            <p className="text-sm text-content">{client.phone || t("admin.client.noPhone")}</p>
           </div>
         </div>
       </section>
@@ -92,7 +77,7 @@ export function ClientDetail() {
           <button
             type="button"
             onClick={handleAddNote}
-            className="self-end rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-white hover:opacity-90 dark:bg-brand-100 dark:text-brand-900"
+            className="self-end rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
           >
             {t("admin.client.addNote")}
           </button>

@@ -1,14 +1,14 @@
 import { LogOut } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-import { useAuth } from "@/lib/auth/AuthProvider";
+import { useProfile } from "@/lib/auth/useProfile";
 import { supabase } from "@/lib/supabase/client";
 
 export function SignOutButton() {
-  const { session } = useAuth();
+  const { data: profile } = useProfile();
   const { t } = useTranslation();
 
-  if (!session) return null;
+  if (profile?.role !== "admin") return null;
 
   return (
     <button

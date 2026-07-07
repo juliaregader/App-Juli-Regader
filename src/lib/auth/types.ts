@@ -5,9 +5,9 @@ export interface Profile {
   id: string;
   full_name: string | null;
   phone: string | null;
+  email: string | null;
   role: UserRole;
   status: ApprovalStatus;
-  has_paid: boolean;
   base_currency: string;
   locale: string;
   theme: string;

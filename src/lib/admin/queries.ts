@@ -5,6 +5,7 @@ import type { ApprovalStatus } from "@/lib/auth/types";
 import { supabase } from "@/lib/supabase/client";
 import type { AdminNote, Appointment, ClientProfile, NewAppointment } from "@/lib/admin/types";
 
+/** Solo cuenta como "lead" un visitante que ha dejado email o teléfono (no cualquier sesión anónima). */
 export function useClientProfiles() {
   return useQuery({
     queryKey: ["admin", "clients"],
@@ -13,6 +14,7 @@ export function useClientProfiles() {
         .from("profiles")
         .select("*")
         .eq("role", "client")
+        .or("email.not.is.null,phone.not.is.null")
         .order("created_at", { ascending: false });
       if (error) throw error;
       return data;
@@ -52,21 +54,6 @@ export function useUpdateClientStatus() {
     },
     onSuccess: () => {
       void queryClient.invalidateQueries({ queryKey: ["admin", "clients"] });
-    },
-  });
-}
-
-export function useUpdateClientPaidStatus() {
-  const queryClient = useQueryClient();
-
-  return useMutation({
-    mutationFn: async ({ id, hasPaid }: { id: string; hasPaid: boolean }) => {
-      const { error } = await supabase.from("profiles").update({ has_paid: hasPaid }).eq("id", id);
-      if (error) throw error;
-    },
-    onSuccess: (_data, variables) => {
-      void queryClient.invalidateQueries({ queryKey: ["admin", "clients"] });
-      void queryClient.invalidateQueries({ queryKey: ["admin", "client", variables.id] });
     },
   });
 }

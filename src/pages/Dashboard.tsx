@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { AssetBreakdownChart } from "@/components/charts/AssetBreakdownChart";
@@ -54,19 +53,19 @@ export function Dashboard() {
 
   if (!historyLoading && !hasData) {
     return (
-      <div className="rounded-2xl border border-dashed border-brand-300 bg-brand-100/40 p-8 text-center dark:bg-brand-950/40">
+      <div className="rounded-2xl border border-dashed border-brand-300 bg-brand-100/40 p-8 text-center">
         <h2 className="font-display text-lg font-semibold text-content">
           {t("dashboard.empty.title")}
         </h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-content-muted">
           {t("dashboard.empty.body")}
         </p>
-        <Link
-          to="/wealth"
-          className="mt-4 inline-block rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 dark:bg-brand-100 dark:text-brand-900"
+        <a
+          href="#simulador"
+          className="mt-4 inline-block rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
         >
           {t("dashboard.empty.cta")}
-        </Link>
+        </a>
       </div>
     );
   }
@@ -79,7 +78,7 @@ export function Dashboard() {
       </div>
 
       {isVisible("netWorth") ? (
-        <section className="rounded-2xl border border-brand-300 bg-brand-100/40 p-6 shadow-soft dark:bg-brand-950/40">
+        <section className="rounded-2xl border border-brand-300 bg-brand-100/40 p-6 shadow-soft">
           <div className="flex items-center gap-1.5">
             <p className="text-sm text-content-muted">{t("dashboard.kpis.netWorth.label")}</p>
           </div>

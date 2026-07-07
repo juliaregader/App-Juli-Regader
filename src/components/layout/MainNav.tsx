@@ -1,55 +1,52 @@
-import {
-  BookOpen,
-  Calculator,
-  CalendarDays,
-  LayoutDashboard,
-  PieChart,
-  Target,
-  Wallet,
-} from "lucide-react";
+import { LayoutDashboard } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { clsx } from "clsx";
 
 import { useProfile } from "@/lib/auth/useProfile";
 
+const SECTIONS = [
+  { href: "#simulador", key: "wealth" },
+  { href: "#estrategia", key: "strategy" },
+  { href: "#objetivos", key: "goals" },
+  { href: "#herramientas", key: "tools" },
+  { href: "#glosario", key: "glossary" },
+  { href: "#reservar", key: "book" },
+] as const;
+
 export function MainNav() {
   const { t } = useTranslation();
   const { data: profile } = useProfile();
 
-  if (!profile || profile.status !== "approved") return null;
-
-  const links =
-    profile.role === "admin"
-      ? [{ to: "/admin", label: t("admin.homeTitle"), icon: LayoutDashboard }]
-      : [
-          { to: "/dashboard", label: t("nav.dashboard"), icon: LayoutDashboard },
-          { to: "/wealth", label: t("nav.wealth"), icon: Wallet },
-          { to: "/strategy", label: t("nav.strategy"), icon: PieChart },
-          { to: "/goals", label: t("nav.goals"), icon: Target },
-          { to: "/tools", label: t("nav.tools"), icon: Calculator },
-          { to: "/glossary", label: t("nav.glossary"), icon: BookOpen },
-          { to: "/book", label: t("nav.book"), icon: CalendarDays },
-        ];
-
-  return (
-    <nav className="flex items-center gap-1">
-      {links.map(({ to, label, icon: Icon }) => (
+  if (profile?.role === "admin") {
+    return (
+      <nav className="flex items-center gap-1">
         <NavLink
-          key={to}
-          to={to}
+          to="/admin"
           className={({ isActive }) =>
             clsx(
               "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
-              isActive
-                ? "bg-brand-100 text-brand-900 dark:bg-brand-900 dark:text-brand-100"
-                : "text-content-muted hover:text-content",
+              isActive ? "bg-brand-100 text-brand-900" : "text-content-muted hover:text-content",
             )
           }
         >
-          <Icon className="size-4" aria-hidden="true" />
-          {label}
+          <LayoutDashboard className="size-4" aria-hidden="true" />
+          {t("admin.homeTitle")}
         </NavLink>
+      </nav>
+    );
+  }
+
+  return (
+    <nav className="hidden items-center gap-0.5 lg:flex">
+      {SECTIONS.map(({ href, key }) => (
+        <a
+          key={href}
+          href={href}
+          className="whitespace-nowrap rounded-lg px-2.5 py-1.5 text-sm font-medium text-content-muted transition-colors hover:bg-surface-subtle hover:text-content xl:px-3"
+        >
+          {t(`nav.${key}`)}
+        </a>
       ))}
     </nav>
   );

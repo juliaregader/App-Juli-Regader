@@ -86,7 +86,7 @@ export function Strategy() {
       </section>
 
       {rows.length === 0 && !isLoading ? (
-        <section className="rounded-2xl border border-dashed border-brand-300 bg-brand-100/40 p-6 dark:bg-brand-950/40">
+        <section className="rounded-2xl border border-dashed border-brand-300 bg-brand-100/40 p-6">
           <p className="text-sm font-medium text-content">{t("strategy.templatesTitle")}</p>
           <p className="mt-1 text-xs text-content-muted">{t("strategy.templatesNote")}</p>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -138,7 +138,7 @@ export function Strategy() {
           <button
             type="button"
             onClick={handleAdd}
-            className="flex items-center justify-center gap-1.5 rounded-lg bg-brand-900 px-3 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 dark:bg-brand-100 dark:text-brand-900"
+            className="flex items-center justify-center gap-1.5 rounded-lg bg-brand-900 px-3 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
             <Plus className="size-4" aria-hidden="true" />
             {t("onboarding.common.add")}

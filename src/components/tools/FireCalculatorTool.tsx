@@ -47,7 +47,7 @@ export function FireCalculatorTool({
 
       <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-surface-subtle">
         <div
-          className="h-full rounded-full bg-brand-900 transition-all dark:bg-brand-100"
+          className="h-full rounded-full bg-brand-900 transition-all"
           style={{ width: `${progress * 100}%` }}
         />
       </div>

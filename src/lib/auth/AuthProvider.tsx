@@ -16,8 +16,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session);
+    let active = true;
+
+    supabase.auth.getSession().then(async ({ data }) => {
+      if (!active) return;
+      if (data.session) {
+        setSession(data.session);
+        setLoading(false);
+        return;
+      }
+
+      // Sin sesión: entra como visitante anónimo para poder usar las
+      // herramientas públicas sin pedirle registro ni contraseña.
+      const { data: anon } = await supabase.auth.signInAnonymously();
+      if (!active) return;
+      setSession(anon.session);
       setLoading(false);
     });
 
@@ -26,7 +39,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(false);
     });
 
-    return () => subscription.subscription.unsubscribe();
+    return () => {
+      active = false;
+      subscription.subscription.unsubscribe();
+    };
   }, []);
 
   return (

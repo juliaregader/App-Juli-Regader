@@ -12,12 +12,9 @@
     "ca": "Català",
     "en": "English"
   },
-  "home": {
-    "adminNotice": "Manage your clients, sessions and business metrics from the admin panel."
-  },
   "nav": {
-    "dashboard": "Dashboard",
-    "wealth": "My data",
+    "why": "Why organize",
+    "wealth": "Simulator",
     "strategy": "Strategy",
     "goals": "Goals",
     "tools": "Tools",
@@ -28,25 +25,23 @@
     "disclaimerTitle": "Legal notice",
     "disclaimer": "This tool is exclusively for educational and personal organization purposes. It does not constitute financial, tax or investment advice. Decisions are the sole responsibility of the user."
   },
-  "paywall": {
-    "title": "Locked content",
-    "body": "Book your 1-hour session and unlock full access to the platform for €229.",
-    "cta": "Book and unlock"
+  "emailGate": {
+    "title": "Before you start",
+    "body": "Leave us your name and email so we can save your data and you can pick it up anytime.",
+    "cta": "Start"
   },
   "auth": {
     "title": "Sign in to your account",
     "subtitle": "No passwords: we'll send a sign-in link to your email.",
     "fullNameLabel": "Full name",
     "emailLabel": "Email",
-    "phoneLabel": "Phone",
     "sendLink": "Send sign-in link",
     "linkSentTo": "We've sent a link to {{email}}. Open it from this same device to sign in.",
     "useAnotherEmail": "Use another email",
     "signOut": "Sign out",
     "errors": {
       "fullNameRequired": "Enter your full name.",
-      "emailInvalid": "Enter a valid email.",
-      "phoneInvalid": "Enter a valid phone number."
+      "emailInvalid": "Enter a valid email."
     },
     "pending": {
       "title": "Your account is pending approval",
@@ -59,22 +54,16 @@
   },
   "admin": {
     "homeTitle": "Admin panel",
-    "homeBody": "Client list, their sessions, and business metrics.",
-    "clientsTitle": "Clients",
+    "homeBody": "Lead list, their sessions, and business metrics.",
+    "clientsTitle": "Leads",
     "appointmentsLink": "View appointments",
     "searchPlaceholder": "Search by name…",
-    "noClients": "No clients registered yet.",
-    "unnamedClient": "Unnamed client",
-    "approve": "Approve",
-    "reject": "Reject",
-    "status": {
-      "pending": "Pending",
-      "approved": "Approved",
-      "rejected": "Rejected"
-    },
+    "noClients": "No leads registered yet.",
+    "unnamedClient": "No name",
+    "block": "Block",
+    "unblock": "Unblock",
     "metrics": {
-      "activeClients": "Active clients",
-      "pending": "Pending approval",
+      "totalLeads": "Total leads",
       "sessionsThisMonth": "Sessions this month",
       "estimatedIncome": "Estimated income",
       "recentSignups": "Signups last 7 days",
@@ -89,11 +78,9 @@
       "addNote": "Add note",
       "noNotes": "No notes yet.",
       "clientSince": "Client since",
-      "paidLabel": "Platform access",
-      "paid": "Paid",
-      "unpaid": "Payment pending",
-      "markPaid": "Mark as paid",
-      "markUnpaid": "Mark as unpaid"
+      "contactLabel": "Contact",
+      "noEmail": "No email",
+      "noPhone": "No phone"
     },
     "appointments": {
       "title": "Appointments",
@@ -397,34 +384,52 @@
     "hero": {
       "eyebrow": "Personalized financial education",
       "title": "Understand your finances. Organize your wealth.",
-      "subtitle": "One-on-one sessions with Julià Regader + a platform to organize and visualize your finances between sessions.",
-      "ctaPrimary": "Get started",
-      "ctaSecondary": "See pricing"
+      "subtitle": "Free tools to organize and visualize your finances, and one-on-one sessions with Julià Regader when you want to go further.",
+      "ctaPrimary": "Try the tools",
+      "ctaSecondary": "Book a session"
+    },
+    "why": {
+      "title": "Why organize your wealth?",
+      "subtitle": "Most financial decisions are made without a full picture. Organizing your data is the first step to deciding with real judgment.",
+      "points": {
+        "clarity": {
+          "title": "The full picture",
+          "body": "Bring income, expenses, assets and debts together in one place and understand your real situation at a glance."
+        },
+        "decisions": {
+          "title": "Decide with judgment",
+          "body": "Define your strategy and goals with data in front of you, not from memory or gut feeling."
+        },
+        "progress": {
+          "title": "Real tracking",
+          "body": "Check whether your wealth is moving in the right direction, month by month."
+        }
+      }
     },
     "howItWorks": {
       "title": "How it works",
       "steps": {
-        "signup": {
-          "title": "1. Sign up",
-          "body": "Leave your name, email and phone. Free, no commitment."
+        "explore": {
+          "title": "1. Explore for free",
+          "body": "Use the simulator, strategy builder, goals and calculators without signing up."
         },
         "data": {
-          "title": "2. Tell us about your situation",
+          "title": "2. Organize your data",
           "body": "Fill in your income, expenses, assets and liabilities in a guided wizard."
         },
         "book": {
           "title": "3. Book your session",
-          "body": "Choose the time that works best for you to talk to me."
+          "body": "If you want to go further, book an hour one-on-one with Julià."
         },
-        "access": {
-          "title": "4. Access the platform",
-          "body": "Once payment is complete, you unlock your full dashboard for good."
+        "talk": {
+          "title": "4. Talk to Julià",
+          "body": "Review your real situation and define a personalized action plan."
         }
       }
     },
     "features": {
-      "title": "What the platform includes",
-      "subtitle": "All of this unlocks with the 229€ plan.",
+      "title": "Free tools",
+      "subtitle": "Try them right now, no sign-up, no card.",
       "items": {
         "dashboard": {
           "title": "Financial dashboard",
@@ -445,32 +450,26 @@
         "glossary": {
           "title": "Financial glossary",
           "body": "Concepts explained in simple, general terms."
-        },
-        "session": {
-          "title": "1 hour with me",
-          "body": "A one-on-one financial education session with Julià."
         }
       }
     },
     "pricing": {
-      "title": "One plan, no surprises",
-      "subtitle": "A single payment: your session and full platform access.",
-      "oneTime": "one-time payment",
+      "title": "Want to go further?",
+      "subtitle": "Book a one-on-one financial education session with Julià.",
+      "oneTime": "per 1-hour session",
       "included": {
-        "session": "1-hour one-on-one session with Julià",
-        "platform": "Full platform access, forever",
-        "dashboard": "Dashboard, strategy, goals and educational tools",
-        "export": "Export your data to Excel"
+        "review": "Personalized review of your financial situation",
+        "plan": "Action plan tailored to your goals",
+        "questions": "Get your questions answered live",
+        "followUp": "Follow-up on your decisions"
       },
-      "cta": "Book my spot",
+      "cta": "Book my session",
       "legalNote": "This platform is a personal organization and education tool. It does not constitute financial, tax or investment advice."
     }
   },
   "booking": {
     "title": "Book your session",
-    "subtitle": "Pick the time that works best for your 1-hour one-on-one session with Julià. Once payment is confirmed (€229) you'll get full access to the platform.",
-    "paidBanner": "You already have full access to the platform.",
-    "goToDashboard": "Go to dashboard",
+    "subtitle": "Pick the time that works best for your 1-hour one-on-one session with Julià (€80).",
     "form": {
       "date": "Preferred date and time",
       "notes": "Anything we should know? (optional)",

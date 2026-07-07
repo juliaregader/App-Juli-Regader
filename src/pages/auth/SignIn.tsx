@@ -8,9 +8,7 @@ import { z } from "zod";
 import { supabase } from "@/lib/supabase/client";
 
 const emailStepSchema = z.object({
-  fullName: z.string().min(2),
   email: z.string().email(),
-  phone: z.string().min(6),
 });
 type EmailStepValues = z.infer<typeof emailStepSchema>;
 
@@ -21,16 +19,15 @@ export function SignIn() {
 
   const emailForm = useForm<EmailStepValues>({
     resolver: zodResolver(emailStepSchema),
-    defaultValues: { fullName: "", email: "", phone: "" },
+    defaultValues: { email: "" },
   });
 
-  const sendMagicLink = async ({ fullName, email, phone }: EmailStepValues) => {
+  const sendMagicLink = async ({ email }: EmailStepValues) => {
     setServerError(null);
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        shouldCreateUser: true,
-        data: { full_name: fullName, phone },
+        shouldCreateUser: false,
         emailRedirectTo: window.location.origin,
       },
     });
@@ -56,19 +53,6 @@ export function SignIn() {
           onSubmit={(e) => void emailForm.handleSubmit(sendMagicLink)(e)}
         >
           <label className="flex flex-col gap-1.5 text-sm">
-            <span className="font-medium text-content">{t("auth.fullNameLabel")}</span>
-            <input
-              type="text"
-              autoComplete="name"
-              className="rounded-lg border border-border bg-surface px-3 py-2 text-content focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-              {...emailForm.register("fullName")}
-            />
-            {emailForm.formState.errors.fullName ? (
-              <span className="text-xs text-red-600">{t("auth.errors.fullNameRequired")}</span>
-            ) : null}
-          </label>
-
-          <label className="flex flex-col gap-1.5 text-sm">
             <span className="font-medium text-content">{t("auth.emailLabel")}</span>
             <input
               type="email"
@@ -81,25 +65,12 @@ export function SignIn() {
             ) : null}
           </label>
 
-          <label className="flex flex-col gap-1.5 text-sm">
-            <span className="font-medium text-content">{t("auth.phoneLabel")}</span>
-            <input
-              type="tel"
-              autoComplete="tel"
-              className="rounded-lg border border-border bg-surface px-3 py-2 text-content focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-              {...emailForm.register("phone")}
-            />
-            {emailForm.formState.errors.phone ? (
-              <span className="text-xs text-red-600">{t("auth.errors.phoneInvalid")}</span>
-            ) : null}
-          </label>
-
           {serverError ? <p className="text-sm text-red-600">{serverError}</p> : null}
 
           <button
             type="submit"
             disabled={emailForm.formState.isSubmitting}
-            className="rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50 dark:bg-brand-100 dark:text-brand-900"
+            className="rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
           >
             {t("auth.sendLink")}
           </button>

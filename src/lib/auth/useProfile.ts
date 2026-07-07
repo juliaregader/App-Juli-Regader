@@ -24,6 +24,23 @@ export function useProfile() {
   });
 }
 
+export function useUpdateProfileContact() {
+  const { session } = useAuth();
+  const queryClient = useQueryClient();
+  const userId = session?.user.id;
+
+  return useMutation({
+    mutationFn: async (contact: { email: string; full_name?: string; phone?: string }) => {
+      if (!userId) throw new Error("No hay sesión activa.");
+      const { error } = await supabase.from("profiles").update(contact).eq("id", userId);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      void queryClient.invalidateQueries({ queryKey: ["profile", userId] });
+    },
+  });
+}
+
 export function useCompleteOnboarding() {
   const { session } = useAuth();
   const queryClient = useQueryClient();

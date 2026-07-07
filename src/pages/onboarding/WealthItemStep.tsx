@@ -130,7 +130,7 @@ export function WealthItemStep({
             type="button"
             onClick={handleAdd}
             disabled={isSubmitting}
-            className="flex items-center justify-center gap-1.5 rounded-lg bg-brand-900 px-3 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50 dark:bg-brand-100 dark:text-brand-900"
+            className="flex items-center justify-center gap-1.5 rounded-lg bg-brand-900 px-3 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
           >
             <Plus className="size-4" aria-hidden="true" />
             {t("onboarding.common.add")}
@@ -213,7 +213,7 @@ export function WealthItemStep({
         <button
           type="button"
           onClick={onNext}
-          className="rounded-lg bg-brand-900 px-5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 dark:bg-brand-100 dark:text-brand-900"
+          className="rounded-lg bg-brand-900 px-5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
         >
           {t("onboarding.common.next")}
         </button>

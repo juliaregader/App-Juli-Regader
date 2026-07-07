@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 import { useCompleteOnboarding, useProfile } from "@/lib/auth/useProfile";
 import { formatCurrency } from "@/lib/format/currency";
@@ -10,7 +9,6 @@ const ANIMATION_MS = 900;
 
 export function SummaryStep({ onBack }: { onBack: () => void }) {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const { data: profile } = useProfile();
   const { data: snapshot, isLoading } = useLatestNetWorth();
   const completeOnboarding = useCompleteOnboarding();
@@ -37,7 +35,7 @@ export function SummaryStep({ onBack }: { onBack: () => void }) {
 
   const handleFinish = async () => {
     await completeOnboarding.mutateAsync();
-    navigate("/dashboard", { replace: true });
+    document.getElementById("resultado")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -72,7 +70,7 @@ export function SummaryStep({ onBack }: { onBack: () => void }) {
           type="button"
           onClick={() => void handleFinish()}
           disabled={completeOnboarding.isPending}
-          className="rounded-lg bg-brand-900 px-5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50 dark:bg-brand-100 dark:text-brand-900"
+          className="rounded-lg bg-brand-900 px-5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
         >
           {t("onboarding.common.finish")}
         </button>

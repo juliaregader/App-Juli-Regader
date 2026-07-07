@@ -90,7 +90,7 @@ export function Appointments() {
           <button
             type="button"
             onClick={handleAdd}
-            className="rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-white hover:opacity-90 dark:bg-brand-100 dark:text-brand-900"
+            className="rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
           >
             {t("admin.appointments.add")}
           </button>

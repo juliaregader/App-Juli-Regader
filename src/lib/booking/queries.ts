@@ -4,7 +4,7 @@ import { useAuth } from "@/lib/auth/AuthProvider";
 import { supabase } from "@/lib/supabase/client";
 import type { Appointment } from "@/lib/admin/types";
 
-const SESSION_PRICE_EUR = 229;
+const SESSION_PRICE_EUR = 80;
 const SESSION_DURATION_MINUTES = 60;
 
 export function useAdminProfile() {

@@ -74,7 +74,7 @@ export function Goals() {
           <button
             type="button"
             onClick={handleAdd}
-            className="flex items-center justify-center gap-1.5 rounded-lg bg-brand-900 px-3 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 dark:bg-brand-100 dark:text-brand-900"
+            className="flex items-center justify-center gap-1.5 rounded-lg bg-brand-900 px-3 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
             <Plus className="size-4" aria-hidden="true" />
             {t("onboarding.common.add")}
@@ -110,7 +110,7 @@ export function Goals() {
 
                   <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-surface-subtle">
                     <div
-                      className="h-full rounded-full bg-brand-900 transition-all dark:bg-brand-100"
+                      className="h-full rounded-full bg-brand-900 transition-all"
                       style={{ width: `${progress * 100}%` }}
                     />
                   </div>

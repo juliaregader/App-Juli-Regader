@@ -56,7 +56,7 @@ export function BudgetRuleTool({ totalIncome, expenseBreakdown, currency }: Budg
                 </div>
                 <div className="relative mt-1 h-2 w-full overflow-hidden rounded-full bg-surface-subtle">
                   <div
-                    className="h-full rounded-full bg-brand-900 dark:bg-brand-100"
+                    className="h-full rounded-full bg-brand-900"
                     style={{ width: `${Math.min(actualPercentage, 100)}%` }}
                   />
                   <div

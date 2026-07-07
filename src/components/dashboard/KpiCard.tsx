@@ -25,7 +25,7 @@ export function KpiCard({
       className={clsx(
         "rounded-2xl border p-6 shadow-soft",
         accent
-          ? "border-brand-300 bg-brand-100/40 dark:bg-brand-950/40"
+          ? "border-brand-300 bg-brand-100/40"
           : "border-border bg-surface",
       )}
     >

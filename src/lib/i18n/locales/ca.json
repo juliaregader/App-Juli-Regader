@@ -12,12 +12,9 @@
     "ca": "Català",
     "en": "English"
   },
-  "home": {
-    "adminNotice": "Gestiona els teus clients, visites i mètriques de negoci des del panell d'administrador."
-  },
   "nav": {
-    "dashboard": "Panell",
-    "wealth": "Les meves dades",
+    "why": "Per què organitzar-te",
+    "wealth": "Simulador",
     "strategy": "Estratègia",
     "goals": "Objectius",
     "tools": "Eines",
@@ -28,25 +25,23 @@
     "disclaimerTitle": "Avís legal",
     "disclaimer": "Aquesta eina té una finalitat exclusivament educativa i d'organització personal. No constitueix assessorament financer, fiscal ni d'inversió. Les decisions són responsabilitat exclusiva de l'usuari."
   },
-  "paywall": {
-    "title": "Contingut bloquejat",
-    "body": "Reserva la teva sessió d'1 hora i desbloqueja l'accés complet a la plataforma per 229€.",
-    "cta": "Reservar i desbloquejar"
+  "emailGate": {
+    "title": "Abans de començar",
+    "body": "Deixa'ns el teu nom i email per guardar les teves dades i poder-les recuperar quan vulguis.",
+    "cta": "Començar"
   },
   "auth": {
     "title": "Accedeix al teu compte",
     "subtitle": "Sense contrasenyes: t'enviem un enllaç d'accés al teu email.",
     "fullNameLabel": "Nom complet",
     "emailLabel": "Email",
-    "phoneLabel": "Telèfon",
     "sendLink": "Enviar enllaç d'accés",
     "linkSentTo": "T'hem enviat un enllaç a {{email}}. Obre'l des d'aquest mateix dispositiu per entrar.",
     "useAnotherEmail": "Fer servir un altre email",
     "signOut": "Tancar sessió",
     "errors": {
       "fullNameRequired": "Escriu el teu nom complet.",
-      "emailInvalid": "Introdueix un email vàlid.",
-      "phoneInvalid": "Introdueix un telèfon vàlid."
+      "emailInvalid": "Introdueix un email vàlid."
     },
     "pending": {
       "title": "El teu compte està pendent d'aprovació",
@@ -59,22 +54,16 @@
   },
   "admin": {
     "homeTitle": "Panell d'administrador",
-    "homeBody": "Llistat de clients, les seves visites i les mètriques de negoci.",
-    "clientsTitle": "Clients",
+    "homeBody": "Llistat de leads, les seves visites i les mètriques de negoci.",
+    "clientsTitle": "Leads",
     "appointmentsLink": "Veure agenda de visites",
     "searchPlaceholder": "Cercar per nom…",
-    "noClients": "Encara no hi ha clients registrats.",
-    "unnamedClient": "Client sense nom",
-    "approve": "Aprovar",
-    "reject": "Rebutjar",
-    "status": {
-      "pending": "Pendent",
-      "approved": "Aprovat",
-      "rejected": "Rebutjat"
-    },
+    "noClients": "Encara no hi ha leads registrats.",
+    "unnamedClient": "Sense nom",
+    "block": "Bloquejar",
+    "unblock": "Desbloquejar",
     "metrics": {
-      "activeClients": "Clients actius",
-      "pending": "Pendents d'aprovar",
+      "totalLeads": "Leads totals",
       "sessionsThisMonth": "Sessions aquest mes",
       "estimatedIncome": "Ingressos estimats",
       "recentSignups": "Altes últims 7 dies",
@@ -89,11 +78,9 @@
       "addNote": "Afegir nota",
       "noNotes": "Encara no hi ha notes.",
       "clientSince": "Client des de",
-      "paidLabel": "Accés a la plataforma",
-      "paid": "Pagat",
-      "unpaid": "Pendent de pagament",
-      "markPaid": "Marcar com a pagat",
-      "markUnpaid": "Marcar com a no pagat"
+      "contactLabel": "Contacte",
+      "noEmail": "Sense email",
+      "noPhone": "Sense telèfon"
     },
     "appointments": {
       "title": "Agenda de visites",
@@ -397,34 +384,52 @@
     "hero": {
       "eyebrow": "Educació financera personalitzada",
       "title": "Entén la teva economia. Organitza el teu patrimoni.",
-      "subtitle": "Sessions individuals amb en Julià Regader + una plataforma per organitzar i visualitzar la teva situació financera entre sessió i sessió.",
-      "ctaPrimary": "Començar ara",
-      "ctaSecondary": "Veure preu"
+      "subtitle": "Eines gratuïtes per organitzar i visualitzar la teva situació financera, i sessions individuals amb en Julià Regader quan vulguis anar més enllà.",
+      "ctaPrimary": "Provar les eines",
+      "ctaSecondary": "Reservar sessió"
+    },
+    "why": {
+      "title": "Per què organitzar el teu patrimoni?",
+      "subtitle": "La majoria de decisions financeres es prenen sense una visió de conjunt. Organitzar les teves dades és el primer pas per prendre-les amb criteri.",
+      "points": {
+        "clarity": {
+          "title": "Visió de conjunt",
+          "body": "Reuneix ingressos, despeses, actius i deutes en un sol lloc i entén d'una ullada la teva situació real."
+        },
+        "decisions": {
+          "title": "Decisions amb criteri",
+          "body": "Defineix la teva estratègia i els teus objectius amb dades al davant, no de memòria ni per intuïció."
+        },
+        "progress": {
+          "title": "Seguiment real",
+          "body": "Comprova si el teu patrimoni avança en la direcció correcta, mes a mes."
+        }
+      }
     },
     "howItWorks": {
       "title": "Com funciona",
       "steps": {
-        "signup": {
-          "title": "1. Registra't",
-          "body": "Deixa el teu nom, email i telèfon. Sense compromís, gratis."
+        "explore": {
+          "title": "1. Explora gratis",
+          "body": "Fes servir el simulador, l'estratègia, els objectius i les calculadores sense registrar-te."
         },
         "data": {
-          "title": "2. Explica'ns la teva situació",
+          "title": "2. Organitza les teves dades",
           "body": "Omple els teus ingressos, despeses, actius i passius en un assistent guiat."
         },
         "book": {
           "title": "3. Reserva la teva sessió",
-          "body": "Tria el moment que et vagi millor per parlar amb mi."
+          "body": "Si vols anar més enllà, reserva una hora individual amb en Julià."
         },
-        "access": {
-          "title": "4. Accedeix a la plataforma",
-          "body": "En completar el pagament, desbloqueges el teu panell complet per sempre."
+        "talk": {
+          "title": "4. Parla amb en Julià",
+          "body": "Revisa la teva situació real i defineix un pla d'acció personalitzat."
         }
       }
     },
     "features": {
-      "title": "Què inclou la plataforma",
-      "subtitle": "Tot això es desbloqueja amb el pla de 229€.",
+      "title": "Eines gratuïtes",
+      "subtitle": "Prova-les ara mateix, sense registre ni targeta.",
       "items": {
         "dashboard": {
           "title": "Panell financer",
@@ -445,32 +450,26 @@
         "glossary": {
           "title": "Glossari financer",
           "body": "Conceptes explicats en termes senzills i generals."
-        },
-        "session": {
-          "title": "1 hora amb mi",
-          "body": "Una sessió individual d'educació financera amb en Julià."
         }
       }
     },
     "pricing": {
-      "title": "Un únic pla, sense sorpreses",
-      "subtitle": "Pagament únic: la teva sessió i l'accés complet a la plataforma.",
-      "oneTime": "pagament únic",
+      "title": "Vols anar més enllà?",
+      "subtitle": "Reserva una sessió individual d'educació financera amb en Julià.",
+      "oneTime": "per sessió d'1 hora",
       "included": {
-        "session": "1 hora de sessió individual amb en Julià",
-        "platform": "Accés complet a la plataforma per sempre",
-        "dashboard": "Panell, estratègia, objectius i eines educatives",
-        "export": "Exportació de les teves dades a Excel"
+        "review": "Revisió personalitzada de la teva situació financera",
+        "plan": "Pla d'acció adaptat als teus objectius",
+        "questions": "Resol els teus dubtes en directe",
+        "followUp": "Seguiment de les teves decisions"
       },
-      "cta": "Reservar la meva plaça",
+      "cta": "Reservar la meva sessió",
       "legalNote": "Aquesta plataforma és una eina d'organització i educació personal. No constitueix assessorament financer, fiscal ni d'inversió."
     }
   },
   "booking": {
     "title": "Reserva la teva sessió",
-    "subtitle": "Tria el moment que et vagi millor per a la teva sessió individual d'1 hora amb en Julià. En confirmar el pagament (229€) tindràs accés complet a la plataforma.",
-    "paidBanner": "Ja tens accés complet a la plataforma.",
-    "goToDashboard": "Anar al panell",
+    "subtitle": "Tria el moment que et vagi millor per a la teva sessió individual d'1 hora amb en Julià (80€).",
     "form": {
       "date": "Data i hora preferida",
       "notes": "Alguna cosa que hàgim de saber? (opcional)",

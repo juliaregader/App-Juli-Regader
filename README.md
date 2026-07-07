@@ -1,9 +1,10 @@
 # JuliusCapital — App de educación y organización patrimonial
 
-Web-app de acompañamiento a las sesiones de educación financiera de Julià Regader.
-Permite a cada cliente organizar y visualizar su propia situación patrimonial
-(ingresos, gastos, activos y pasivos), sin sustituir en ningún caso el
-asesoramiento profesional de la sesión.
+Web pública de una sola página con la oferta de educación financiera de Julià
+Regader: explica por qué organizar el patrimonio, y deja probar libremente
+(sin registro ni contraseña) el simulador de patrimonio, el constructor de
+estrategia, los objetivos, las calculadoras y el glosario. Quien quiera ir más
+allá puede reservar una sesión individual de pago con Julià.
 
 > **Aviso legal:** esta herramienta tiene una finalidad exclusivamente educativa
 > y de organización personal. No constituye asesoramiento financiero, fiscal ni
@@ -11,10 +12,10 @@ asesoramiento profesional de la sesión.
 
 ## Estado del proyecto
 
-**Las 8 fases previstas están completas.** Web-app funcional de principio a
-fin, lista para probarse con datos reales y desplegarse:
+Web-app funcional de principio a fin, lista para probarse con datos reales y
+desplegarse:
 
-- [x] Fase 0 — Scaffolding, marca, i18n, tema claro/oscuro, layout base
+- [x] Fase 0 — Scaffolding, marca, i18n, layout base
 - [x] Fase 1 — Autenticación (Supabase Auth) y roles (cliente/admin)
 - [x] Fase 2 — Onboarding patrimonial y modelo de datos
 - [x] Fase 3 — Dashboard, gráficos, KPIs y personalización del panel
@@ -22,6 +23,20 @@ fin, lista para probarse con datos reales y desplegarse:
 - [x] Fase 5 — Exportación a Excel con fórmulas
 - [x] Fase 6 — Panel de administrador
 - [x] Fase 7 — Pulido, accesibilidad y despliegue
+- [x] Pivot — Web pública one-page sin cuentas de cliente: acceso anónimo a
+      las herramientas, captura de email/reserva como único punto de
+      contacto, panel de administrador privado sin cambios para Julià
+
+### Cómo funciona el acceso (tras el pivot)
+
+No hay registro ni contraseña para los visitantes. Cada visitante entra con
+una **sesión anónima de Supabase Auth** (invisible, creada automáticamente al
+cargar la página), que le permite usar y guardar sus propios datos en el
+simulador/estrategia/objetivos exactamente igual que antes, pero sin pedirle
+ninguna cuenta. Antes de usar esas secciones se le pide su nombre y email
+(`EmailGate`), que se guarda en su mismo perfil para poder contactarle. El
+**único login real de la app es el de Julià como admin**, en `/login`
+(magic link, `shouldCreateUser: false`), protegido con `AdminRoute`.
 
 ## Stack técnico
 
@@ -143,30 +158,36 @@ src/
     tools/           Calculadoras educativas (interés compuesto, FIRE, deuda, 50/30/20)
     ui/              Componentes de interfaz reutilizables
   lib/
-    admin/           Tipos y hooks del panel de administrador
-    auth/            AuthProvider, useProfile, guards de ruta por rol
+    admin/           Tipos y hooks del panel de administrador (leads, citas, notas)
+    auth/            AuthProvider (sesión anónima + admin), useProfile, AdminRoute
+    booking/         Hooks de reserva de sesión (cliente público)
     dashboard/       Preferencias de personalización del panel
     export/          Generación del libro Excel (ExcelJS)
     i18n/            Configuración i18next + locales (es, ca, en)
     format/          Formateo de divisas por locale
     query/           Cliente de TanStack Query
-    theme/           Proveedor de tema claro/oscuro
     tools/           Funciones puras de cálculo (interés compuesto, amortización)
     supabase/        Cliente de Supabase
     wealth/          Tipos y hooks de ingresos, gastos, activos, pasivos, KPIs
+  components/
+    wealth/          EmailGate: pide nombre/email antes de usar el simulador
   pages/
-    auth/            Login (email + OTP), pendiente de aprobación
+    PublicLanding.tsx  One-page pública: hero, por qué, cómo funciona,
+                       herramientas embebidas, reserva de sesión
+    auth/            Login del admin (magic link, sin registro)
+    booking/         Página de reserva de sesión (embebida en la one-page)
     onboarding/       Carrusel patrimonial (ingresos, gastos, activos, pasivos, resumen)
     goals/           Objetivos financieros
     strategy/        Constructor de estrategia de inversión
     tools/           Página de herramientas educativas
     glossary/        Glosario financiero
-    admin/           Panel de administrador: clientes, ficha de cliente, agenda
-  router.tsx         Rutas y protección por sesión/rol
+    admin/           Panel de administrador: leads, ficha de lead, agenda
+  router.tsx         "/" pública + "/login", "/admin/*" protegidas para el admin
 
 supabase/
   migrations/        Migraciones SQL (perfiles, roles, RLS, modelo patrimonial,
-                     estrategia, objetivos, citas y notas de admin)
+                     estrategia, objetivos, citas y notas de admin, acceso
+                     público anónimo)
 ```
 
 ## Despliegue en Vercel

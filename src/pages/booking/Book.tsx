@@ -1,14 +1,10 @@
-import { CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
-import { useProfile } from "@/lib/auth/useProfile";
 import { useAdminProfile, useMyAppointments, useRequestAppointment } from "@/lib/booking/queries";
 
 export function Book() {
   const { t } = useTranslation();
-  const { data: profile } = useProfile();
   const { data: admin } = useAdminProfile();
   const { data: appointments } = useMyAppointments();
   const requestAppointment = useRequestAppointment();
@@ -36,18 +32,6 @@ export function Book() {
       <section className="rounded-2xl border border-border bg-surface p-6 shadow-soft">
         <h1 className="font-display text-xl font-semibold text-content">{t("booking.title")}</h1>
         <p className="mt-1 text-sm text-content-muted">{t("booking.subtitle")}</p>
-
-        {profile?.has_paid ? (
-          <div className="mt-4 flex items-center gap-2 rounded-xl border border-brand-300 bg-brand-100/40 p-4">
-            <CheckCircle2 className="size-5 shrink-0 text-brand-500" aria-hidden="true" />
-            <div>
-              <p className="text-sm text-content">{t("booking.paidBanner")}</p>
-              <Link to="/dashboard" className="mt-1 inline-block text-sm font-medium text-brand-500 hover:underline">
-                {t("booking.goToDashboard")}
-              </Link>
-            </div>
-          </div>
-        ) : null}
 
         {submitted ? (
           <p className="mt-4 rounded-xl border border-brand-300 bg-brand-100/40 p-4 text-sm text-content">
