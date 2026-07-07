@@ -17,15 +17,11 @@
     "en": "English"
   },
   "home": {
-    "heroEyebrow": "Acompanyament a les teves sessions d'educació financera",
-    "heroTitle": "Entén la teva economia. Organitza el teu patrimoni.",
-    "heroSubtitle": "Aquesta aplicació t'acompanya entre sessions perquè vegis amb claredat els teus ingressos, despeses, actius i passius, i segueixis el teu progrés al llarg del temps.",
-    "stats": {
-      "assets": "Actius totals",
-      "liabilities": "Passius totals",
-      "netWorth": "Patrimoni net"
-    },
     "adminNotice": "Gestiona els teus clients, visites i mètriques de negoci des del panell d'administrador."
+  },
+  "nav": {
+    "dashboard": "Panell",
+    "wealth": "Les meves dades"
   },
   "legal": {
     "disclaimerTitle": "Avís legal",
@@ -56,6 +52,46 @@
   "admin": {
     "homeTitle": "Panell d'administrador",
     "homeBody": "Aquí veuràs el llistat de clients, les seves visites i les mètriques de negoci (properament)."
+  },
+  "dashboard": {
+    "empty": {
+      "title": "Encara no hi ha dades suficients",
+      "body": "Afegeix els teus ingressos, despeses, actius i passius per veure aquí el teu patrimoni net i els teus indicadors.",
+      "cta": "Afegir les meves dades"
+    },
+    "kpis": {
+      "netWorth": {
+        "label": "Patrimoni net",
+        "tooltip": "És la suma de tots els teus actius menys la suma de tots els teus passius: el que tens menys el que deus."
+      },
+      "cashFlow": {
+        "label": "Cash-flow mensual",
+        "tooltip": "La diferència entre els teus ingressos i les teves despeses d'aquest mes."
+      },
+      "savingsRate": {
+        "label": "Taxa d'estalvi",
+        "tooltip": "El percentatge dels teus ingressos d'aquest mes que no has gastat: (ingressos − despeses) ÷ ingressos."
+      },
+      "emergencyFund": {
+        "label": "Fons d'emergència",
+        "tooltip": "Quants mesos de les teves despeses actuals podries cobrir només amb els teus actius líquids (comptes i efectiu).",
+        "months": "{{count}} mesos"
+      },
+      "debtToAssets": {
+        "label": "Deute / Actius",
+        "tooltip": "Quant deute tens en relació amb tot el que posseeixes: total de passius dividit entre total d'actius."
+      },
+      "debtToIncome": {
+        "label": "Deute / Ingressos",
+        "tooltip": "Quant deute tens en relació amb els teus ingressos mensuals: total de passius dividit entre els teus ingressos d'aquest mes."
+      }
+    },
+    "charts": {
+      "assetsVsLiabilitiesTitle": "Actius vs. passius",
+      "assetBreakdownTitle": "Distribució d'actius",
+      "assetsLabel": "Actius",
+      "liabilitiesLabel": "Passius"
+    }
   },
   "onboarding": {
     "progress": "Pas {{current}} de {{total}}",

@@ -17,15 +17,11 @@
     "en": "English"
   },
   "home": {
-    "heroEyebrow": "Acompañamiento a tus sesiones de educación financiera",
-    "heroTitle": "Entiende tu economía. Organiza tu patrimonio.",
-    "heroSubtitle": "Esta aplicación te acompaña entre sesiones para que veas con claridad tus ingresos, gastos, activos y pasivos, y sigas tu progreso a lo largo del tiempo.",
-    "stats": {
-      "assets": "Activos totales",
-      "liabilities": "Pasivos totales",
-      "netWorth": "Patrimonio neto"
-    },
     "adminNotice": "Gestiona tus clientes, visitas y métricas de negocio desde el panel de administrador."
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "wealth": "Mis datos"
   },
   "legal": {
     "disclaimerTitle": "Aviso legal",
@@ -56,6 +52,46 @@
   "admin": {
     "homeTitle": "Panel de administrador",
     "homeBody": "Aquí verás el listado de clientes, sus visitas y las métricas de negocio (próximamente)."
+  },
+  "dashboard": {
+    "empty": {
+      "title": "Todavía no hay datos suficientes",
+      "body": "Añade tus ingresos, gastos, activos y pasivos para ver aquí tu patrimonio neto y tus indicadores.",
+      "cta": "Añadir mis datos"
+    },
+    "kpis": {
+      "netWorth": {
+        "label": "Patrimonio neto",
+        "tooltip": "Es la suma de todos tus activos menos la suma de todos tus pasivos: lo que tienes menos lo que debes."
+      },
+      "cashFlow": {
+        "label": "Cash-flow mensual",
+        "tooltip": "La diferencia entre tus ingresos y tus gastos de este mes."
+      },
+      "savingsRate": {
+        "label": "Tasa de ahorro",
+        "tooltip": "El porcentaje de tus ingresos de este mes que no has gastado: (ingresos − gastos) ÷ ingresos."
+      },
+      "emergencyFund": {
+        "label": "Fondo de emergencia",
+        "tooltip": "Cuántos meses de tus gastos actuales podrías cubrir solo con tus activos líquidos (cuentas y efectivo).",
+        "months": "{{count}} meses"
+      },
+      "debtToAssets": {
+        "label": "Deuda / Activos",
+        "tooltip": "Cuánta deuda tienes en relación con todo lo que posees: total de pasivos dividido entre total de activos."
+      },
+      "debtToIncome": {
+        "label": "Deuda / Ingresos",
+        "tooltip": "Cuánta deuda tienes en relación con tus ingresos mensuales: total de pasivos dividido entre tus ingresos de este mes."
+      }
+    },
+    "charts": {
+      "assetsVsLiabilitiesTitle": "Activos vs. pasivos",
+      "assetBreakdownTitle": "Distribución de activos",
+      "assetsLabel": "Activos",
+      "liabilitiesLabel": "Pasivos"
+    }
   },
   "onboarding": {
     "progress": "Paso {{current}} de {{total}}",

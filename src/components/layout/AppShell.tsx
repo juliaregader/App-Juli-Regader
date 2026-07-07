@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { Logo } from "@/components/brand/Logo";
 import { Disclaimer } from "@/components/layout/Disclaimer";
+import { MainNav } from "@/components/layout/MainNav";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { SignOutButton } from "@/components/ui/SignOutButton";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -10,8 +11,11 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-dvh flex-col bg-surface-subtle">
       <header className="border-b border-border bg-surface">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-          <Logo />
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
+          <div className="flex items-center gap-6">
+            <Logo />
+            <MainNav />
+          </div>
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <ThemeToggle />

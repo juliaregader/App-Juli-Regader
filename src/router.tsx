@@ -50,6 +50,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/wealth",
+        element: (
+          <ProtectedRoute>
+            <Onboarding />
+          </ProtectedRoute>
+        ),
+      },
+      {
         path: "/admin",
         element: (
           <ProtectedRoute requireRole="admin">

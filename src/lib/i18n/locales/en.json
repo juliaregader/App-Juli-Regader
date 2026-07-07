@@ -17,15 +17,11 @@
     "en": "English"
   },
   "home": {
-    "heroEyebrow": "Support for your financial education sessions",
-    "heroTitle": "Understand your finances. Organize your wealth.",
-    "heroSubtitle": "This app supports you between sessions so you can clearly see your income, expenses, assets and liabilities, and track your progress over time.",
-    "stats": {
-      "assets": "Total assets",
-      "liabilities": "Total liabilities",
-      "netWorth": "Net worth"
-    },
     "adminNotice": "Manage your clients, sessions and business metrics from the admin panel."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "wealth": "My data"
   },
   "legal": {
     "disclaimerTitle": "Legal notice",
@@ -56,6 +52,46 @@
   "admin": {
     "homeTitle": "Admin panel",
     "homeBody": "Here you'll see the client list, their sessions, and business metrics (coming soon)."
+  },
+  "dashboard": {
+    "empty": {
+      "title": "Not enough data yet",
+      "body": "Add your income, expenses, assets and liabilities to see your net worth and indicators here.",
+      "cta": "Add my data"
+    },
+    "kpis": {
+      "netWorth": {
+        "label": "Net worth",
+        "tooltip": "The sum of all your assets minus the sum of all your liabilities: what you own minus what you owe."
+      },
+      "cashFlow": {
+        "label": "Monthly cash flow",
+        "tooltip": "The difference between your income and your expenses this month."
+      },
+      "savingsRate": {
+        "label": "Savings rate",
+        "tooltip": "The percentage of this month's income you haven't spent: (income − expenses) ÷ income."
+      },
+      "emergencyFund": {
+        "label": "Emergency fund",
+        "tooltip": "How many months of your current expenses you could cover using only your liquid assets (cash and accounts).",
+        "months": "{{count}} months"
+      },
+      "debtToAssets": {
+        "label": "Debt / Assets",
+        "tooltip": "How much debt you have relative to everything you own: total liabilities divided by total assets."
+      },
+      "debtToIncome": {
+        "label": "Debt / Income",
+        "tooltip": "How much debt you have relative to your monthly income: total liabilities divided by this month's income."
+      }
+    },
+    "charts": {
+      "assetsVsLiabilitiesTitle": "Assets vs. liabilities",
+      "assetBreakdownTitle": "Asset distribution",
+      "assetsLabel": "Assets",
+      "liabilitiesLabel": "Liabilities"
+    }
   },
   "onboarding": {
     "progress": "Step {{current}} of {{total}}",
