@@ -11,6 +11,7 @@ import { AdminHome } from "@/pages/admin/AdminHome";
 import { PendingApproval } from "@/pages/auth/PendingApproval";
 import { SignIn } from "@/pages/auth/SignIn";
 import { Home } from "@/pages/Home";
+import { Glossary } from "@/pages/glossary/Glossary";
 import { Goals } from "@/pages/goals/Goals";
 import { Onboarding } from "@/pages/onboarding/Onboarding";
 import { Strategy } from "@/pages/strategy/Strategy";
@@ -81,6 +82,14 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Tools />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/glossary",
+        element: (
+          <ProtectedRoute>
+            <Glossary />
           </ProtectedRoute>
         ),
       },

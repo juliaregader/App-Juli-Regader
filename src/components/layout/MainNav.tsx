@@ -1,4 +1,4 @@
-import { Calculator, LayoutDashboard, PieChart, Target, Wallet } from "lucide-react";
+import { BookOpen, Calculator, LayoutDashboard, PieChart, Target, Wallet } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { clsx } from "clsx";
@@ -20,6 +20,7 @@ export function MainNav() {
           { to: "/strategy", label: t("nav.strategy"), icon: PieChart },
           { to: "/goals", label: t("nav.goals"), icon: Target },
           { to: "/tools", label: t("nav.tools"), icon: Calculator },
+          { to: "/glossary", label: t("nav.glossary"), icon: BookOpen },
         ];
 
   return (

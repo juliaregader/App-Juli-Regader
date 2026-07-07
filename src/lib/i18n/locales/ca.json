@@ -24,7 +24,8 @@
     "wealth": "Les meves dades",
     "strategy": "Estratègia",
     "goals": "Objectius",
-    "tools": "Eines"
+    "tools": "Eines",
+    "glossary": "Glossari"
   },
   "legal": {
     "disclaimerTitle": "Avís legal",
@@ -89,6 +90,7 @@
         "tooltip": "Quant deute tens en relació amb els teus ingressos mensuals: total de passius dividit entre els teus ingressos d'aquest mes."
       }
     },
+    "glossaryLink": "Veure al glossari →",
     "charts": {
       "assetsVsLiabilitiesTitle": "Actius vs. passius",
       "assetBreakdownTitle": "Distribució d'actius",
@@ -256,6 +258,56 @@
       "wants": "Desitjos",
       "savings": "Estalvi",
       "vsTarget": "vs."
+    }
+  },
+  "glossary": {
+    "title": "Glossari financer",
+    "description": "Conceptes explicats en termes generals, perquè entenguis els indicadors del teu panell.",
+    "terms": {
+      "netWorth": {
+        "term": "Patrimoni net",
+        "definition": "El que tens menys el que deus: la suma de tots els teus actius menys la suma de tots els teus passius."
+      },
+      "asset": {
+        "term": "Actiu",
+        "definition": "Qualsevol bé o dret amb valor econòmic que posseeixes: diners en comptes, inversions, un habitatge, etc."
+      },
+      "liability": {
+        "term": "Passiu",
+        "definition": "Qualsevol deute o obligació de pagament pendent: una hipoteca, un préstec, el saldo d'una targeta de crèdit."
+      },
+      "diversification": {
+        "term": "Diversificació",
+        "definition": "Repartir els diners entre diferents tipus d'actius per no dependre del comportament d'un de sol."
+      },
+      "liquidity": {
+        "term": "Liquiditat",
+        "definition": "La facilitat amb què un actiu es pot convertir en diners disponibles sense perdre valor, com l'efectiu o un compte corrent."
+      },
+      "compoundInterest": {
+        "term": "Interès compost",
+        "definition": "Quan els interessos generats també generen interessos amb el temps, accelerant el creixement d'un estalvi o un deute."
+      },
+      "savingsRate": {
+        "term": "Taxa d'estalvi",
+        "definition": "El percentatge dels teus ingressos que no gastes: (ingressos − despeses) dividit entre ingressos."
+      },
+      "debtRatio": {
+        "term": "Ràtio d'endeutament",
+        "definition": "Una mesura de quant deute tens en relació amb els teus actius o els teus ingressos."
+      },
+      "emergencyFund": {
+        "term": "Fons d'emergència",
+        "definition": "Un coixí d'actius líquids pensat per cobrir despeses imprevistes, normalment mesurat en mesos de despesa coberts."
+      },
+      "fourPercentRule": {
+        "term": "Regla del 4%",
+        "definition": "Un marc teòric que estima que es podria viure d'un patrimoni invertit retirant-ne un 4% l'any, cosa que equival a necessitar 25 vegades la despesa anual."
+      },
+      "budget502030": {
+        "term": "Pressupost 50/30/20",
+        "definition": "Un repartiment orientatiu dels ingressos: 50% necessitats, 30% desitjos i 20% estalvi."
+      }
     }
   }
 }

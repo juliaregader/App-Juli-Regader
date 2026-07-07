@@ -24,7 +24,8 @@
     "wealth": "My data",
     "strategy": "Strategy",
     "goals": "Goals",
-    "tools": "Tools"
+    "tools": "Tools",
+    "glossary": "Glossary"
   },
   "legal": {
     "disclaimerTitle": "Legal notice",
@@ -89,6 +90,7 @@
         "tooltip": "How much debt you have relative to your monthly income: total liabilities divided by this month's income."
       }
     },
+    "glossaryLink": "See in glossary →",
     "charts": {
       "assetsVsLiabilitiesTitle": "Assets vs. liabilities",
       "assetBreakdownTitle": "Asset distribution",
@@ -256,6 +258,56 @@
       "wants": "Wants",
       "savings": "Savings",
       "vsTarget": "vs."
+    }
+  },
+  "glossary": {
+    "title": "Financial glossary",
+    "description": "Concepts explained in general terms, so you can understand the indicators on your dashboard.",
+    "terms": {
+      "netWorth": {
+        "term": "Net worth",
+        "definition": "What you own minus what you owe: the sum of all your assets minus the sum of all your liabilities."
+      },
+      "asset": {
+        "term": "Asset",
+        "definition": "Any item or right with economic value that you own: money in accounts, investments, a home, etc."
+      },
+      "liability": {
+        "term": "Liability",
+        "definition": "Any outstanding debt or payment obligation: a mortgage, a loan, a credit card balance."
+      },
+      "diversification": {
+        "term": "Diversification",
+        "definition": "Spreading money across different types of assets so you don't depend on how just one performs."
+      },
+      "liquidity": {
+        "term": "Liquidity",
+        "definition": "How easily an asset can be turned into available cash without losing value, like cash or a checking account."
+      },
+      "compoundInterest": {
+        "term": "Compound interest",
+        "definition": "When interest earned also earns interest over time, accelerating the growth of savings or debt."
+      },
+      "savingsRate": {
+        "term": "Savings rate",
+        "definition": "The percentage of your income you don't spend: (income − expenses) divided by income."
+      },
+      "debtRatio": {
+        "term": "Debt ratio",
+        "definition": "A measure of how much debt you have relative to your assets or your income."
+      },
+      "emergencyFund": {
+        "term": "Emergency fund",
+        "definition": "A cushion of liquid assets meant to cover unexpected expenses, usually measured in months of expenses covered."
+      },
+      "fourPercentRule": {
+        "term": "4% rule",
+        "definition": "A theoretical framework estimating you could live off invested wealth by withdrawing 4% a year, meaning you'd need about 25 times your annual expenses."
+      },
+      "budget502030": {
+        "term": "50/30/20 budget",
+        "definition": "A suggested income split: 50% needs, 30% wants, and 20% savings."
+      }
     }
   }
 }

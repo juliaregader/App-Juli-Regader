@@ -11,14 +11,14 @@ asesoramiento profesional de la sesión.
 
 ## Estado del proyecto
 
-**Fase 4 — Estrategia de inversión y herramientas educativas**, en curso de
-construcción por fases:
+**Fase 5 — Exportación a Excel con fórmulas**, en curso de construcción por
+fases:
 
 - [x] Fase 0 — Scaffolding, marca, i18n, tema claro/oscuro, layout base
 - [x] Fase 1 — Autenticación (Supabase Auth) y roles (cliente/admin)
 - [x] Fase 2 — Onboarding patrimonial y modelo de datos
 - [x] Fase 3 — Dashboard, gráficos, KPIs y personalización del panel
-- [ ] Fase 4 — Estrategia de inversión y herramientas educativas
+- [x] Fase 4 — Estrategia de inversión y herramientas educativas
 - [ ] Fase 5 — Exportación a Excel con fórmulas
 - [ ] Fase 6 — Panel de administrador
 - [ ] Fase 7 — Pulido, accesibilidad y despliegue
@@ -111,24 +111,33 @@ src/
   assets/logo/       Isotipo SVG de la marca
   components/
     brand/           Logo e isotipo
-    layout/          AppShell, RootLayout, Disclaimer
+    charts/          Gráficos Recharts reutilizables (línea, barras, donut)
+    dashboard/        KpiCard, InfoTooltip, CustomizePanel
+    layout/          AppShell, RootLayout, MainNav, Disclaimer
+    tools/           Calculadoras educativas (interés compuesto, FIRE, deuda, 50/30/20)
     ui/              Componentes de interfaz reutilizables
   lib/
     auth/            AuthProvider, useProfile, guards de ruta por rol
+    dashboard/       Preferencias de personalización del panel
     i18n/            Configuración i18next + locales (es, ca, en)
     format/          Formateo de divisas por locale
     query/           Cliente de TanStack Query
     theme/           Proveedor de tema claro/oscuro
+    tools/           Funciones puras de cálculo (interés compuesto, amortización)
     supabase/        Cliente de Supabase
-    wealth/          Tipos y hooks de ingresos, gastos, activos y pasivos
+    wealth/          Tipos y hooks de ingresos, gastos, activos, pasivos, KPIs
   pages/
     auth/            Login (email + OTP), pendiente de aprobación
     onboarding/       Carrusel patrimonial (ingresos, gastos, activos, pasivos, resumen)
+    goals/           Objetivos financieros
+    strategy/        Constructor de estrategia de inversión
+    tools/           Página de herramientas educativas
+    glossary/        Glosario financiero
     admin/           Panel de administrador (placeholder, Fase 6)
   router.tsx         Rutas y protección por sesión/rol
 
 supabase/
-  migrations/        Migraciones SQL (perfiles, roles, RLS)
+  migrations/        Migraciones SQL (perfiles, roles, RLS, modelo patrimonial, estrategia, objetivos)
 ```
 
 ## Despliegue en Vercel

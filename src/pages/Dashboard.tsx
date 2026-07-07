@@ -107,6 +107,8 @@ export function Dashboard() {
             label={t("dashboard.kpis.savingsRate.label")}
             value={formatPercent(cashFlow?.savingsRate ?? null)}
             tooltip={t("dashboard.kpis.savingsRate.tooltip")}
+            glossaryTerm="savingsRate"
+            glossaryLabel={t("dashboard.glossaryLink")}
           />
         ) : null}
         {isVisible("emergencyFund") ? (
@@ -120,6 +122,8 @@ export function Dashboard() {
                 : "—"
             }
             tooltip={t("dashboard.kpis.emergencyFund.tooltip")}
+            glossaryTerm="emergencyFund"
+            glossaryLabel={t("dashboard.glossaryLink")}
           />
         ) : null}
         {isVisible("debtToAssets") ? (
@@ -127,12 +131,16 @@ export function Dashboard() {
             label={t("dashboard.kpis.debtToAssets.label")}
             value={formatRatio(debtRatios?.debtToAssets ?? null)}
             tooltip={t("dashboard.kpis.debtToAssets.tooltip")}
+            glossaryTerm="debtRatio"
+            glossaryLabel={t("dashboard.glossaryLink")}
           />
         ) : null}
         {isVisible("debtToIncome") ? (
           <KpiCard
             label={t("dashboard.kpis.debtToIncome.label")}
             value={formatRatio(debtRatios?.debtToIncome ?? null)}
+            glossaryTerm="debtRatio"
+            glossaryLabel={t("dashboard.glossaryLink")}
             tooltip={t("dashboard.kpis.debtToIncome.tooltip")}
           />
         ) : null}

@@ -8,9 +8,18 @@ interface KpiCardProps {
   value: ReactNode;
   tooltip: string;
   accent?: boolean;
+  glossaryTerm?: string;
+  glossaryLabel?: string;
 }
 
-export function KpiCard({ label, value, tooltip, accent = false }: KpiCardProps) {
+export function KpiCard({
+  label,
+  value,
+  tooltip,
+  accent = false,
+  glossaryTerm,
+  glossaryLabel,
+}: KpiCardProps) {
   return (
     <div
       className={clsx(
@@ -22,7 +31,11 @@ export function KpiCard({ label, value, tooltip, accent = false }: KpiCardProps)
     >
       <div className="flex items-center gap-1.5">
         <p className="text-sm normal-case text-content-muted">{label}</p>
-        <InfoTooltip text={tooltip} />
+        <InfoTooltip
+          text={tooltip}
+          linkTo={glossaryTerm ? `/glossary#${glossaryTerm}` : undefined}
+          linkLabel={glossaryLabel}
+        />
       </div>
       <p className="mt-2 font-display text-2xl font-bold tabular-nums text-content">{value}</p>
     </div>

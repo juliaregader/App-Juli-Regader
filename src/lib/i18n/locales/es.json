@@ -24,7 +24,8 @@
     "wealth": "Mis datos",
     "strategy": "Estrategia",
     "goals": "Objetivos",
-    "tools": "Herramientas"
+    "tools": "Herramientas",
+    "glossary": "Glosario"
   },
   "legal": {
     "disclaimerTitle": "Aviso legal",
@@ -89,6 +90,7 @@
         "tooltip": "Cuánta deuda tienes en relación con tus ingresos mensuales: total de pasivos dividido entre tus ingresos de este mes."
       }
     },
+    "glossaryLink": "Ver en el glosario →",
     "charts": {
       "assetsVsLiabilitiesTitle": "Activos vs. pasivos",
       "assetBreakdownTitle": "Distribución de activos",
@@ -256,6 +258,56 @@
       "wants": "Deseos",
       "savings": "Ahorro",
       "vsTarget": "vs."
+    }
+  },
+  "glossary": {
+    "title": "Glosario financiero",
+    "description": "Conceptos explicados en términos generales, para que entiendas los indicadores de tu panel.",
+    "terms": {
+      "netWorth": {
+        "term": "Patrimonio neto",
+        "definition": "Lo que tienes menos lo que debes: la suma de todos tus activos menos la suma de todos tus pasivos."
+      },
+      "asset": {
+        "term": "Activo",
+        "definition": "Cualquier bien o derecho con valor económico que posees: dinero en cuentas, inversiones, una vivienda, etc."
+      },
+      "liability": {
+        "term": "Pasivo",
+        "definition": "Cualquier deuda u obligación de pago pendiente: una hipoteca, un préstamo, el saldo de una tarjeta de crédito."
+      },
+      "diversification": {
+        "term": "Diversificación",
+        "definition": "Repartir el dinero entre distintos tipos de activos para no depender del comportamiento de uno solo."
+      },
+      "liquidity": {
+        "term": "Liquidez",
+        "definition": "La facilidad con la que un activo se puede convertir en dinero disponible sin perder valor, como el efectivo o una cuenta corriente."
+      },
+      "compoundInterest": {
+        "term": "Interés compuesto",
+        "definition": "Cuando los intereses generados también generan intereses con el tiempo, acelerando el crecimiento de un ahorro o una deuda."
+      },
+      "savingsRate": {
+        "term": "Tasa de ahorro",
+        "definition": "El porcentaje de tus ingresos que no gastas: (ingresos − gastos) dividido entre ingresos."
+      },
+      "debtRatio": {
+        "term": "Ratio de endeudamiento",
+        "definition": "Una medida de cuánta deuda tienes en relación con tus activos o tus ingresos."
+      },
+      "emergencyFund": {
+        "term": "Fondo de emergencia",
+        "definition": "Un colchón de activos líquidos pensado para cubrir gastos imprevistos, normalmente medido en meses de gasto cubiertos."
+      },
+      "fourPercentRule": {
+        "term": "Regla del 4%",
+        "definition": "Un marco teórico que estima que se podría vivir de un patrimonio invertido retirando un 4% al año, lo que equivale a necesitar 25 veces el gasto anual."
+      },
+      "budget502030": {
+        "term": "Presupuesto 50/30/20",
+        "definition": "Un reparto orientativo de los ingresos: 50% necesidades, 30% deseos y 20% ahorro."
+      }
     }
   }
 }
