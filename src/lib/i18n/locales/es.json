@@ -1,0 +1,30 @@
+{
+  "app": {
+    "name": "Julià Regader",
+    "tagline": "Entiende. Organiza. Decide.",
+    "description": "Educación financiera y organización patrimonial personal."
+  },
+  "common": {
+    "language": "Idioma",
+    "theme": "Tema",
+    "themeLight": "Claro",
+    "themeDark": "Oscuro",
+    "themeSystem": "Sistema"
+  },
+  "languages": {
+    "es": "Español",
+    "ca": "Català",
+    "en": "English"
+  },
+  "home": {
+    "heroEyebrow": "Acompañamiento a tus sesiones de educación financiera",
+    "heroTitle": "Entiende tu economía. Organiza tu patrimonio.",
+    "heroSubtitle": "Esta aplicación te acompaña entre sesiones para que veas con claridad tus ingresos, gastos, activos y pasivos, y sigas tu progreso a lo largo del tiempo.",
+    "phaseNoticeTitle": "Fase 0 — Fundamentos",
+    "phaseNoticeBody": "Scaffolding del proyecto: marca, idiomas y tema listos. El resto de funcionalidades (registro, cuestionario patrimonial, panel y exportaciones) llegan en las siguientes fases."
+  },
+  "legal": {
+    "disclaimerTitle": "Aviso legal",
+    "disclaimer": "Esta herramienta tiene una finalidad exclusivamente educativa y de organización personal. No constituye asesoramiento financiero, fiscal ni de inversión. Las decisiones son responsabilidad exclusiva del usuario."
+  }
+}

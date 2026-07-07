@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Marca — azul oscuro (navy) como color principal, azul medio como acento funcional */
+  --color-brand-950: #071726;
+  --color-brand-900: #0e2a47;
+  --color-brand-800: #163a5c;
+  --color-brand-700: #1e4a6e;
+  --color-brand-500: #4e8fc1;
+  --color-brand-300: #9cc4e4;
+  --color-brand-100: #e4eef6;
+
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f7f8fa;
+  --color-surface-raised: #ffffff;
+  --color-border: #e2e6ec;
+  --color-content: #0e1621;
+  --color-content-muted: #5b6675;
+}
+
+:root[data-theme="dark"] {
+  --color-surface: #0b1420;
+  --color-surface-subtle: #0e1a2a;
+  --color-surface-raised: #101d2e;
+  --color-border: #1f2d3d;
+  --color-content: #eef2f6;
+  --color-content-muted: #94a2b3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-surface: #0b1420;
+    --color-surface-subtle: #0e1a2a;
+    --color-surface-raised: #101d2e;
+    --color-border: #1f2d3d;
+    --color-content: #eef2f6;
+    --color-content-muted: #94a2b3;
+  }
+}
+
+body {
+  background-color: var(--color-surface-subtle);
+  color: var(--color-content);
+  font-feature-settings: "tnum" 1;
+}

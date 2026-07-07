@@ -1,0 +1,30 @@
+{
+  "app": {
+    "name": "Julià Regader",
+    "tagline": "Understand. Organize. Decide.",
+    "description": "Financial education and personal wealth organization."
+  },
+  "common": {
+    "language": "Language",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System"
+  },
+  "languages": {
+    "es": "Español",
+    "ca": "Català",
+    "en": "English"
+  },
+  "home": {
+    "heroEyebrow": "Support for your financial education sessions",
+    "heroTitle": "Understand your finances. Organize your wealth.",
+    "heroSubtitle": "This app supports you between sessions so you can clearly see your income, expenses, assets and liabilities, and track your progress over time.",
+    "phaseNoticeTitle": "Phase 0 — Foundations",
+    "phaseNoticeBody": "Project scaffolding: brand, languages and theme are ready. The rest of the features (sign-up, wealth questionnaire, dashboard and exports) are coming in the next phases."
+  },
+  "legal": {
+    "disclaimerTitle": "Legal notice",
+    "disclaimer": "This tool is exclusively for educational and personal organization purposes. It does not constitute financial, tax or investment advice. Decisions are the sole responsibility of the user."
+  }
+}
