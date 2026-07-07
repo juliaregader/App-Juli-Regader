@@ -6,6 +6,7 @@ import { AssetsVsLiabilitiesChart } from "@/components/charts/AssetsVsLiabilitie
 import { NetWorthChart } from "@/components/charts/NetWorthChart";
 import { CustomizePanel } from "@/components/dashboard/CustomizePanel";
 import { KpiCard } from "@/components/dashboard/KpiCard";
+import { ExportButton } from "@/components/export/ExportButton";
 import { useProfile } from "@/lib/auth/useProfile";
 import { useDashboardPreferences } from "@/lib/dashboard/preferences";
 import { formatCurrency } from "@/lib/format/currency";
@@ -72,7 +73,8 @@ export function Dashboard() {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex justify-end">
+      <div className="flex justify-end gap-2">
+        <ExportButton />
         <CustomizePanel />
       </div>
 

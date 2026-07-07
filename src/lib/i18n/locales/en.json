@@ -309,5 +309,30 @@
         "definition": "A suggested income split: 50% needs, 30% wants, and 20% savings."
       }
     }
+  },
+  "export": {
+    "button": "Export to Excel",
+    "exporting": "Generating…",
+    "sheets": {
+      "summary": "Summary",
+      "incomeExpense": "Income and expenses",
+      "assets": "Assets",
+      "liabilities": "Liabilities",
+      "strategy": "Strategy",
+      "projection": "Projection",
+      "legal": "Legal notice"
+    },
+    "summary": {
+      "title": "Wealth summary for {{name}}",
+      "totalAssets": "Total assets",
+      "totalLiabilities": "Total liabilities",
+      "monthlyIncome": "Monthly income",
+      "monthlyExpenses": "Monthly expenses",
+      "liquidAssets": "Liquid assets"
+    },
+    "columns": {
+      "currency": "Currency",
+      "year": "Year"
+    }
   }
 }

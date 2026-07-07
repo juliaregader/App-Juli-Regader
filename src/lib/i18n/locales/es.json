@@ -309,5 +309,30 @@
         "definition": "Un reparto orientativo de los ingresos: 50% necesidades, 30% deseos y 20% ahorro."
       }
     }
+  },
+  "export": {
+    "button": "Exportar a Excel",
+    "exporting": "Generando…",
+    "sheets": {
+      "summary": "Resumen",
+      "incomeExpense": "Ingresos y gastos",
+      "assets": "Activos",
+      "liabilities": "Pasivos",
+      "strategy": "Estrategia",
+      "projection": "Proyección",
+      "legal": "Aviso legal"
+    },
+    "summary": {
+      "title": "Resumen patrimonial de {{name}}",
+      "totalAssets": "Activos totales",
+      "totalLiabilities": "Pasivos totales",
+      "monthlyIncome": "Ingresos del mes",
+      "monthlyExpenses": "Gastos del mes",
+      "liquidAssets": "Activos líquidos"
+    },
+    "columns": {
+      "currency": "Divisa",
+      "year": "Año"
+    }
   }
 }

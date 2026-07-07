@@ -309,5 +309,30 @@
         "definition": "Un repartiment orientatiu dels ingressos: 50% necessitats, 30% desitjos i 20% estalvi."
       }
     }
+  },
+  "export": {
+    "button": "Exportar a Excel",
+    "exporting": "Generant…",
+    "sheets": {
+      "summary": "Resum",
+      "incomeExpense": "Ingressos i despeses",
+      "assets": "Actius",
+      "liabilities": "Passius",
+      "strategy": "Estratègia",
+      "projection": "Projecció",
+      "legal": "Avís legal"
+    },
+    "summary": {
+      "title": "Resum patrimonial de {{name}}",
+      "totalAssets": "Actius totals",
+      "totalLiabilities": "Passius totals",
+      "monthlyIncome": "Ingressos del mes",
+      "monthlyExpenses": "Despeses del mes",
+      "liquidAssets": "Actius líquids"
+    },
+    "columns": {
+      "currency": "Divisa",
+      "year": "Any"
+    }
   }
 }
