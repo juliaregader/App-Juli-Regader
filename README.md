@@ -11,8 +11,8 @@ asesoramiento profesional de la sesión.
 
 ## Estado del proyecto
 
-**Fase 7 — Pulido, accesibilidad y despliegue**, en curso de construcción por
-fases:
+**Las 8 fases previstas están completas.** Web-app funcional de principio a
+fin, lista para probarse con datos reales y desplegarse:
 
 - [x] Fase 0 — Scaffolding, marca, i18n, tema claro/oscuro, layout base
 - [x] Fase 1 — Autenticación (Supabase Auth) y roles (cliente/admin)
@@ -21,7 +21,7 @@ fases:
 - [x] Fase 4 — Estrategia de inversión y herramientas educativas
 - [x] Fase 5 — Exportación a Excel con fórmulas
 - [x] Fase 6 — Panel de administrador
-- [ ] Fase 7 — Pulido, accesibilidad y despliegue
+- [x] Fase 7 — Pulido, accesibilidad y despliegue
 
 ## Stack técnico
 
@@ -174,7 +174,15 @@ supabase/
 1. Importa el repositorio en Vercel.
 2. Framework preset: **Vite**.
 3. Build command: `npm run build` · Output directory: `dist`.
-4. Añade las variables de entorno de `.env.example` en *Project Settings > Environment Variables*.
+4. Añade las variables de entorno de `.env.example` en *Project Settings > Environment Variables*
+   (`VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`).
+5. El archivo [`vercel.json`](./vercel.json) ya incluye la reescritura
+   necesaria para que las rutas de React Router (`/wealth`, `/admin`, etc.)
+   funcionen al recargar la página o acceder directamente por URL, en vez de
+   dar un 404.
+6. En **Authentication → URL Configuration** de Supabase, añade la URL de
+   producción (`https://tu-dominio.vercel.app`) a **Site URL** / **Redirect
+   URLs**, igual que hiciste con `localhost:5173` en desarrollo.
 
 ## Marco legal del producto
 
