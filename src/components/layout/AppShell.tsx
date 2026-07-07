@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { Disclaimer } from "@/components/layout/Disclaimer";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { SignOutButton } from "@/components/ui/SignOutButton";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function AppShell({ children }: { children: ReactNode }) {
@@ -14,6 +15,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <ThemeToggle />
+            <SignOutButton />
           </div>
         </div>
       </header>

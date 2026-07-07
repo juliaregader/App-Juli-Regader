@@ -26,5 +26,34 @@
   "legal": {
     "disclaimerTitle": "Legal notice",
     "disclaimer": "This tool is exclusively for educational and personal organization purposes. It does not constitute financial, tax or investment advice. Decisions are the sole responsibility of the user."
+  },
+  "auth": {
+    "title": "Sign in to your account",
+    "subtitle": "No passwords: we'll send a one-time code to your email.",
+    "fullNameLabel": "Full name",
+    "emailLabel": "Email",
+    "sendCode": "Send code",
+    "codeSentTo": "We've sent a 6-digit code to {{email}}.",
+    "codeLabel": "Access code",
+    "verifyCode": "Verify code",
+    "useAnotherEmail": "Use another email",
+    "signOut": "Sign out",
+    "errors": {
+      "fullNameRequired": "Enter your full name.",
+      "emailInvalid": "Enter a valid email.",
+      "codeLength": "The code is 6 digits long."
+    },
+    "pending": {
+      "title": "Your account is pending approval",
+      "body": "Thanks for signing up. Julià will review your request and grant access shortly. We'll email you once your account is active."
+    },
+    "rejected": {
+      "title": "Access request not approved",
+      "body": "Your access request hasn't been approved. If you think this is a mistake, please contact Julià directly."
+    }
+  },
+  "admin": {
+    "homeTitle": "Admin panel",
+    "homeBody": "Here you'll see the client list, their sessions, and business metrics (coming soon)."
   }
 }

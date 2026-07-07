@@ -26,5 +26,34 @@
   "legal": {
     "disclaimerTitle": "Aviso legal",
     "disclaimer": "Esta herramienta tiene una finalidad exclusivamente educativa y de organización personal. No constituye asesoramiento financiero, fiscal ni de inversión. Las decisiones son responsabilidad exclusiva del usuario."
+  },
+  "auth": {
+    "title": "Accede a tu cuenta",
+    "subtitle": "Sin contraseñas: te enviamos un código de un solo uso a tu email.",
+    "fullNameLabel": "Nombre completo",
+    "emailLabel": "Email",
+    "sendCode": "Enviar código",
+    "codeSentTo": "Te hemos enviado un código de 6 dígitos a {{email}}.",
+    "codeLabel": "Código de acceso",
+    "verifyCode": "Verificar código",
+    "useAnotherEmail": "Usar otro email",
+    "signOut": "Cerrar sesión",
+    "errors": {
+      "fullNameRequired": "Escribe tu nombre completo.",
+      "emailInvalid": "Introduce un email válido.",
+      "codeLength": "El código tiene 6 dígitos."
+    },
+    "pending": {
+      "title": "Tu cuenta está pendiente de aprobación",
+      "body": "Gracias por registrarte. Julià revisará tu solicitud y te dará acceso en breve. Te avisaremos por email en cuanto tu cuenta esté activa."
+    },
+    "rejected": {
+      "title": "Solicitud no aprobada",
+      "body": "Tu solicitud de acceso no ha sido aprobada. Si crees que es un error, contacta directamente con Julià."
+    }
+  },
+  "admin": {
+    "homeTitle": "Panel de administrador",
+    "homeBody": "Aquí verás el listado de clientes, sus visitas y las métricas de negocio (próximamente)."
   }
 }

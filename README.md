@@ -14,7 +14,7 @@ asesoramiento profesional de la sesión.
 **Fase 0 — Fundamentos**, en curso de construcción por fases:
 
 - [x] Fase 0 — Scaffolding, marca, i18n, tema claro/oscuro, layout base
-- [ ] Fase 1 — Autenticación (Supabase Auth) y roles (cliente/admin)
+- [x] Fase 1 — Autenticación (Supabase Auth) y roles (cliente/admin)
 - [ ] Fase 2 — Onboarding patrimonial y modelo de datos
 - [ ] Fase 3 — Dashboard, gráficos y KPIs
 - [ ] Fase 4 — Estrategia de inversión y herramientas educativas
@@ -65,6 +65,37 @@ La app queda disponible en `http://localhost:5173`.
 Ver [`.env.example`](./.env.example). Ninguna clave secreta debe usarse desde el
 cliente: solo la URL del proyecto y la clave `anon` (pública, protegida por RLS).
 
+## Base de datos y autenticación (Supabase)
+
+Las migraciones SQL están en [`supabase/migrations`](./supabase/migrations). Para
+aplicarlas:
+
+```bash
+# Con la Supabase CLI, apuntando a tu proyecto remoto
+supabase link --project-ref <tu-project-ref>
+supabase db push
+```
+
+O simplemente copia el contenido del `.sql` en el **SQL Editor** del panel de
+Supabase.
+
+### Flujo de acceso
+
+- El login es **sin contraseña**: el usuario introduce su nombre y email, recibe
+  un código de 6 dígitos por email y lo introduce para entrar (Supabase Auth OTP).
+- Todo usuario nuevo queda en estado `pending` y **no puede usar la app** hasta
+  que el admin lo apruebe. Por ahora esa aprobación se hace manualmente en la
+  tabla `profiles` desde el SQL Editor o el Table Editor de Supabase (cambiando
+  `status` a `approved`); un panel de aprobación dedicado llega en la Fase 6.
+- El **primer administrador** (Julià) debe promocionarse a sí mismo tras
+  registrarse, ejecutando en el SQL Editor:
+
+  ```sql
+  update public.profiles
+  set role = 'admin', status = 'approved'
+  where id = (select id from auth.users where email = 'TU_EMAIL_AQUI');
+  ```
+
 ## Estructura del proyecto
 
 ```
@@ -72,13 +103,21 @@ src/
   assets/logo/       Isotipo SVG de la marca
   components/
     brand/           Logo e isotipo
-    layout/          AppShell, Disclaimer
+    layout/          AppShell, RootLayout, Disclaimer
     ui/              Componentes de interfaz reutilizables
   lib/
+    auth/            AuthProvider, useProfile, guards de ruta por rol
     i18n/            Configuración i18next + locales (es, ca, en)
+    query/           Cliente de TanStack Query
     theme/           Proveedor de tema claro/oscuro
-    supabase/        Cliente de Supabase (Fase 1+)
-  pages/             Páginas de la aplicación
+    supabase/        Cliente de Supabase
+  pages/
+    auth/            Login (email + OTP), pendiente de aprobación
+    admin/           Panel de administrador (placeholder, Fase 6)
+  router.tsx         Rutas y protección por sesión/rol
+
+supabase/
+  migrations/        Migraciones SQL (perfiles, roles, RLS)
 ```
 
 ## Despliegue en Vercel

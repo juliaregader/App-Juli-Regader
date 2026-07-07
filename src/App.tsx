@@ -1,10 +1,7 @@
-import { AppShell } from "@/components/layout/AppShell";
-import { Home } from "@/pages/Home";
+import { RouterProvider } from "react-router-dom";
+
+import { router } from "@/router";
 
 export function App() {
-  return (
-    <AppShell>
-      <Home />
-    </AppShell>
-  );
+  return <RouterProvider router={router} />;
 }

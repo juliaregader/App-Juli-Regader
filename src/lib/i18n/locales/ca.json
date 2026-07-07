@@ -26,5 +26,34 @@
   "legal": {
     "disclaimerTitle": "Avís legal",
     "disclaimer": "Aquesta eina té una finalitat exclusivament educativa i d'organització personal. No constitueix assessorament financer, fiscal ni d'inversió. Les decisions són responsabilitat exclusiva de l'usuari."
+  },
+  "auth": {
+    "title": "Accedeix al teu compte",
+    "subtitle": "Sense contrasenyes: t'enviem un codi d'un sol ús al teu email.",
+    "fullNameLabel": "Nom complet",
+    "emailLabel": "Email",
+    "sendCode": "Enviar codi",
+    "codeSentTo": "T'hem enviat un codi de 6 dígits a {{email}}.",
+    "codeLabel": "Codi d'accés",
+    "verifyCode": "Verificar codi",
+    "useAnotherEmail": "Fer servir un altre email",
+    "signOut": "Tancar sessió",
+    "errors": {
+      "fullNameRequired": "Escriu el teu nom complet.",
+      "emailInvalid": "Introdueix un email vàlid.",
+      "codeLength": "El codi té 6 dígits."
+    },
+    "pending": {
+      "title": "El teu compte està pendent d'aprovació",
+      "body": "Gràcies per registrar-te. En Julià revisarà la teva sol·licitud i et donarà accés en breu. T'avisarem per email quan el teu compte estigui actiu."
+    },
+    "rejected": {
+      "title": "Sol·licitud no aprovada",
+      "body": "La teva sol·licitud d'accés no ha estat aprovada. Si creus que és un error, contacta directament amb en Julià."
+    }
+  },
+  "admin": {
+    "homeTitle": "Panell d'administrador",
+    "homeBody": "Aquí veuràs el llistat de clients, les seves visites i les mètriques de negoci (properament)."
   }
 }
