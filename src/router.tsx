@@ -12,6 +12,7 @@ import { PendingApproval } from "@/pages/auth/PendingApproval";
 import { SignIn } from "@/pages/auth/SignIn";
 import { Home } from "@/pages/Home";
 import { Onboarding } from "@/pages/onboarding/Onboarding";
+import { Strategy } from "@/pages/strategy/Strategy";
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,14 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Onboarding />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/strategy",
+        element: (
+          <ProtectedRoute>
+            <Strategy />
           </ProtectedRoute>
         ),
       },

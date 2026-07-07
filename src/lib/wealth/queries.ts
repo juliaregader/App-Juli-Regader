@@ -5,13 +5,17 @@ import { supabase } from "@/lib/supabase/client";
 import type {
   Asset,
   ExpenseItem,
+  Goal,
   IncomeItem,
   Liability,
   NetWorthSnapshot,
   NewAsset,
   NewExpenseItem,
+  NewGoal,
   NewIncomeItem,
   NewLiability,
+  NewStrategyAllocation,
+  StrategyAllocation,
 } from "@/lib/wealth/types";
 
 function useWealthList<T>(table: string) {
@@ -67,6 +71,22 @@ function useWealthDelete(table: string) {
   });
 }
 
+function useWealthUpdate<TPatch extends object>(table: string) {
+  const { session } = useAuth();
+  const queryClient = useQueryClient();
+  const profileId = session?.user.id;
+
+  return useMutation({
+    mutationFn: async ({ id, patch }: { id: string; patch: TPatch }) => {
+      const { error } = await supabase.from(table).update(patch).eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      void queryClient.invalidateQueries({ queryKey: [table, profileId] });
+    },
+  });
+}
+
 export const useIncomeItems = () => useWealthList<IncomeItem>("income_items");
 export const useCreateIncomeItem = () => useWealthCreate<NewIncomeItem>("income_items");
 export const useDeleteIncomeItem = () => useWealthDelete("income_items");
@@ -82,6 +102,19 @@ export const useDeleteAsset = () => useWealthDelete("assets");
 export const useLiabilities = () => useWealthList<Liability>("liabilities");
 export const useCreateLiability = () => useWealthCreate<NewLiability>("liabilities");
 export const useDeleteLiability = () => useWealthDelete("liabilities");
+
+export const useStrategyAllocations = () =>
+  useWealthList<StrategyAllocation>("strategy_allocations");
+export const useCreateStrategyAllocation = () =>
+  useWealthCreate<NewStrategyAllocation>("strategy_allocations");
+export const useUpdateStrategyAllocation = () =>
+  useWealthUpdate<Partial<NewStrategyAllocation>>("strategy_allocations");
+export const useDeleteStrategyAllocation = () => useWealthDelete("strategy_allocations");
+
+export const useGoals = () => useWealthList<Goal>("goals");
+export const useCreateGoal = () => useWealthCreate<NewGoal>("goals");
+export const useUpdateGoal = () => useWealthUpdate<Partial<NewGoal>>("goals");
+export const useDeleteGoal = () => useWealthDelete("goals");
 
 export function useLatestNetWorth() {
   const { session } = useAuth();

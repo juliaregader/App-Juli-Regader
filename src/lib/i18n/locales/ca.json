@@ -21,7 +21,8 @@
   },
   "nav": {
     "dashboard": "Panell",
-    "wealth": "Les meves dades"
+    "wealth": "Les meves dades",
+    "strategy": "Estratègia"
   },
   "legal": {
     "disclaimerTitle": "Avís legal",
@@ -175,5 +176,34 @@
         "other": "Altre deute"
       }
     }
+  },
+  "strategy": {
+    "title": "Estratègia d'inversió",
+    "description": "Aquest és el teu propi llenç: defineix les classes d'actiu que vulguis i el percentatge objectiu per a cadascuna. L'app no recomana cap assignació ni instrument concret — la decisió és sempre teva.",
+    "educationalNote": "Avís: això és una eina d'organització, no assessorament. Cap xifra aquí és una recomanació.",
+    "templatesTitle": "Plantilles educatives d'exemple",
+    "templatesNote": "Són només punts de partida genèrics per classe d'actiu, totalment editables. No són una recomanació per al teu cas.",
+    "templates": {
+      "conservative": "Perfil conservador",
+      "moderate": "Perfil moderat",
+      "dynamic": "Perfil dinàmic"
+    },
+    "classes": {
+      "equities": "Renda variable",
+      "bonds": "Renda fixa",
+      "cash": "Liquiditat"
+    },
+    "form": {
+      "assetClass": "Classe d'actiu",
+      "targetPercentage": "% objectiu",
+      "currentValue": "Valor actual"
+    },
+    "row": {
+      "target": "Objectiu",
+      "actual": "Real",
+      "deviation": "Desviació"
+    },
+    "totalTarget": "Total objectiu",
+    "totalValue": "Valor total"
   }
 }

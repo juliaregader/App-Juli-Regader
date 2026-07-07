@@ -21,7 +21,8 @@
   },
   "nav": {
     "dashboard": "Dashboard",
-    "wealth": "My data"
+    "wealth": "My data",
+    "strategy": "Strategy"
   },
   "legal": {
     "disclaimerTitle": "Legal notice",
@@ -175,5 +176,34 @@
         "other": "Other debt"
       }
     }
+  },
+  "strategy": {
+    "title": "Investment strategy",
+    "description": "This is your own canvas: define whatever asset classes you want and a target percentage for each. The app never recommends an allocation or a specific instrument — the decision is always yours.",
+    "educationalNote": "Notice: this is an organization tool, not advice. No figure here is a recommendation.",
+    "templatesTitle": "Example educational templates",
+    "templatesNote": "These are just generic starting points by asset class, fully editable. They are not a recommendation for your situation.",
+    "templates": {
+      "conservative": "Conservative profile",
+      "moderate": "Moderate profile",
+      "dynamic": "Dynamic profile"
+    },
+    "classes": {
+      "equities": "Equities",
+      "bonds": "Bonds",
+      "cash": "Cash"
+    },
+    "form": {
+      "assetClass": "Asset class",
+      "targetPercentage": "Target %",
+      "currentValue": "Current value"
+    },
+    "row": {
+      "target": "Target",
+      "actual": "Actual",
+      "deviation": "Deviation"
+    },
+    "totalTarget": "Total target",
+    "totalValue": "Total value"
   }
 }

@@ -21,7 +21,8 @@
   },
   "nav": {
     "dashboard": "Panel",
-    "wealth": "Mis datos"
+    "wealth": "Mis datos",
+    "strategy": "Estrategia"
   },
   "legal": {
     "disclaimerTitle": "Aviso legal",
@@ -175,5 +176,34 @@
         "other": "Otra deuda"
       }
     }
+  },
+  "strategy": {
+    "title": "Estrategia de inversión",
+    "description": "Este es tu propio lienzo: define las clases de activo que quieras y el porcentaje objetivo para cada una. La app no recomienda ninguna asignación ni instrumento concreto — la decisión es siempre tuya.",
+    "educationalNote": "Aviso: esto es una herramienta de organización, no asesoramiento. Ninguna cifra aquí es una recomendación.",
+    "templatesTitle": "Plantillas educativas de ejemplo",
+    "templatesNote": "Son solo puntos de partida genéricos por clase de activo, totalmente editables. No son una recomendación para tu caso.",
+    "templates": {
+      "conservative": "Perfil conservador",
+      "moderate": "Perfil moderado",
+      "dynamic": "Perfil dinámico"
+    },
+    "classes": {
+      "equities": "Renta variable",
+      "bonds": "Renta fija",
+      "cash": "Liquidez"
+    },
+    "form": {
+      "assetClass": "Clase de activo",
+      "targetPercentage": "% objetivo",
+      "currentValue": "Valor actual"
+    },
+    "row": {
+      "target": "Objetivo",
+      "actual": "Real",
+      "deviation": "Desviación"
+    },
+    "totalTarget": "Total objetivo",
+    "totalValue": "Valor total"
   }
 }

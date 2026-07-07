@@ -63,6 +63,26 @@ export interface NetWorthSnapshot {
   net_worth: number;
 }
 
+export interface StrategyAllocation {
+  id: string;
+  profile_id: string;
+  asset_class: string;
+  target_percentage: number;
+  current_value: number;
+  currency: string;
+  sort_order: number;
+}
+
+export interface Goal {
+  id: string;
+  profile_id: string;
+  name: string;
+  target_amount: number;
+  current_amount: number;
+  currency: string;
+  target_date: string | null;
+}
+
 /** Nuevo registro sin los campos que rellena la base de datos. */
 export type NewIncomeItem = Pick<IncomeItem, "name" | "category" | "amount" | "currency">;
 export type NewExpenseItem = Pick<ExpenseItem, "name" | "category" | "amount" | "currency">;
@@ -71,3 +91,8 @@ export type NewLiability = Pick<
   Liability,
   "name" | "category" | "value" | "currency" | "interest_rate" | "monthly_payment"
 >;
+export type NewStrategyAllocation = Pick<
+  StrategyAllocation,
+  "asset_class" | "target_percentage" | "current_value" | "currency"
+>;
+export type NewGoal = Pick<Goal, "name" | "target_amount" | "current_amount" | "currency" | "target_date">;
