@@ -61,6 +61,7 @@ export function ClientDetail() {
           <textarea
             value={noteText}
             onChange={(e) => setNoteText(e.target.value)}
+            aria-label={t("admin.client.addNotePlaceholder")}
             placeholder={t("admin.client.addNotePlaceholder")}
             rows={2}
             className="flex-1 rounded-lg border border-border bg-surface px-3 py-2 text-sm text-content focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"

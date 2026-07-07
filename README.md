@@ -80,6 +80,31 @@ supabase db push
 O simplemente copia el contenido del `.sql` en el **SQL Editor** del panel de
 Supabase.
 
+### Verificación de RLS (Row Level Security)
+
+Todas las tablas con datos de usuario (`profiles`, `income_items`,
+`expense_items`, `assets`, `liabilities`, `net_worth_snapshots`,
+`strategy_allocations`, `goals`, `appointments`, `admin_notes`) tienen RLS
+habilitado, y se ha revisado que:
+
+- Un cliente solo puede leer/escribir filas donde `profile_id` (o `id` en
+  `profiles`) coincide con su propio `auth.uid()` — verificado revisando cada
+  política una por una y comprobando que ninguna usa `using (true)` ni omite
+  el filtro por usuario.
+- `admin_notes` no tiene ninguna política de lectura para clientes: un cliente
+  que consulte esa tabla recibe siempre cero filas (RLS deniega por defecto
+  sin política aplicable), confirmando que las notas del admin son
+  verdaderamente privadas.
+- Un cliente no puede auto-promocionarse a `admin` ni auto-aprobar su cuenta:
+  el trigger `enforce_profile_role_change` revierte cualquier cambio a las
+  columnas `role`/`status` que no venga de un admin, aunque la política RLS
+  de "actualizar mi propio perfil" permita el `UPDATE` en general.
+- Las inserciones llevan siempre `with check (profile_id = auth.uid())`, así
+  que aunque el cliente manipule la petición para intentar escribir con el
+  `profile_id` de otro usuario, la base de datos la rechaza.
+- Ninguna tabla tiene RLS habilitado sin al menos una política (lo que
+  bloquearía todo acceso, incluido el del propio dueño).
+
 ### Flujo de acceso
 
 - El login es **sin contraseña**: el usuario introduce su nombre y email y

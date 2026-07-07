@@ -111,6 +111,7 @@ export function AdminHome() {
 
         <input
           type="search"
+          aria-label={t("admin.searchPlaceholder")}
           placeholder={t("admin.searchPlaceholder")}
           value={search}
           onChange={(e) => setSearch(e.target.value)}

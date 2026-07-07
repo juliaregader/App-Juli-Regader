@@ -59,6 +59,7 @@ export function Appointments() {
 
         <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-[1fr_auto_auto_auto]">
           <select
+            aria-label={t("admin.appointments.form.client")}
             value={clientId}
             onChange={(e) => setClientId(e.target.value)}
             className="rounded-lg border border-border bg-surface px-3 py-2 text-sm text-content focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
@@ -116,6 +117,7 @@ export function Appointments() {
               </div>
               <div className="flex items-center gap-2">
                 <select
+                  aria-label={t("admin.appointments.form.status")}
                   value={appointment.status}
                   onChange={(e) =>
                     updateAppointment.mutate({

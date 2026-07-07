@@ -108,6 +108,7 @@ export function Strategy() {
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_auto_auto_auto]">
           <input
             type="text"
+            aria-label={t("strategy.form.assetClass")}
             placeholder={t("strategy.form.assetClass")}
             value={assetClass}
             onChange={(e) => setAssetClass(e.target.value)}
@@ -118,6 +119,7 @@ export function Strategy() {
             inputMode="decimal"
             min={0}
             max={100}
+            aria-label={t("strategy.form.targetPercentage")}
             placeholder={t("strategy.form.targetPercentage")}
             value={targetPercentage}
             onChange={(e) => setTargetPercentage(e.target.value)}
@@ -127,6 +129,7 @@ export function Strategy() {
             type="number"
             inputMode="decimal"
             min={0}
+            aria-label={t("strategy.form.currentValue")}
             placeholder={t("strategy.form.currentValue")}
             value={currentValue}
             onChange={(e) => setCurrentValue(e.target.value)}

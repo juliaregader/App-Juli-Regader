@@ -48,6 +48,7 @@ export function Goals() {
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_auto_auto_auto]">
           <input
             type="text"
+            aria-label={t("goals.form.name")}
             placeholder={t("goals.form.name")}
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -57,6 +58,7 @@ export function Goals() {
             type="number"
             inputMode="decimal"
             min={0}
+            aria-label={t("goals.form.targetAmount")}
             placeholder={t("goals.form.targetAmount")}
             value={targetAmount}
             onChange={(e) => setTargetAmount(e.target.value)}
