@@ -22,7 +22,8 @@
   "nav": {
     "dashboard": "Dashboard",
     "wealth": "My data",
-    "strategy": "Strategy"
+    "strategy": "Strategy",
+    "goals": "Goals"
   },
   "legal": {
     "disclaimerTitle": "Legal notice",
@@ -205,5 +206,16 @@
     },
     "totalTarget": "Total target",
     "totalValue": "Total value"
+  },
+  "goals": {
+    "title": "Financial goals",
+    "description": "Create savings goals with an amount and a date, and track your progress.",
+    "form": {
+      "name": "Goal name",
+      "targetAmount": "Target amount",
+      "targetDate": "Target date"
+    },
+    "targetDateLabel": "Target date:",
+    "currentAmountLabel": "Saved:"
   }
 }

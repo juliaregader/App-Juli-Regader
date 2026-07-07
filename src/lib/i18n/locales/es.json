@@ -22,7 +22,8 @@
   "nav": {
     "dashboard": "Panel",
     "wealth": "Mis datos",
-    "strategy": "Estrategia"
+    "strategy": "Estrategia",
+    "goals": "Objetivos"
   },
   "legal": {
     "disclaimerTitle": "Aviso legal",
@@ -205,5 +206,16 @@
     },
     "totalTarget": "Total objetivo",
     "totalValue": "Valor total"
+  },
+  "goals": {
+    "title": "Objetivos financieros",
+    "description": "Crea metas de ahorro con un importe y una fecha, y sigue tu progreso.",
+    "form": {
+      "name": "Nombre del objetivo",
+      "targetAmount": "Importe objetivo",
+      "targetDate": "Fecha objetivo"
+    },
+    "targetDateLabel": "Fecha objetivo:",
+    "currentAmountLabel": "Ahorrado:"
   }
 }

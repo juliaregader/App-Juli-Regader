@@ -22,7 +22,8 @@
   "nav": {
     "dashboard": "Panell",
     "wealth": "Les meves dades",
-    "strategy": "Estratègia"
+    "strategy": "Estratègia",
+    "goals": "Objectius"
   },
   "legal": {
     "disclaimerTitle": "Avís legal",
@@ -205,5 +206,16 @@
     },
     "totalTarget": "Total objectiu",
     "totalValue": "Valor total"
+  },
+  "goals": {
+    "title": "Objectius financers",
+    "description": "Crea metes d'estalvi amb un import i una data, i segueix el teu progrés.",
+    "form": {
+      "name": "Nom de l'objectiu",
+      "targetAmount": "Import objectiu",
+      "targetDate": "Data objectiu"
+    },
+    "targetDateLabel": "Data objectiu:",
+    "currentAmountLabel": "Estalviat:"
   }
 }
