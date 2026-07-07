@@ -23,7 +23,8 @@
     "dashboard": "Panel",
     "wealth": "Mis datos",
     "strategy": "Estrategia",
-    "goals": "Objetivos"
+    "goals": "Objetivos",
+    "tools": "Herramientas"
   },
   "legal": {
     "disclaimerTitle": "Aviso legal",
@@ -217,5 +218,44 @@
     },
     "targetDateLabel": "Fecha objetivo:",
     "currentAmountLabel": "Ahorrado:"
+  },
+  "tools": {
+    "title": "Herramientas educativas",
+    "description": "Calculadoras genéricas para entender conceptos financieros. Ningún resultado es una recomendación: la decisión es siempre tuya.",
+    "compoundInterest": {
+      "title": "Interés compuesto y proyección",
+      "description": "Simula cómo podría crecer un ahorro con aportaciones periódicas. Es un marco teórico general, no una promesa de rentabilidad.",
+      "initial": "Importe inicial",
+      "monthly": "Aportación mensual",
+      "rate": "Rentabilidad anual (%)",
+      "years": "Años",
+      "resultLabel": "Valor estimado",
+      "contributedLabel": "Aportado"
+    },
+    "fire": {
+      "title": "Independencia financiera (regla del 4%)",
+      "description": "Un marco teórico general: cuánto patrimonio se necesitaría para vivir de las rentas, según la regla del 4% (25 veces el gasto anual).",
+      "monthlyExpensesLabel": "Gasto mensual estimado",
+      "targetLabel": "Patrimonio objetivo"
+    },
+    "debtPayoff": {
+      "title": "Amortización de deuda: avalancha vs. bola de nieve",
+      "description": "Compara dos métodos didácticos para priorizar el pago de tus deudas actuales con un extra mensual.",
+      "noDebts": "No tienes pasivos registrados todavía.",
+      "extraLabel": "Extra mensual disponible",
+      "avalanche": "Avalancha (mayor interés primero)",
+      "snowball": "Bola de nieve (menor saldo primero)",
+      "monthsLabel": "Meses hasta saldar:",
+      "interestLabel": "Interés total pagado:"
+    },
+    "budgetRule": {
+      "title": "Presupuesto 50/30/20",
+      "description": "Compara tu gasto real de este mes con el reparto orientativo 50% necesidades, 30% deseos, 20% ahorro.",
+      "noIncome": "Añade tus ingresos de este mes para ver la comparación.",
+      "needs": "Necesidades",
+      "wants": "Deseos",
+      "savings": "Ahorro",
+      "vsTarget": "vs."
+    }
   }
 }

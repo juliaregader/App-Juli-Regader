@@ -175,3 +175,28 @@ export function useAssetBreakdown() {
     enabled: Boolean(profileId),
   });
 }
+
+/** Distribución de gastos del mes en curso por categoría. */
+export function useExpenseBreakdown() {
+  const { session } = useAuth();
+  const profileId = session?.user.id;
+  const month = currentMonthStart();
+
+  return useQuery({
+    queryKey: ["expense-breakdown", profileId, month],
+    queryFn: async (): Promise<AssetBreakdownEntry[]> => {
+      const { data, error } = await supabase
+        .from("expense_items")
+        .select("category, amount")
+        .eq("period_month", month);
+      if (error) throw error;
+
+      const totals = new Map<string, number>();
+      for (const item of data as Pick<ExpenseItem, "category" | "amount">[]) {
+        totals.set(item.category, (totals.get(item.category) ?? 0) + Number(item.amount));
+      }
+      return Array.from(totals.entries()).map(([category, total]) => ({ category, total }));
+    },
+    enabled: Boolean(profileId),
+  });
+}

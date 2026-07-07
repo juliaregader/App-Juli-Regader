@@ -23,7 +23,8 @@
     "dashboard": "Panell",
     "wealth": "Les meves dades",
     "strategy": "Estratègia",
-    "goals": "Objectius"
+    "goals": "Objectius",
+    "tools": "Eines"
   },
   "legal": {
     "disclaimerTitle": "Avís legal",
@@ -217,5 +218,44 @@
     },
     "targetDateLabel": "Data objectiu:",
     "currentAmountLabel": "Estalviat:"
+  },
+  "tools": {
+    "title": "Eines educatives",
+    "description": "Calculadores genèriques per entendre conceptes financers. Cap resultat és una recomanació: la decisió és sempre teva.",
+    "compoundInterest": {
+      "title": "Interès compost i projecció",
+      "description": "Simula com podria créixer un estalvi amb aportacions periòdiques. És un marc teòric general, no una promesa de rendibilitat.",
+      "initial": "Import inicial",
+      "monthly": "Aportació mensual",
+      "rate": "Rendibilitat anual (%)",
+      "years": "Anys",
+      "resultLabel": "Valor estimat",
+      "contributedLabel": "Aportat"
+    },
+    "fire": {
+      "title": "Independència financera (regla del 4%)",
+      "description": "Un marc teòric general: quant patrimoni caldria per viure de les rendes, segons la regla del 4% (25 vegades la despesa anual).",
+      "monthlyExpensesLabel": "Despesa mensual estimada",
+      "targetLabel": "Patrimoni objectiu"
+    },
+    "debtPayoff": {
+      "title": "Amortització de deute: allau vs. bola de neu",
+      "description": "Compara dos mètodes didàctics per prioritzar el pagament dels teus deutes actuals amb un extra mensual.",
+      "noDebts": "Encara no tens passius registrats.",
+      "extraLabel": "Extra mensual disponible",
+      "avalanche": "Allau (més interès primer)",
+      "snowball": "Bola de neu (menor saldo primer)",
+      "monthsLabel": "Mesos fins a saldar:",
+      "interestLabel": "Interès total pagat:"
+    },
+    "budgetRule": {
+      "title": "Pressupost 50/30/20",
+      "description": "Compara la teva despesa real d'aquest mes amb el repartiment orientatiu: 50% necessitats, 30% desitjos, 20% estalvi.",
+      "noIncome": "Afegeix els teus ingressos d'aquest mes per veure la comparació.",
+      "needs": "Necessitats",
+      "wants": "Desitjos",
+      "savings": "Estalvi",
+      "vsTarget": "vs."
+    }
   }
 }

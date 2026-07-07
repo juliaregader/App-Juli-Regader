@@ -23,7 +23,8 @@
     "dashboard": "Dashboard",
     "wealth": "My data",
     "strategy": "Strategy",
-    "goals": "Goals"
+    "goals": "Goals",
+    "tools": "Tools"
   },
   "legal": {
     "disclaimerTitle": "Legal notice",
@@ -217,5 +218,44 @@
     },
     "targetDateLabel": "Target date:",
     "currentAmountLabel": "Saved:"
+  },
+  "tools": {
+    "title": "Educational tools",
+    "description": "Generic calculators to understand financial concepts. No result here is a recommendation: the decision is always yours.",
+    "compoundInterest": {
+      "title": "Compound interest and projection",
+      "description": "Simulates how savings could grow with periodic contributions. It's a general theoretical framework, not a promise of returns.",
+      "initial": "Initial amount",
+      "monthly": "Monthly contribution",
+      "rate": "Annual return (%)",
+      "years": "Years",
+      "resultLabel": "Estimated value",
+      "contributedLabel": "Contributed"
+    },
+    "fire": {
+      "title": "Financial independence (4% rule)",
+      "description": "A general theoretical framework: how much wealth you'd need to live off returns, per the 4% rule (25 times annual expenses).",
+      "monthlyExpensesLabel": "Estimated monthly expenses",
+      "targetLabel": "Target net worth"
+    },
+    "debtPayoff": {
+      "title": "Debt payoff: avalanche vs. snowball",
+      "description": "Compares two didactic methods for prioritizing payoff of your current debts with a monthly extra.",
+      "noDebts": "You haven't added any liabilities yet.",
+      "extraLabel": "Available monthly extra",
+      "avalanche": "Avalanche (highest interest first)",
+      "snowball": "Snowball (lowest balance first)",
+      "monthsLabel": "Months to payoff:",
+      "interestLabel": "Total interest paid:"
+    },
+    "budgetRule": {
+      "title": "50/30/20 budget",
+      "description": "Compares your actual spending this month with the suggested split: 50% needs, 30% wants, 20% savings.",
+      "noIncome": "Add this month's income to see the comparison.",
+      "needs": "Needs",
+      "wants": "Wants",
+      "savings": "Savings",
+      "vsTarget": "vs."
+    }
   }
 }

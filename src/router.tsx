@@ -14,6 +14,7 @@ import { Home } from "@/pages/Home";
 import { Goals } from "@/pages/goals/Goals";
 import { Onboarding } from "@/pages/onboarding/Onboarding";
 import { Strategy } from "@/pages/strategy/Strategy";
+import { Tools } from "@/pages/tools/Tools";
 
 export const router = createBrowserRouter([
   {
@@ -72,6 +73,14 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Goals />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/tools",
+        element: (
+          <ProtectedRoute>
+            <Tools />
           </ProtectedRoute>
         ),
       },
