@@ -11,15 +11,14 @@ asesoramiento profesional de la sesión.
 
 ## Estado del proyecto
 
-**Fase 5 — Exportación a Excel con fórmulas**, en curso de construcción por
-fases:
+**Fase 6 — Panel de administrador**, en curso de construcción por fases:
 
 - [x] Fase 0 — Scaffolding, marca, i18n, tema claro/oscuro, layout base
 - [x] Fase 1 — Autenticación (Supabase Auth) y roles (cliente/admin)
 - [x] Fase 2 — Onboarding patrimonial y modelo de datos
 - [x] Fase 3 — Dashboard, gráficos, KPIs y personalización del panel
 - [x] Fase 4 — Estrategia de inversión y herramientas educativas
-- [ ] Fase 5 — Exportación a Excel con fórmulas
+- [x] Fase 5 — Exportación a Excel con fórmulas
 - [ ] Fase 6 — Panel de administrador
 - [ ] Fase 7 — Pulido, accesibilidad y despliegue
 
