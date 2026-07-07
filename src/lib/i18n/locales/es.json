@@ -55,7 +55,55 @@
   },
   "admin": {
     "homeTitle": "Panel de administrador",
-    "homeBody": "Aquí verás el listado de clientes, sus visitas y las métricas de negocio (próximamente)."
+    "homeBody": "Listado de clientes, sus visitas y las métricas de negocio.",
+    "clientsTitle": "Clientes",
+    "appointmentsLink": "Ver agenda de visitas",
+    "searchPlaceholder": "Buscar por nombre…",
+    "noClients": "Todavía no hay clientes registrados.",
+    "unnamedClient": "Cliente sin nombre",
+    "approve": "Aprobar",
+    "reject": "Rechazar",
+    "status": {
+      "pending": "Pendiente",
+      "approved": "Aprobado",
+      "rejected": "Rechazado"
+    },
+    "metrics": {
+      "activeClients": "Clientes activos",
+      "pending": "Pendientes de aprobar",
+      "sessionsThisMonth": "Sesiones este mes",
+      "estimatedIncome": "Ingresos estimados",
+      "recentSignups": "Altas últimos 7 días"
+    },
+    "client": {
+      "backToList": "← Volver al listado",
+      "netWorthLabel": "Patrimonio neto",
+      "notesTitle": "Notas privadas",
+      "notesDescription": "Solo visibles para ti, nunca para el cliente.",
+      "addNotePlaceholder": "Escribe una nota…",
+      "addNote": "Añadir nota",
+      "noNotes": "Todavía no hay notas.",
+      "clientSince": "Cliente desde"
+    },
+    "appointments": {
+      "title": "Agenda de visitas",
+      "description": "Sesiones de educación financiera con tus clientes.",
+      "form": {
+        "client": "Cliente",
+        "date": "Fecha y hora",
+        "duration": "Duración (min)",
+        "amount": "Importe (€)",
+        "status": "Estado"
+      },
+      "add": "Añadir cita",
+      "noAppointments": "Todavía no hay citas programadas.",
+      "status": {
+        "requested": "Solicitada",
+        "confirmed": "Confirmada",
+        "completed": "Realizada",
+        "cancelled": "Cancelada"
+      }
+    }
   },
   "dashboard": {
     "empty": {

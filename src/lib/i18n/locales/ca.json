@@ -55,7 +55,55 @@
   },
   "admin": {
     "homeTitle": "Panell d'administrador",
-    "homeBody": "Aquí veuràs el llistat de clients, les seves visites i les mètriques de negoci (properament)."
+    "homeBody": "Llistat de clients, les seves visites i les mètriques de negoci.",
+    "clientsTitle": "Clients",
+    "appointmentsLink": "Veure agenda de visites",
+    "searchPlaceholder": "Cercar per nom…",
+    "noClients": "Encara no hi ha clients registrats.",
+    "unnamedClient": "Client sense nom",
+    "approve": "Aprovar",
+    "reject": "Rebutjar",
+    "status": {
+      "pending": "Pendent",
+      "approved": "Aprovat",
+      "rejected": "Rebutjat"
+    },
+    "metrics": {
+      "activeClients": "Clients actius",
+      "pending": "Pendents d'aprovar",
+      "sessionsThisMonth": "Sessions aquest mes",
+      "estimatedIncome": "Ingressos estimats",
+      "recentSignups": "Altes últims 7 dies"
+    },
+    "client": {
+      "backToList": "← Tornar al llistat",
+      "netWorthLabel": "Patrimoni net",
+      "notesTitle": "Notes privades",
+      "notesDescription": "Només visibles per a tu, mai per al client.",
+      "addNotePlaceholder": "Escriu una nota…",
+      "addNote": "Afegir nota",
+      "noNotes": "Encara no hi ha notes.",
+      "clientSince": "Client des de"
+    },
+    "appointments": {
+      "title": "Agenda de visites",
+      "description": "Sessions d'educació financera amb els teus clients.",
+      "form": {
+        "client": "Client",
+        "date": "Data i hora",
+        "duration": "Durada (min)",
+        "amount": "Import (€)",
+        "status": "Estat"
+      },
+      "add": "Afegir cita",
+      "noAppointments": "Encara no hi ha cites programades.",
+      "status": {
+        "requested": "Sol·licitada",
+        "confirmed": "Confirmada",
+        "completed": "Realitzada",
+        "cancelled": "Cancel·lada"
+      }
+    }
   },
   "dashboard": {
     "empty": {

@@ -55,7 +55,55 @@
   },
   "admin": {
     "homeTitle": "Admin panel",
-    "homeBody": "Here you'll see the client list, their sessions, and business metrics (coming soon)."
+    "homeBody": "Client list, their sessions, and business metrics.",
+    "clientsTitle": "Clients",
+    "appointmentsLink": "View appointments",
+    "searchPlaceholder": "Search by name…",
+    "noClients": "No clients registered yet.",
+    "unnamedClient": "Unnamed client",
+    "approve": "Approve",
+    "reject": "Reject",
+    "status": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    },
+    "metrics": {
+      "activeClients": "Active clients",
+      "pending": "Pending approval",
+      "sessionsThisMonth": "Sessions this month",
+      "estimatedIncome": "Estimated income",
+      "recentSignups": "Signups last 7 days"
+    },
+    "client": {
+      "backToList": "← Back to list",
+      "netWorthLabel": "Net worth",
+      "notesTitle": "Private notes",
+      "notesDescription": "Only visible to you, never to the client.",
+      "addNotePlaceholder": "Write a note…",
+      "addNote": "Add note",
+      "noNotes": "No notes yet.",
+      "clientSince": "Client since"
+    },
+    "appointments": {
+      "title": "Appointments",
+      "description": "Financial education sessions with your clients.",
+      "form": {
+        "client": "Client",
+        "date": "Date and time",
+        "duration": "Duration (min)",
+        "amount": "Amount (€)",
+        "status": "Status"
+      },
+      "add": "Add appointment",
+      "noAppointments": "No appointments scheduled yet.",
+      "status": {
+        "requested": "Requested",
+        "confirmed": "Confirmed",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+      }
+    }
   },
   "dashboard": {
     "empty": {
