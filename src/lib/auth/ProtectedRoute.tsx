@@ -30,6 +30,25 @@ export function ProtectedRoute({ children, requireRole }: ProtectedRouteProps) {
     return <Navigate to="/" replace />;
   }
 
+  if (profile.role === "client" && !profile.onboarding_completed) {
+    return <Navigate to="/onboarding" replace />;
+  }
+
+  return <>{children}</>;
+}
+
+/** Para la propia ruta /onboarding: solo clientes que aún no la han completado. */
+export function OnboardingRoute({ children }: { children: ReactNode }) {
+  const { session, loading: authLoading } = useAuth();
+  const { data: profile, isLoading: profileLoading } = useProfile();
+
+  if (authLoading || (session && profileLoading)) return null;
+  if (!session) return <Navigate to="/login" replace />;
+  if (!profile || profile.status !== "approved") return <Navigate to="/pending" replace />;
+  if (profile.role !== "client" || profile.onboarding_completed) {
+    return <Navigate to="/" replace />;
+  }
+
   return <>{children}</>;
 }
 

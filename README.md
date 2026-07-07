@@ -11,11 +11,11 @@ asesoramiento profesional de la sesión.
 
 ## Estado del proyecto
 
-**Fase 0 — Fundamentos**, en curso de construcción por fases:
+**Fase 2 — Onboarding y modelo de datos**, en curso de construcción por fases:
 
 - [x] Fase 0 — Scaffolding, marca, i18n, tema claro/oscuro, layout base
 - [x] Fase 1 — Autenticación (Supabase Auth) y roles (cliente/admin)
-- [ ] Fase 2 — Onboarding patrimonial y modelo de datos
+- [x] Fase 2 — Onboarding patrimonial y modelo de datos
 - [ ] Fase 3 — Dashboard, gráficos y KPIs
 - [ ] Fase 4 — Estrategia de inversión y herramientas educativas
 - [ ] Fase 5 — Exportación a Excel con fórmulas
@@ -115,11 +115,14 @@ src/
   lib/
     auth/            AuthProvider, useProfile, guards de ruta por rol
     i18n/            Configuración i18next + locales (es, ca, en)
+    format/          Formateo de divisas por locale
     query/           Cliente de TanStack Query
     theme/           Proveedor de tema claro/oscuro
     supabase/        Cliente de Supabase
+    wealth/          Tipos y hooks de ingresos, gastos, activos y pasivos
   pages/
     auth/            Login (email + OTP), pendiente de aprobación
+    onboarding/       Carrusel patrimonial (ingresos, gastos, activos, pasivos, resumen)
     admin/           Panel de administrador (placeholder, Fase 6)
   router.tsx         Rutas y protección por sesión/rol
 

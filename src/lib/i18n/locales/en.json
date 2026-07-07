@@ -20,8 +20,12 @@
     "heroEyebrow": "Support for your financial education sessions",
     "heroTitle": "Understand your finances. Organize your wealth.",
     "heroSubtitle": "This app supports you between sessions so you can clearly see your income, expenses, assets and liabilities, and track your progress over time.",
-    "phaseNoticeTitle": "Phase 0 — Foundations",
-    "phaseNoticeBody": "Project scaffolding: brand, languages and theme are ready. The rest of the features (sign-up, wealth questionnaire, dashboard and exports) are coming in the next phases."
+    "stats": {
+      "assets": "Total assets",
+      "liabilities": "Total liabilities",
+      "netWorth": "Net worth"
+    },
+    "adminNotice": "Manage your clients, sessions and business metrics from the admin panel."
   },
   "legal": {
     "disclaimerTitle": "Legal notice",
@@ -52,5 +56,74 @@
   "admin": {
     "homeTitle": "Admin panel",
     "homeBody": "Here you'll see the client list, their sessions, and business metrics (coming soon)."
+  },
+  "onboarding": {
+    "progress": "Step {{current}} of {{total}}",
+    "common": {
+      "nameLabel": "Name",
+      "categoryLabel": "Category",
+      "amountLabel": "Monthly amount",
+      "valueLabel": "Value",
+      "interestRateLabel": "Interest (%)",
+      "monthlyPaymentLabel": "Monthly payment",
+      "monthlyPaymentShort": "Payment:",
+      "add": "Add",
+      "remove": "Remove",
+      "empty": "You haven't added anything here yet.",
+      "total": "Total",
+      "back": "Back",
+      "next": "Next",
+      "finish": "Go to my dashboard"
+    },
+    "steps": {
+      "income": {
+        "title": "Your income",
+        "description": "Add your income sources, fixed or variable."
+      },
+      "expenses": {
+        "title": "Your expenses",
+        "description": "Add your regular expenses by category."
+      },
+      "assets": {
+        "title": "Your assets",
+        "description": "Accounts, investments, properties and other things you own."
+      },
+      "liabilities": {
+        "title": "Your liabilities",
+        "description": "Mortgage, loans, credit cards or other debts."
+      },
+      "summary": {
+        "title": "Your net worth",
+        "description": "This is what you own minus what you owe, calculated from what you just entered.",
+        "netWorthLabel": "Net worth"
+      }
+    },
+    "categories": {
+      "income": {
+        "fixed": "Fixed",
+        "variable": "Variable"
+      },
+      "expenses": {
+        "housing": "Housing",
+        "utilities": "Utilities",
+        "transport": "Transport",
+        "leisure": "Leisure",
+        "debt": "Debt",
+        "savings": "Savings",
+        "other": "Other"
+      },
+      "assets": {
+        "liquid": "Cash",
+        "investment": "Investment",
+        "real_estate": "Real estate",
+        "other": "Other assets"
+      },
+      "liabilities": {
+        "mortgage": "Mortgage",
+        "loan": "Loan",
+        "credit_card": "Credit card",
+        "other": "Other debt"
+      }
+    }
   }
 }

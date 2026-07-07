@@ -1,11 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import { RootLayout } from "@/components/layout/RootLayout";
-import { ProtectedRoute, PublicOnlyRoute, RequireSession } from "@/lib/auth/ProtectedRoute";
+import {
+  OnboardingRoute,
+  ProtectedRoute,
+  PublicOnlyRoute,
+  RequireSession,
+} from "@/lib/auth/ProtectedRoute";
 import { AdminHome } from "@/pages/admin/AdminHome";
 import { PendingApproval } from "@/pages/auth/PendingApproval";
 import { SignIn } from "@/pages/auth/SignIn";
 import { Home } from "@/pages/Home";
+import { Onboarding } from "@/pages/onboarding/Onboarding";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +39,14 @@ export const router = createBrowserRouter([
           <RequireSession>
             <PendingApproval />
           </RequireSession>
+        ),
+      },
+      {
+        path: "/onboarding",
+        element: (
+          <OnboardingRoute>
+            <Onboarding />
+          </OnboardingRoute>
         ),
       },
       {

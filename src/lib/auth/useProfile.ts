@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { useAuth } from "@/lib/auth/AuthProvider";
 import { supabase } from "@/lib/supabase/client";
@@ -21,5 +21,25 @@ export function useProfile() {
       return data;
     },
     enabled: Boolean(userId),
+  });
+}
+
+export function useCompleteOnboarding() {
+  const { session } = useAuth();
+  const queryClient = useQueryClient();
+  const userId = session?.user.id;
+
+  return useMutation({
+    mutationFn: async () => {
+      if (!userId) throw new Error("No hay sesión activa.");
+      const { error } = await supabase
+        .from("profiles")
+        .update({ onboarding_completed: true })
+        .eq("id", userId);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      void queryClient.invalidateQueries({ queryKey: ["profile", userId] });
+    },
   });
 }

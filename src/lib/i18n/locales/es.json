@@ -20,8 +20,12 @@
     "heroEyebrow": "Acompañamiento a tus sesiones de educación financiera",
     "heroTitle": "Entiende tu economía. Organiza tu patrimonio.",
     "heroSubtitle": "Esta aplicación te acompaña entre sesiones para que veas con claridad tus ingresos, gastos, activos y pasivos, y sigas tu progreso a lo largo del tiempo.",
-    "phaseNoticeTitle": "Fase 0 — Fundamentos",
-    "phaseNoticeBody": "Scaffolding del proyecto: marca, idiomas y tema listos. El resto de funcionalidades (registro, cuestionario patrimonial, panel y exportaciones) llegan en las siguientes fases."
+    "stats": {
+      "assets": "Activos totales",
+      "liabilities": "Pasivos totales",
+      "netWorth": "Patrimonio neto"
+    },
+    "adminNotice": "Gestiona tus clientes, visitas y métricas de negocio desde el panel de administrador."
   },
   "legal": {
     "disclaimerTitle": "Aviso legal",
@@ -52,5 +56,74 @@
   "admin": {
     "homeTitle": "Panel de administrador",
     "homeBody": "Aquí verás el listado de clientes, sus visitas y las métricas de negocio (próximamente)."
+  },
+  "onboarding": {
+    "progress": "Paso {{current}} de {{total}}",
+    "common": {
+      "nameLabel": "Nombre",
+      "categoryLabel": "Categoría",
+      "amountLabel": "Importe mensual",
+      "valueLabel": "Valor",
+      "interestRateLabel": "Interés (%)",
+      "monthlyPaymentLabel": "Cuota mensual",
+      "monthlyPaymentShort": "Cuota:",
+      "add": "Añadir",
+      "remove": "Eliminar",
+      "empty": "Todavía no has añadido nada aquí.",
+      "total": "Total",
+      "back": "Atrás",
+      "next": "Siguiente",
+      "finish": "Ir a mi panel"
+    },
+    "steps": {
+      "income": {
+        "title": "Tus ingresos",
+        "description": "Añade tus fuentes de ingreso, fijas o variables."
+      },
+      "expenses": {
+        "title": "Tus gastos",
+        "description": "Añade tus gastos habituales por categoría."
+      },
+      "assets": {
+        "title": "Tus activos",
+        "description": "Cuentas, inversiones, propiedades y otros bienes que tengas."
+      },
+      "liabilities": {
+        "title": "Tus pasivos",
+        "description": "Hipoteca, préstamos, tarjetas u otras deudas."
+      },
+      "summary": {
+        "title": "Tu patrimonio neto",
+        "description": "Esto es lo que tienes menos lo que debes, calculado con lo que acabas de introducir.",
+        "netWorthLabel": "Patrimonio neto"
+      }
+    },
+    "categories": {
+      "income": {
+        "fixed": "Fijo",
+        "variable": "Variable"
+      },
+      "expenses": {
+        "housing": "Vivienda",
+        "utilities": "Suministros",
+        "transport": "Transporte",
+        "leisure": "Ocio",
+        "debt": "Deuda",
+        "savings": "Ahorro",
+        "other": "Otros"
+      },
+      "assets": {
+        "liquid": "Líquido",
+        "investment": "Inversión",
+        "real_estate": "Inmobiliario",
+        "other": "Otros bienes"
+      },
+      "liabilities": {
+        "mortgage": "Hipoteca",
+        "loan": "Préstamo",
+        "credit_card": "Tarjeta de crédito",
+        "other": "Otra deuda"
+      }
+    }
   }
 }

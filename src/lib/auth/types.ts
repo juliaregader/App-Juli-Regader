@@ -10,6 +10,7 @@ export interface Profile {
   locale: string;
   theme: string;
   dashboard_preferences: Record<string, unknown>;
+  onboarding_completed: boolean;
   created_at: string;
   updated_at: string;
 }

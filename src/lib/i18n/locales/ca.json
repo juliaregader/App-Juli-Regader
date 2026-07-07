@@ -20,8 +20,12 @@
     "heroEyebrow": "Acompanyament a les teves sessions d'educació financera",
     "heroTitle": "Entén la teva economia. Organitza el teu patrimoni.",
     "heroSubtitle": "Aquesta aplicació t'acompanya entre sessions perquè vegis amb claredat els teus ingressos, despeses, actius i passius, i segueixis el teu progrés al llarg del temps.",
-    "phaseNoticeTitle": "Fase 0 — Fonaments",
-    "phaseNoticeBody": "Scaffolding del projecte: marca, idiomes i tema a punt. La resta de funcionalitats (registre, qüestionari patrimonial, panell i exportacions) arriben a les properes fases."
+    "stats": {
+      "assets": "Actius totals",
+      "liabilities": "Passius totals",
+      "netWorth": "Patrimoni net"
+    },
+    "adminNotice": "Gestiona els teus clients, visites i mètriques de negoci des del panell d'administrador."
   },
   "legal": {
     "disclaimerTitle": "Avís legal",
@@ -52,5 +56,74 @@
   "admin": {
     "homeTitle": "Panell d'administrador",
     "homeBody": "Aquí veuràs el llistat de clients, les seves visites i les mètriques de negoci (properament)."
+  },
+  "onboarding": {
+    "progress": "Pas {{current}} de {{total}}",
+    "common": {
+      "nameLabel": "Nom",
+      "categoryLabel": "Categoria",
+      "amountLabel": "Import mensual",
+      "valueLabel": "Valor",
+      "interestRateLabel": "Interès (%)",
+      "monthlyPaymentLabel": "Quota mensual",
+      "monthlyPaymentShort": "Quota:",
+      "add": "Afegir",
+      "remove": "Eliminar",
+      "empty": "Encara no has afegit res aquí.",
+      "total": "Total",
+      "back": "Enrere",
+      "next": "Següent",
+      "finish": "Anar al meu panell"
+    },
+    "steps": {
+      "income": {
+        "title": "Els teus ingressos",
+        "description": "Afegeix les teves fonts d'ingrés, fixes o variables."
+      },
+      "expenses": {
+        "title": "Les teves despeses",
+        "description": "Afegeix les teves despeses habituals per categoria."
+      },
+      "assets": {
+        "title": "Els teus actius",
+        "description": "Comptes, inversions, propietats i altres béns que tinguis."
+      },
+      "liabilities": {
+        "title": "Els teus passius",
+        "description": "Hipoteca, préstecs, targetes o altres deutes."
+      },
+      "summary": {
+        "title": "El teu patrimoni net",
+        "description": "Això és el que tens menys el que deus, calculat amb el que acabes d'introduir.",
+        "netWorthLabel": "Patrimoni net"
+      }
+    },
+    "categories": {
+      "income": {
+        "fixed": "Fix",
+        "variable": "Variable"
+      },
+      "expenses": {
+        "housing": "Habitatge",
+        "utilities": "Subministraments",
+        "transport": "Transport",
+        "leisure": "Oci",
+        "debt": "Deute",
+        "savings": "Estalvi",
+        "other": "Altres"
+      },
+      "assets": {
+        "liquid": "Líquid",
+        "investment": "Inversió",
+        "real_estate": "Immobiliari",
+        "other": "Altres béns"
+      },
+      "liabilities": {
+        "mortgage": "Hipoteca",
+        "loan": "Préstec",
+        "credit_card": "Targeta de crèdit",
+        "other": "Altre deute"
+      }
+    }
   }
 }
