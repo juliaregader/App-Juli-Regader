@@ -1,16 +1,24 @@
 -- Landing page pública + acceso de pago (229€: sesión + plataforma).
 --
--- El registro (con teléfono) sigue siendo gratuito. El acceso real a la
--- plataforma ("has_paid") lo activa hoy el admin manualmente desde su panel
--- (a la espera de conectar Stripe); en el futuro un webhook de Stripe podrá
--- hacer el mismo update sin intervención manual.
+-- El registro (con teléfono) es libre e instantáneo: ya no requiere
+-- aprobación manual del admin para poder rellenar datos o reservar sesión.
+-- El único filtro de acceso a la plataforma (panel, estrategia, objetivos...)
+-- es el pago ("has_paid"), que hoy activa el admin manualmente desde su
+-- panel (a la espera de conectar Stripe); en el futuro un webhook de Stripe
+-- podrá hacer el mismo update sin intervención manual. El estado
+-- pending/rejected se conserva por si el admin necesita bloquear a algún
+-- cliente puntual, pero ya no es el estado de partida.
 
 alter table public.profiles
   add column phone text,
   add column has_paid boolean not null default false;
 
+alter table public.profiles
+  alter column status set default 'approved';
+
 -- ---------------------------------------------------------------------------
--- El registro ahora también guarda el teléfono introducido en el alta.
+-- El registro ahora también guarda el teléfono introducido en el alta y
+-- queda aprobado automáticamente (sin espera de revisión manual).
 -- ---------------------------------------------------------------------------
 create or replace function public.handle_new_user()
 returns trigger
@@ -19,8 +27,8 @@ security definer
 set search_path = public
 as $$
 begin
-  insert into public.profiles (id, full_name, phone)
-  values (new.id, new.raw_user_meta_data ->> 'full_name', new.raw_user_meta_data ->> 'phone');
+  insert into public.profiles (id, full_name, phone, status)
+  values (new.id, new.raw_user_meta_data ->> 'full_name', new.raw_user_meta_data ->> 'phone', 'approved');
   return new;
 end;
 $$;

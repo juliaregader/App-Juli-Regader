@@ -14,6 +14,7 @@ import { Appointments } from "@/pages/admin/Appointments";
 import { ClientDetail } from "@/pages/admin/ClientDetail";
 import { PendingApproval } from "@/pages/auth/PendingApproval";
 import { SignIn } from "@/pages/auth/SignIn";
+import { Book } from "@/pages/booking/Book";
 import { Home } from "@/pages/Home";
 import { PublicLanding } from "@/pages/PublicLanding";
 import { Glossary } from "@/pages/glossary/Glossary";
@@ -113,6 +114,14 @@ export const router = createBrowserRouter([
             <PaywallGate>
               <Glossary />
             </PaywallGate>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/book",
+        element: (
+          <ProtectedRoute>
+            <Book />
           </ProtectedRoute>
         ),
       },

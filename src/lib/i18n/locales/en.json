@@ -88,7 +88,12 @@
       "addNotePlaceholder": "Write a note…",
       "addNote": "Add note",
       "noNotes": "No notes yet.",
-      "clientSince": "Client since"
+      "clientSince": "Client since",
+      "paidLabel": "Platform access",
+      "paid": "Paid",
+      "unpaid": "Payment pending",
+      "markPaid": "Mark as paid",
+      "markUnpaid": "Mark as unpaid"
     },
     "appointments": {
       "title": "Appointments",
@@ -460,5 +465,19 @@
       "cta": "Book my spot",
       "legalNote": "This platform is a personal organization and education tool. It does not constitute financial, tax or investment advice."
     }
+  },
+  "booking": {
+    "title": "Book your session",
+    "subtitle": "Pick the time that works best for your 1-hour one-on-one session with Julià. Once payment is confirmed (€229) you'll get full access to the platform.",
+    "paidBanner": "You already have full access to the platform.",
+    "goToDashboard": "Go to dashboard",
+    "form": {
+      "date": "Preferred date and time",
+      "notes": "Anything we should know? (optional)",
+      "submit": "Send request"
+    },
+    "success": "We've received your request. Julià will contact you to confirm the session and payment.",
+    "yourRequests": "Your requests",
+    "noRequests": "You haven't requested any session yet."
   }
 }

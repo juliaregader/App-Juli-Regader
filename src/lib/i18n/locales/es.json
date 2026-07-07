@@ -88,7 +88,12 @@
       "addNotePlaceholder": "Escribe una nota…",
       "addNote": "Añadir nota",
       "noNotes": "Todavía no hay notas.",
-      "clientSince": "Cliente desde"
+      "clientSince": "Cliente desde",
+      "paidLabel": "Acceso a la plataforma",
+      "paid": "Pagado",
+      "unpaid": "Pendiente de pago",
+      "markPaid": "Marcar como pagado",
+      "markUnpaid": "Marcar como no pagado"
     },
     "appointments": {
       "title": "Agenda de visitas",
@@ -460,5 +465,19 @@
       "cta": "Reservar mi plaza",
       "legalNote": "Esta plataforma es una herramienta de organización y educación personal. No constituye asesoramiento financiero, fiscal ni de inversión."
     }
+  },
+  "booking": {
+    "title": "Reserva tu sesión",
+    "subtitle": "Elige el momento que mejor te venga para tu sesión individual de 1 hora con Julià. Al confirmar el pago (229€) tendrás acceso completo a la plataforma.",
+    "paidBanner": "Ya tienes acceso completo a la plataforma.",
+    "goToDashboard": "Ir al panel",
+    "form": {
+      "date": "Fecha y hora preferida",
+      "notes": "¿Algo que debamos saber? (opcional)",
+      "submit": "Enviar solicitud"
+    },
+    "success": "Hemos recibido tu solicitud. Julià se pondrá en contacto contigo para confirmar la sesión y el pago.",
+    "yourRequests": "Tus solicitudes",
+    "noRequests": "Todavía no has solicitado ninguna sesión."
   }
 }

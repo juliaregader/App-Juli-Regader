@@ -56,6 +56,21 @@ export function useUpdateClientStatus() {
   });
 }
 
+export function useUpdateClientPaidStatus() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({ id, hasPaid }: { id: string; hasPaid: boolean }) => {
+      const { error } = await supabase.from("profiles").update({ has_paid: hasPaid }).eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: (_data, variables) => {
+      void queryClient.invalidateQueries({ queryKey: ["admin", "clients"] });
+      void queryClient.invalidateQueries({ queryKey: ["admin", "client", variables.id] });
+    },
+  });
+}
+
 export function useClientProfile(clientId: string | undefined) {
   return useQuery({
     queryKey: ["admin", "client", clientId],
