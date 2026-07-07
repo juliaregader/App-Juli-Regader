@@ -37,7 +37,7 @@ export function SummaryStep({ onBack }: { onBack: () => void }) {
 
   const handleFinish = async () => {
     await completeOnboarding.mutateAsync();
-    navigate("/", { replace: true });
+    navigate("/dashboard", { replace: true });
   };
 
   return (

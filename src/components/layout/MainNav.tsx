@@ -1,4 +1,12 @@
-import { BookOpen, Calculator, LayoutDashboard, PieChart, Target, Wallet } from "lucide-react";
+import {
+  BookOpen,
+  Calculator,
+  CalendarDays,
+  LayoutDashboard,
+  PieChart,
+  Target,
+  Wallet,
+} from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { clsx } from "clsx";
@@ -15,12 +23,13 @@ export function MainNav() {
     profile.role === "admin"
       ? [{ to: "/admin", label: t("admin.homeTitle"), icon: LayoutDashboard }]
       : [
-          { to: "/", label: t("nav.dashboard"), icon: LayoutDashboard },
+          { to: "/dashboard", label: t("nav.dashboard"), icon: LayoutDashboard },
           { to: "/wealth", label: t("nav.wealth"), icon: Wallet },
           { to: "/strategy", label: t("nav.strategy"), icon: PieChart },
           { to: "/goals", label: t("nav.goals"), icon: Target },
           { to: "/tools", label: t("nav.tools"), icon: Calculator },
           { to: "/glossary", label: t("nav.glossary"), icon: BookOpen },
+          { to: "/book", label: t("nav.book"), icon: CalendarDays },
         ];
 
   return (
@@ -29,7 +38,6 @@ export function MainNav() {
         <NavLink
           key={to}
           to={to}
-          end={to === "/"}
           className={({ isActive }) =>
             clsx(
               "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",

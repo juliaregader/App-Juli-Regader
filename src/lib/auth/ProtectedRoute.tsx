@@ -27,7 +27,7 @@ export function ProtectedRoute({ children, requireRole }: ProtectedRouteProps) {
   }
 
   if (requireRole && profile.role !== requireRole) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/dashboard" replace />;
   }
 
   if (profile.role === "client" && !profile.onboarding_completed) {
@@ -46,7 +46,7 @@ export function OnboardingRoute({ children }: { children: ReactNode }) {
   if (!session) return <Navigate to="/login" replace />;
   if (!profile || profile.status !== "approved") return <Navigate to="/pending" replace />;
   if (profile.role !== "client" || profile.onboarding_completed) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/dashboard" replace />;
   }
 
   return <>{children}</>;
@@ -70,8 +70,18 @@ export function PublicOnlyRoute({ children }: { children: ReactNode }) {
   if (authLoading || (session && profileLoading)) return null;
 
   if (session) {
-    return <Navigate to={profile?.status === "approved" ? "/" : "/pending"} replace />;
+    return <Navigate to={profile?.status === "approved" ? "/dashboard" : "/pending"} replace />;
   }
+
+  return <>{children}</>;
+}
+
+/** Para la ruta pública "/": si ya hay sesión, va directo al panel. */
+export function LandingRoute({ children }: { children: ReactNode }) {
+  const { session, loading } = useAuth();
+
+  if (loading) return null;
+  if (session) return <Navigate to="/dashboard" replace />;
 
   return <>{children}</>;
 }

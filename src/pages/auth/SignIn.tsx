@@ -10,6 +10,7 @@ import { supabase } from "@/lib/supabase/client";
 const emailStepSchema = z.object({
   fullName: z.string().min(2),
   email: z.string().email(),
+  phone: z.string().min(6),
 });
 type EmailStepValues = z.infer<typeof emailStepSchema>;
 
@@ -20,16 +21,16 @@ export function SignIn() {
 
   const emailForm = useForm<EmailStepValues>({
     resolver: zodResolver(emailStepSchema),
-    defaultValues: { fullName: "", email: "" },
+    defaultValues: { fullName: "", email: "", phone: "" },
   });
 
-  const sendMagicLink = async ({ fullName, email }: EmailStepValues) => {
+  const sendMagicLink = async ({ fullName, email, phone }: EmailStepValues) => {
     setServerError(null);
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
         shouldCreateUser: true,
-        data: { full_name: fullName },
+        data: { full_name: fullName, phone },
         emailRedirectTo: window.location.origin,
       },
     });
@@ -77,6 +78,19 @@ export function SignIn() {
             />
             {emailForm.formState.errors.email ? (
               <span className="text-xs text-red-600">{t("auth.errors.emailInvalid")}</span>
+            ) : null}
+          </label>
+
+          <label className="flex flex-col gap-1.5 text-sm">
+            <span className="font-medium text-content">{t("auth.phoneLabel")}</span>
+            <input
+              type="tel"
+              autoComplete="tel"
+              className="rounded-lg border border-border bg-surface px-3 py-2 text-content focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+              {...emailForm.register("phone")}
+            />
+            {emailForm.formState.errors.phone ? (
+              <span className="text-xs text-red-600">{t("auth.errors.phoneInvalid")}</span>
             ) : null}
           </label>
 

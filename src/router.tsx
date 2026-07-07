@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import { RootLayout } from "@/components/layout/RootLayout";
 import {
+  LandingRoute,
   OnboardingRoute,
   ProtectedRoute,
   PublicOnlyRoute,
@@ -13,6 +14,7 @@ import { ClientDetail } from "@/pages/admin/ClientDetail";
 import { PendingApproval } from "@/pages/auth/PendingApproval";
 import { SignIn } from "@/pages/auth/SignIn";
 import { Home } from "@/pages/Home";
+import { PublicLanding } from "@/pages/PublicLanding";
 import { Glossary } from "@/pages/glossary/Glossary";
 import { Goals } from "@/pages/goals/Goals";
 import { Onboarding } from "@/pages/onboarding/Onboarding";
@@ -25,6 +27,14 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: (
+          <LandingRoute>
+            <PublicLanding />
+          </LandingRoute>
+        ),
+      },
+      {
+        path: "/dashboard",
         element: (
           <ProtectedRoute>
             <Home />

@@ -21,7 +21,8 @@
     "strategy": "Estratègia",
     "goals": "Objectius",
     "tools": "Eines",
-    "glossary": "Glossari"
+    "glossary": "Glossari",
+    "book": "Reservar sessió"
   },
   "legal": {
     "disclaimerTitle": "Avís legal",
@@ -32,13 +33,15 @@
     "subtitle": "Sense contrasenyes: t'enviem un enllaç d'accés al teu email.",
     "fullNameLabel": "Nom complet",
     "emailLabel": "Email",
+    "phoneLabel": "Telèfon",
     "sendLink": "Enviar enllaç d'accés",
     "linkSentTo": "T'hem enviat un enllaç a {{email}}. Obre'l des d'aquest mateix dispositiu per entrar.",
     "useAnotherEmail": "Fer servir un altre email",
     "signOut": "Tancar sessió",
     "errors": {
       "fullNameRequired": "Escriu el teu nom complet.",
-      "emailInvalid": "Introdueix un email vàlid."
+      "emailInvalid": "Introdueix un email vàlid.",
+      "phoneInvalid": "Introdueix un telèfon vàlid."
     },
     "pending": {
       "title": "El teu compte està pendent d'aprovació",
@@ -378,6 +381,79 @@
     "columns": {
       "currency": "Divisa",
       "year": "Any"
+    }
+  },
+  "landing": {
+    "hero": {
+      "eyebrow": "Educació financera personalitzada",
+      "title": "Entén la teva economia. Organitza el teu patrimoni.",
+      "subtitle": "Sessions individuals amb en Julià Regader + una plataforma per organitzar i visualitzar la teva situació financera entre sessió i sessió.",
+      "ctaPrimary": "Començar ara",
+      "ctaSecondary": "Veure preu"
+    },
+    "howItWorks": {
+      "title": "Com funciona",
+      "steps": {
+        "signup": {
+          "title": "1. Registra't",
+          "body": "Deixa el teu nom, email i telèfon. Sense compromís, gratis."
+        },
+        "data": {
+          "title": "2. Explica'ns la teva situació",
+          "body": "Omple els teus ingressos, despeses, actius i passius en un assistent guiat."
+        },
+        "book": {
+          "title": "3. Reserva la teva sessió",
+          "body": "Tria el moment que et vagi millor per parlar amb mi."
+        },
+        "access": {
+          "title": "4. Accedeix a la plataforma",
+          "body": "En completar el pagament, desbloqueges el teu panell complet per sempre."
+        }
+      }
+    },
+    "features": {
+      "title": "Què inclou la plataforma",
+      "subtitle": "Tot això es desbloqueja amb el pla de 229€.",
+      "items": {
+        "dashboard": {
+          "title": "Panell financer",
+          "body": "Patrimoni net, cash-flow, taxa d'estalvi i més, amb gràfics clars."
+        },
+        "strategy": {
+          "title": "Estratègia d'inversió",
+          "body": "Defineix les teves pròpies classes d'actiu i objectius. Sense recomanacions automàtiques."
+        },
+        "goals": {
+          "title": "Objectius financers",
+          "body": "Crea metes d'estalvi i segueix el teu progrés visualment."
+        },
+        "tools": {
+          "title": "Eines educatives",
+          "body": "Interès compost, independència financera, amortització de deute i més."
+        },
+        "glossary": {
+          "title": "Glossari financer",
+          "body": "Conceptes explicats en termes senzills i generals."
+        },
+        "session": {
+          "title": "1 hora amb mi",
+          "body": "Una sessió individual d'educació financera amb en Julià."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Un únic pla, sense sorpreses",
+      "subtitle": "Pagament únic: la teva sessió i l'accés complet a la plataforma.",
+      "oneTime": "pagament únic",
+      "included": {
+        "session": "1 hora de sessió individual amb en Julià",
+        "platform": "Accés complet a la plataforma per sempre",
+        "dashboard": "Panell, estratègia, objectius i eines educatives",
+        "export": "Exportació de les teves dades a Excel"
+      },
+      "cta": "Reservar la meva plaça",
+      "legalNote": "Aquesta plataforma és una eina d'organització i educació personal. No constitueix assessorament financer, fiscal ni d'inversió."
     }
   }
 }

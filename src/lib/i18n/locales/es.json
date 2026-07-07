@@ -21,7 +21,8 @@
     "strategy": "Estrategia",
     "goals": "Objetivos",
     "tools": "Herramientas",
-    "glossary": "Glosario"
+    "glossary": "Glosario",
+    "book": "Reservar sesión"
   },
   "legal": {
     "disclaimerTitle": "Aviso legal",
@@ -32,13 +33,15 @@
     "subtitle": "Sin contraseñas: te enviamos un enlace de acceso a tu email.",
     "fullNameLabel": "Nombre completo",
     "emailLabel": "Email",
+    "phoneLabel": "Teléfono",
     "sendLink": "Enviar enlace de acceso",
     "linkSentTo": "Te hemos enviado un enlace a {{email}}. Ábrelo desde este mismo dispositivo para entrar.",
     "useAnotherEmail": "Usar otro email",
     "signOut": "Cerrar sesión",
     "errors": {
       "fullNameRequired": "Escribe tu nombre completo.",
-      "emailInvalid": "Introduce un email válido."
+      "emailInvalid": "Introduce un email válido.",
+      "phoneInvalid": "Introduce un teléfono válido."
     },
     "pending": {
       "title": "Tu cuenta está pendiente de aprobación",
@@ -378,6 +381,79 @@
     "columns": {
       "currency": "Divisa",
       "year": "Año"
+    }
+  },
+  "landing": {
+    "hero": {
+      "eyebrow": "Educación financiera personalizada",
+      "title": "Entiende tu economía. Organiza tu patrimonio.",
+      "subtitle": "Sesiones individuales con Julià Regader + una plataforma para organizar y visualizar tu situación financiera entre sesión y sesión.",
+      "ctaPrimary": "Empezar ahora",
+      "ctaSecondary": "Ver precio"
+    },
+    "howItWorks": {
+      "title": "Cómo funciona",
+      "steps": {
+        "signup": {
+          "title": "1. Regístrate",
+          "body": "Deja tu nombre, email y teléfono. Sin compromiso, gratis."
+        },
+        "data": {
+          "title": "2. Cuéntanos tu situación",
+          "body": "Rellena tus ingresos, gastos, activos y pasivos en un asistente guiado."
+        },
+        "book": {
+          "title": "3. Reserva tu sesión",
+          "body": "Elige el momento que mejor te venga para hablar conmigo."
+        },
+        "access": {
+          "title": "4. Accede a la plataforma",
+          "body": "Al completar el pago, desbloqueas tu panel completo para siempre."
+        }
+      }
+    },
+    "features": {
+      "title": "Qué incluye la plataforma",
+      "subtitle": "Todo esto se desbloquea con el plan de 229€.",
+      "items": {
+        "dashboard": {
+          "title": "Panel financiero",
+          "body": "Patrimonio neto, cash-flow, tasa de ahorro y más, con gráficos claros."
+        },
+        "strategy": {
+          "title": "Estrategia de inversión",
+          "body": "Define tus propias clases de activo y objetivos. Sin recomendaciones automáticas."
+        },
+        "goals": {
+          "title": "Objetivos financieros",
+          "body": "Crea metas de ahorro y sigue tu progreso visualmente."
+        },
+        "tools": {
+          "title": "Herramientas educativas",
+          "body": "Interés compuesto, independencia financiera, amortización de deuda y más."
+        },
+        "glossary": {
+          "title": "Glosario financiero",
+          "body": "Conceptos explicados en términos sencillos y generales."
+        },
+        "session": {
+          "title": "1 hora contigo",
+          "body": "Una sesión individual de educación financiera con Julià."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Un único plan, sin sorpresas",
+      "subtitle": "Pago único: tu sesión y el acceso completo a la plataforma.",
+      "oneTime": "pago único",
+      "included": {
+        "session": "1 hora de sesión individual con Julià",
+        "platform": "Acceso completo a la plataforma para siempre",
+        "dashboard": "Panel, estrategia, objetivos y herramientas educativas",
+        "export": "Exportación de tus datos a Excel"
+      },
+      "cta": "Reservar mi plaza",
+      "legalNote": "Esta plataforma es una herramienta de organización y educación personal. No constituye asesoramiento financiero, fiscal ni de inversión."
     }
   }
 }

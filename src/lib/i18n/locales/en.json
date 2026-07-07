@@ -21,7 +21,8 @@
     "strategy": "Strategy",
     "goals": "Goals",
     "tools": "Tools",
-    "glossary": "Glossary"
+    "glossary": "Glossary",
+    "book": "Book a session"
   },
   "legal": {
     "disclaimerTitle": "Legal notice",
@@ -32,13 +33,15 @@
     "subtitle": "No passwords: we'll send a sign-in link to your email.",
     "fullNameLabel": "Full name",
     "emailLabel": "Email",
+    "phoneLabel": "Phone",
     "sendLink": "Send sign-in link",
     "linkSentTo": "We've sent a link to {{email}}. Open it from this same device to sign in.",
     "useAnotherEmail": "Use another email",
     "signOut": "Sign out",
     "errors": {
       "fullNameRequired": "Enter your full name.",
-      "emailInvalid": "Enter a valid email."
+      "emailInvalid": "Enter a valid email.",
+      "phoneInvalid": "Enter a valid phone number."
     },
     "pending": {
       "title": "Your account is pending approval",
@@ -378,6 +381,79 @@
     "columns": {
       "currency": "Currency",
       "year": "Year"
+    }
+  },
+  "landing": {
+    "hero": {
+      "eyebrow": "Personalized financial education",
+      "title": "Understand your finances. Organize your wealth.",
+      "subtitle": "One-on-one sessions with Julià Regader + a platform to organize and visualize your finances between sessions.",
+      "ctaPrimary": "Get started",
+      "ctaSecondary": "See pricing"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "steps": {
+        "signup": {
+          "title": "1. Sign up",
+          "body": "Leave your name, email and phone. Free, no commitment."
+        },
+        "data": {
+          "title": "2. Tell us about your situation",
+          "body": "Fill in your income, expenses, assets and liabilities in a guided wizard."
+        },
+        "book": {
+          "title": "3. Book your session",
+          "body": "Choose the time that works best for you to talk to me."
+        },
+        "access": {
+          "title": "4. Access the platform",
+          "body": "Once payment is complete, you unlock your full dashboard for good."
+        }
+      }
+    },
+    "features": {
+      "title": "What the platform includes",
+      "subtitle": "All of this unlocks with the 229€ plan.",
+      "items": {
+        "dashboard": {
+          "title": "Financial dashboard",
+          "body": "Net worth, cash flow, savings rate and more, with clear charts."
+        },
+        "strategy": {
+          "title": "Investment strategy",
+          "body": "Define your own asset classes and targets. No automatic recommendations."
+        },
+        "goals": {
+          "title": "Financial goals",
+          "body": "Create savings goals and track your progress visually."
+        },
+        "tools": {
+          "title": "Educational tools",
+          "body": "Compound interest, financial independence, debt payoff and more."
+        },
+        "glossary": {
+          "title": "Financial glossary",
+          "body": "Concepts explained in simple, general terms."
+        },
+        "session": {
+          "title": "1 hour with me",
+          "body": "A one-on-one financial education session with Julià."
+        }
+      }
+    },
+    "pricing": {
+      "title": "One plan, no surprises",
+      "subtitle": "A single payment: your session and full platform access.",
+      "oneTime": "one-time payment",
+      "included": {
+        "session": "1-hour one-on-one session with Julià",
+        "platform": "Full platform access, forever",
+        "dashboard": "Dashboard, strategy, goals and educational tools",
+        "export": "Export your data to Excel"
+      },
+      "cta": "Book my spot",
+      "legalNote": "This platform is a personal organization and education tool. It does not constitute financial, tax or investment advice."
     }
   }
 }

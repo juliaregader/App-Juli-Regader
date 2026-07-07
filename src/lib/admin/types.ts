@@ -5,7 +5,9 @@ export type AppointmentStatus = "requested" | "confirmed" | "completed" | "cance
 export interface ClientProfile {
   id: string;
   full_name: string | null;
+  phone: string | null;
   status: ApprovalStatus;
+  has_paid: boolean;
   base_currency: string;
   created_at: string;
   updated_at: string;
