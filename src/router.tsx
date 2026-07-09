@@ -5,7 +5,7 @@ import { RootLayout } from "@/components/layout/RootLayout";
 import { AdminRoute } from "@/features/auth/AdminRoute";
 import { ProtectedRoute } from "@/features/auth/ProtectedRoute";
 import { AdminHome } from "@/pages/admin/AdminHome";
-import { AppHome } from "@/pages/app/AppHome";
+import { Dashboard } from "@/pages/app/Dashboard";
 import { Perfil } from "@/pages/app/Perfil";
 import { ForgotPassword } from "@/pages/auth/ForgotPassword";
 import { Login } from "@/pages/auth/Login";
@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
       {
         element: <PrivateLayout />,
         children: [
-          { index: true, element: <AppHome /> },
+          { index: true, element: <Dashboard /> },
           { path: "onboarding", element: <Onboarding /> },
           { path: "perfil", element: <Perfil /> },
           {

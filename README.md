@@ -17,7 +17,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 - [x] Fase 1 — Supabase: esquema, RLS, Auth, SMTP propio, rol admin
 - [x] Fase 2 — Web pública (Home, Servicios, Consulta, Contacto, Legal)
 - [x] Fase 3 — Onboarding (carrusel) + Mi perfil
-- [ ] Fase 4 — Dashboard financiero + indicadores
+- [x] Fase 4 — Dashboard financiero + indicadores
 - [ ] Fase 5 — Estrategia de inversión
 - [ ] Fase 6 — Registro mensual + evolución del patrimonio
 - [ ] Fase 7 — Panel de administrador
@@ -208,6 +208,21 @@ Toda esta información es editable en cualquier momento desde **Mi perfil**
 (`IncomeExpensesEditor`, `AssetsEditor`, `LiabilitiesEditor`, `GoalsEditor`)
 en una sola página, además de los datos personales (nombre, teléfono,
 idioma, divisa).
+
+## Dashboard financiero (Fase 4)
+
+`/app` (Dashboard) calcula en el cliente, a partir de activos/pasivos en vivo
+y el último registro mensual:
+
+- Patrimonio neto (Activos − Pasivos), ahorro mensual y tasa de ahorro,
+  ratio de endeudamiento (cuotas de deuda / ingresos, semáforo verde <30 % /
+  ámbar 30–40 % / rojo >40 %), cobertura de fondo de emergencia (activos
+  líquidos / gastos mensuales, en meses), ratio de liquidez, peso de la
+  vivienda sobre el patrimonio y ratio deuda/activos.
+- Gráfico de distribución de activos (tarta) y evolución del patrimonio neto
+  (línea), alimentado por `financial_snapshots`.
+- Paleta de los gráficos validada con el script de accesibilidad del skill
+  de visualización de datos (separación CVD y contraste verificados).
 
 ## Estructura del proyecto
 
