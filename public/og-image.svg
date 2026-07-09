@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0A1F44" />
+  <path
+    d="M640 140 L640 340 A150 150 0 0 1 490 490"
+    stroke="#F7F8FA"
+    stroke-width="34"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="490" cy="490" r="20" fill="#C9A44C" />
+  <text x="700" y="300" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="#F7F8FA">
+    Julius<tspan font-weight="400">Capital</tspan>
+  </text>
+  <text x="700" y="360" font-family="Inter, sans-serif" font-size="28" fill="#9DB8DE">
+    Organización financiera para tomar mejores decisiones
+  </text>
+</svg>

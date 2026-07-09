@@ -1,32 +1,30 @@
 interface LogoMarkProps {
   className?: string;
+  accent?: boolean;
 }
 
 /**
- * Isotipo de la marca: monograma "J" en una insignia redondeada azul
- * oscuro, estilo neobanco. Colores fijos (no depende del tema).
+ * Isotipo de JuliusCapital: una "J" geométrica de trazo único.
+ * El trazo usa currentColor para funcionar sobre fondo claro u oscuro;
+ * el punto final es un acento dorado opcional.
  */
-export function LogoMark({ className }: LogoMarkProps) {
+export function LogoMark({ className, accent = true }: LogoMarkProps) {
   return (
     <svg
-      viewBox="0 0 32 32"
+      viewBox="0 0 64 64"
       fill="none"
       className={className}
       role="img"
-      aria-label="Isotipo de JuliusCapital"
+      aria-label="JuliusCapital"
     >
-      <rect width="32" height="32" rx="8" fill="#0E2A47" />
-      <text
-        x="16"
-        y="22.5"
-        textAnchor="middle"
-        fontFamily="Inter, system-ui, sans-serif"
-        fontWeight="700"
-        fontSize="18"
-        fill="#FFFFFF"
-      >
-        J
-      </text>
+      <path
+        d="M39 9 L39 35 A15 15 0 0 1 24 50"
+        stroke="currentColor"
+        strokeWidth="8.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      {accent ? <circle cx="24" cy="50" r="5.5" fill="#C9A44C" /> : null}
     </svg>
   );
 }

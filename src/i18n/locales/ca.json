@@ -1,0 +1,39 @@
+{
+  "common": {
+    "appName": "JuliusCapital",
+    "loading": "Carregant…",
+    "error": "S'ha produït un error. Torna-ho a provar.",
+    "save": "Desar",
+    "cancel": "Cancel·lar",
+    "continue": "Continuar",
+    "back": "Enrere",
+    "close": "Tancar"
+  },
+  "nav": {
+    "home": "Inici",
+    "services": "Serveis",
+    "consultation": "Consulta patrimonial",
+    "booking": "Reserves",
+    "contact": "Contacte",
+    "login": "Accedir",
+    "register": "Crea el teu perfil"
+  },
+  "footer": {
+    "rights": "Tots els drets reservats.",
+    "legalNotice": "Avís legal",
+    "privacy": "Privacitat",
+    "terms": "Termes d'ús",
+    "disclaimer": "JuliusCapital és una eina d'organització patrimonial amb finalitats educatives i informatives. No constitueix assessorament financer, fiscal ni d'inversió personalitzat ni una recomanació de compra/venda de productes financers. Les decisions d'inversió són responsabilitat de l'usuari."
+  },
+  "status": {
+    "title": "Estat del sistema",
+    "supabaseConfigured": "Variables de Supabase detectades al build",
+    "supabaseMissing": "Falten variables de Supabase al build. Configura-les a Vercel (Production i Preview) i torna a desplegar.",
+    "ok": "OK"
+  },
+  "notFound": {
+    "title": "Pàgina no trobada",
+    "description": "La pàgina que busques no existeix o s'ha mogut.",
+    "backHome": "Tornar a l'inici"
+  }
+}

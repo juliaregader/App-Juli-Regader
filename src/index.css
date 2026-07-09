@@ -3,37 +3,75 @@
 @tailwind utilities;
 
 :root {
-  /* Marca — azul oscuro (navy) como color principal, azul medio como acento funcional */
-  --color-brand-950: #071726;
-  --color-brand-900: #0e2a47;
-  --color-brand-800: #163a5c;
-  --color-brand-700: #1e4a6e;
-  --color-brand-500: #4e8fc1;
-  --color-brand-300: #9cc4e4;
-  --color-brand-100: #e4eef6;
+  --color-brand-950: #050f24;
+  --color-brand-900: #0a1f44;
+  --color-brand-800: #12315f;
+  --color-brand-700: #1e4272;
+  --color-brand-500: #3e6db5;
+  --color-brand-300: #9db8de;
+  --color-brand-100: #e7eef8;
+
+  --color-gold: #c9a44c;
+  --color-gold-dark: #a6842f;
 
   --color-surface: #ffffff;
   --color-surface-subtle: #f7f8fa;
   --color-surface-raised: #ffffff;
-  --color-border: #e2e6ec;
-  --color-content: #0e1621;
-  --color-content-muted: #5b6675;
 
-  /* Gráficos — paleta categórica validada (contraste + CVD) para las pocas
-     vistas que necesitan distinguir varias categorías a la vez (ver
-     dataviz skill). El resto de la marca se mantiene monocromática en azul. */
-  --chart-series-1: #2a78d6;
-  --chart-series-2: #1baf7a;
-  --chart-series-3: #eda100;
-  --chart-series-4: #008300;
-  --chart-negative: #e34948;
+  --color-border: #e2e5ea;
+
+  --color-content: #101828;
+  --color-content-muted: #5b6472;
 }
 
-/* La app usa siempre el tema claro: no hay modo oscuro ni se sigue la
-   preferencia del sistema operativo. */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background-color: var(--color-surface-subtle);
-  color: var(--color-content);
-  font-feature-settings: "tnum" 1;
+  @apply bg-surface-subtle text-content antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-900 text-white shadow-soft hover:bg-brand-800;
+  }
+
+  .btn-secondary {
+    @apply btn border border-border bg-white text-brand-900 hover:bg-brand-100;
+  }
+
+  .btn-gold {
+    @apply btn bg-[var(--color-gold)] text-brand-950 hover:bg-[var(--color-gold-dark)] hover:text-white;
+  }
+
+  .card {
+    @apply rounded-2xl border border-border bg-surface-raised p-6 shadow-soft;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-border bg-white px-3.5 py-2.5 text-sm text-content placeholder:text-content-muted focus-visible:border-brand-500 focus-visible:outline-2 focus-visible:outline-brand-300;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-content;
+  }
+
+  .help-text {
+    @apply mt-1 text-xs text-content-muted;
+  }
 }

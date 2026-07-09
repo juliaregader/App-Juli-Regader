@@ -1,0 +1,39 @@
+{
+  "common": {
+    "appName": "JuliusCapital",
+    "loading": "Loading…",
+    "error": "Something went wrong. Please try again.",
+    "save": "Save",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "back": "Back",
+    "close": "Close"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "consultation": "Wealth consultation",
+    "booking": "Bookings",
+    "contact": "Contact",
+    "login": "Sign in",
+    "register": "Create your profile"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "legalNotice": "Legal notice",
+    "privacy": "Privacy",
+    "terms": "Terms of use",
+    "disclaimer": "JuliusCapital is a wealth organization tool for educational and informational purposes. It does not constitute personalized financial, tax or investment advice, nor a recommendation to buy or sell any financial product. Investment decisions are the sole responsibility of the user."
+  },
+  "status": {
+    "title": "System status",
+    "supabaseConfigured": "Supabase environment variables detected in the build",
+    "supabaseMissing": "Supabase environment variables are missing from the build. Configure them in Vercel (Production and Preview) and redeploy.",
+    "ok": "OK"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has moved.",
+    "backHome": "Back to home"
+  }
+}

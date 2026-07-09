@@ -1,0 +1,39 @@
+{
+  "common": {
+    "appName": "JuliusCapital",
+    "loading": "Cargando…",
+    "error": "Ha ocurrido un error. Inténtalo de nuevo.",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "back": "Atrás",
+    "close": "Cerrar"
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "consultation": "Consulta patrimonial",
+    "booking": "Reservas",
+    "contact": "Contacto",
+    "login": "Acceder",
+    "register": "Crear tu perfil"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "legalNotice": "Aviso legal",
+    "privacy": "Privacidad",
+    "terms": "Términos de uso",
+    "disclaimer": "JuliusCapital es una herramienta de organización patrimonial con fines educativos e informativos. No constituye asesoramiento financiero, fiscal ni de inversión personalizado ni una recomendación de compra/venta de productos financieros. Las decisiones de inversión son responsabilidad del usuario."
+  },
+  "status": {
+    "title": "Estado del sistema",
+    "supabaseConfigured": "Variables de Supabase detectadas en el build",
+    "supabaseMissing": "Faltan variables de Supabase en el build. Configúralas en Vercel (Production y Preview) y vuelve a desplegar.",
+    "ok": "OK"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o se ha movido.",
+    "backHome": "Volver al inicio"
+  }
+}

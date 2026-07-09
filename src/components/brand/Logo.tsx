@@ -1,27 +1,22 @@
 import { clsx } from "clsx";
 
-import { LogoMark } from "@/components/brand/LogoMark";
+import { LogoMark } from "./LogoMark";
 
 interface LogoProps {
   className?: string;
   markClassName?: string;
-  showTagline?: boolean;
+  showWordmark?: boolean;
 }
 
-export function Logo({ className, markClassName, showTagline = false }: LogoProps) {
+export function Logo({ className, markClassName, showWordmark = true }: LogoProps) {
   return (
-    <div className={clsx("flex items-center gap-2.5", className)}>
-      <LogoMark className={clsx("size-8 shrink-0", markClassName)} />
-      <div className="flex flex-col leading-none">
-        <span className="font-display text-lg font-semibold tracking-tight text-content">
-          JuliusCapital
+    <span className={clsx("inline-flex items-center gap-2.5", className)}>
+      <LogoMark className={clsx("h-8 w-8 shrink-0 text-brand-900", markClassName)} />
+      {showWordmark ? (
+        <span className="font-display text-lg font-bold tracking-tight text-current">
+          Julius<span className="font-normal">Capital</span>
         </span>
-        {showTagline ? (
-          <span className="text-xs font-medium text-content-muted">
-            Entiende. Organiza. Decide.
-          </span>
-        ) : null}
-      </div>
-    </div>
+      ) : null}
+    </span>
   );
 }

@@ -1,216 +1,149 @@
-# JuliusCapital — App de educación y organización patrimonial
+# JuliusCapital
 
-Web pública de una sola página con la oferta de educación financiera de Julià
-Regader: explica por qué organizar el patrimonio, y deja probar libremente
-(sin registro ni contraseña) el simulador de patrimonio, el constructor de
-estrategia, los objetivos, las calculadoras y el glosario. Quien quiera ir más
-allá puede reservar una sesión individual de pago con Julià.
+Plataforma de organización patrimonial de Julià Regader: web pública de
+servicios, área privada de clientes (onboarding, dashboard financiero,
+estrategia de inversión, registro mensual), panel de administrador, reservas
+con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 
-> **Aviso legal:** esta herramienta tiene una finalidad exclusivamente educativa
-> y de organización personal. No constituye asesoramiento financiero, fiscal ni
-> de inversión. Las decisiones son responsabilidad exclusiva del usuario.
+> **Aviso legal:** JuliusCapital es una herramienta de organización
+> patrimonial con fines educativos e informativos. No constituye
+> asesoramiento financiero, fiscal ni de inversión personalizado ni una
+> recomendación de compra/venta de productos financieros. Las decisiones de
+> inversión son responsabilidad del usuario.
 
 ## Estado del proyecto
 
-Web-app funcional de principio a fin, lista para probarse con datos reales y
-desplegarse:
-
-- [x] Fase 0 — Scaffolding, marca, i18n, layout base
-- [x] Fase 1 — Autenticación (Supabase Auth) y roles (cliente/admin)
-- [x] Fase 2 — Onboarding patrimonial y modelo de datos
-- [x] Fase 3 — Dashboard, gráficos, KPIs y personalización del panel
-- [x] Fase 4 — Estrategia de inversión y herramientas educativas
-- [x] Fase 5 — Exportación a Excel con fórmulas
-- [x] Fase 6 — Panel de administrador
-- [x] Fase 7 — Pulido, accesibilidad y despliegue
-- [x] Pivot — Web pública one-page sin cuentas de cliente: acceso anónimo a
-      las herramientas, captura de email/reserva como único punto de
-      contacto, panel de administrador privado sin cambios para Julià
-
-### Cómo funciona el acceso (tras el pivot)
-
-No hay registro ni contraseña para los visitantes. Cada visitante entra con
-una **sesión anónima de Supabase Auth** (invisible, creada automáticamente al
-cargar la página), que le permite usar y guardar sus propios datos en el
-simulador/estrategia/objetivos exactamente igual que antes, pero sin pedirle
-ninguna cuenta. Antes de usar esas secciones se le pide su nombre y email
-(`EmailGate`), que se guarda en su mismo perfil para poder contactarle. El
-**único login real de la app es el de Julià como admin**, en `/login`
-(magic link, `shouldCreateUser: false`), protegido con `AdminRoute`.
+- [x] Fase 0 — Setup: scaffolding, marca, página de estado de env vars
+- [ ] Fase 1 — Supabase: esquema, RLS, Auth, SMTP propio, rol admin
+- [ ] Fase 2 — Web pública (Home, Servicios, Consulta, Contacto, Legal)
+- [ ] Fase 3 — Onboarding (carrusel) + Mi perfil
+- [ ] Fase 4 — Dashboard financiero + indicadores
+- [ ] Fase 5 — Estrategia de inversión
+- [ ] Fase 6 — Registro mensual + evolución del patrimonio
+- [ ] Fase 7 — Panel de administrador
+- [ ] Fase 8 — i18n (es/ca/en) + divisas
+- [ ] Fase 9 — Calendario de reservas + notificaciones por email
+- [ ] Fase 10 — Stripe (Checkout + webhook)
+- [ ] Fase 11 — Legal / RGPD / disclaimers finales
+- [ ] Fase 12 — Pulido, responsive, QA
 
 ## Stack técnico
 
-- **Frontend:** React + Vite + TypeScript + Tailwind CSS
-- **Backend/datos:** Supabase (Auth, Postgres con RLS, Storage)
-- **Gráficos:** Recharts (a partir de la Fase 3)
-- **Exportación:** ExcelJS (a partir de la Fase 5)
-- **Formularios:** React Hook Form + Zod (a partir de la Fase 1)
-- **Datos remotos:** TanStack Query (a partir de la Fase 1)
-- **i18n:** i18next / react-i18next — catalán, español (por defecto) e inglés
+- **Frontend:** React + Vite + TypeScript + Tailwind CSS, React Router,
+  TanStack Query, Recharts, lucide-react.
+- **Backend/datos:** Supabase (Auth, Postgres + Row Level Security, Storage,
+  Edge Functions).
+- **Pagos:** Stripe (Checkout + webhook vía Edge Function).
+- **Emails transaccionales:** Resend (SMTP de Supabase Auth + notificaciones
+  de reserva desde Edge Functions).
+- **i18n:** react-i18next — castellano (por defecto), català, English.
 
-## Puesta en marcha
+## Marca
 
-### Requisitos
+- **Nombre:** JuliusCapital.
+- **Eslogan** (3 opciones, la primera es la que usa la app por defecto):
+  1. **"Organización financiera para tomar mejores decisiones."** ← por defecto
+  2. "Claridad patrimonial para decidir con confianza."
+  3. "Tu patrimonio, organizado. Tu futuro, decidido."
+- **Color primario:** azul marino `#0A1F44` (hover `#12315F`), acento dorado
+  `#C9A44C` y azul claro `#3E6DB5` para CTAs secundarios, fondo `#F7F8FA`.
+- **Logo:** isotipo minimalista basado en una única "J" geométrica de trazo
+  continuo (`src/components/brand/LogoMark.tsx`), con un punto de acento
+  dorado. Usa `currentColor` para funcionar sobre fondo claro u oscuro.
+  Versión estática para favicon en `public/favicon.svg`.
 
-- Node.js 20+
-- Una cuenta y proyecto de [Supabase](https://supabase.com) (necesario a partir de la Fase 1)
-
-### Instalación
+## Puesta en marcha en local
 
 ```bash
 npm install
 cp .env.example .env
-# Completa .env con la URL y la clave anónima de tu proyecto Supabase
+# Completa .env con tus credenciales (ver tabla de variables abajo)
 npm run dev
 ```
 
-La app queda disponible en `http://localhost:5173`.
-
-### Scripts disponibles
-
-| Script            | Descripción                                  |
-| ----------------- | --------------------------------------------- |
-| `npm run dev`      | Servidor de desarrollo con hot reload         |
-| `npm run build`    | Compilación de tipos + build de producción    |
-| `npm run preview`  | Sirve el build de producción localmente       |
-| `npm run lint`     | Linter (ESLint)                               |
-| `npm run typecheck`| Verificación de tipos sin generar archivos    |
+Disponible en `http://localhost:5173`. `npm run build` compila tipos +
+produce el build de producción; `npm run typecheck` y `npm run lint`
+verifican tipos y estilo sin generar archivos.
 
 ## Variables de entorno
 
-Ver [`.env.example`](./.env.example). Ninguna clave secreta debe usarse desde el
-cliente: solo la URL del proyecto y la clave `anon` (pública, protegida por RLS).
+Ver [`.env.example`](./.env.example). **Las que usa el frontend (Vite) deben
+empezar por `VITE_`** — cualquier otra variable NUNCA debe leerse desde
+`src/`, solo desde Edge Functions.
 
-## Base de datos y autenticación (Supabase)
+| Variable | Dónde se usa | Descripción |
+| --- | --- | --- |
+| `VITE_SUPABASE_URL` | Frontend | URL del proyecto Supabase (Project Settings → API) |
+| `VITE_SUPABASE_ANON_KEY` | Frontend | Clave pública `anon` (protegida por RLS) |
+| `VITE_APP_URL` | Frontend | URL pública de producción, p. ej. `https://juliuscapital.vercel.app` |
+| `VITE_STRIPE_PUBLISHABLE_KEY` | Frontend | Clave publicable de Stripe |
+| `SUPABASE_SERVICE_ROLE_KEY` | Edge Functions | Clave con privilegios totales — **nunca** en el frontend |
+| `STRIPE_SECRET_KEY` | Edge Functions | Clave secreta de Stripe |
+| `STRIPE_WEBHOOK_SECRET` | Edge Functions | Firma del webhook de Stripe |
+| `RESEND_API_KEY` | Edge Functions + SMTP Supabase | Envío de emails transaccionales |
+| `ADMIN_EMAIL` | Migraciones + Edge Functions | Email que recibe el rol `admin` automáticamente y las notificaciones de reserva |
+| `ADMIN_PHONE` | Edge Functions (reservado) | Número de contacto del admin; hoy no se usa (ver WhatsApp más abajo) |
+| `TWILIO_*` | — | **Ampliación futura.** No configurar todavía; ver `notifyAdmin()` |
 
-Las migraciones SQL están en [`supabase/migrations`](./supabase/migrations). Para
-aplicarlas:
+## Checklist de despliegue (crítico — leer antes del primer deploy)
 
-```bash
-# Con la Supabase CLI, apuntando a tu proyecto remoto
-supabase link --project-ref <tu-project-ref>
-supabase db push
-```
-
-O simplemente copia el contenido del `.sql` en el **SQL Editor** del panel de
-Supabase.
-
-### Verificación de RLS (Row Level Security)
-
-Todas las tablas con datos de usuario (`profiles`, `income_items`,
-`expense_items`, `assets`, `liabilities`, `net_worth_snapshots`,
-`strategy_allocations`, `goals`, `appointments`, `admin_notes`) tienen RLS
-habilitado, y se ha revisado que:
-
-- Un cliente solo puede leer/escribir filas donde `profile_id` (o `id` en
-  `profiles`) coincide con su propio `auth.uid()` — verificado revisando cada
-  política una por una y comprobando que ninguna usa `using (true)` ni omite
-  el filtro por usuario.
-- `admin_notes` no tiene ninguna política de lectura para clientes: un cliente
-  que consulte esa tabla recibe siempre cero filas (RLS deniega por defecto
-  sin política aplicable), confirmando que las notas del admin son
-  verdaderamente privadas.
-- Un cliente no puede auto-promocionarse a `admin` ni auto-aprobar su cuenta:
-  el trigger `enforce_profile_role_change` revierte cualquier cambio a las
-  columnas `role`/`status` que no venga de un admin, aunque la política RLS
-  de "actualizar mi propio perfil" permita el `UPDATE` en general.
-- Las inserciones llevan siempre `with check (profile_id = auth.uid())`, así
-  que aunque el cliente manipule la petición para intentar escribir con el
-  `profile_id` de otro usuario, la base de datos la rechaza.
-- Ninguna tabla tiene RLS habilitado sin al menos una política (lo que
-  bloquearía todo acceso, incluido el del propio dueño).
-
-### Flujo de acceso
-
-- El login es **sin contraseña**: el usuario introduce su nombre y email y
-  recibe un enlace de acceso por email (Supabase Auth magic link); al abrirlo
-  desde el mismo dispositivo, entra automáticamente. Se usa enlace en vez de
-  código de un solo uso porque personalizar la plantilla para mostrar un
-  código requiere configurar un proveedor SMTP externo (el correo gratuito de
-  Supabase no permite editar plantillas).
-- Todo usuario nuevo queda en estado `pending` y **no puede usar la app** hasta
-  que el admin lo apruebe desde el panel de administrador (listado de clientes
-  con botones de aprobar/rechazar).
-- El **primer administrador** (Julià) debe promocionarse a sí mismo tras
-  registrarse, ejecutando en el SQL Editor (los siguientes admins, si los
-  hubiera, ya no lo necesitan):
-
-  ```sql
-  update public.profiles
-  set role = 'admin', status = 'approved'
-  where id = (select id from auth.users where email = 'TU_EMAIL_AQUI');
-  ```
-- En **Authentication → URL Configuration** del panel de Supabase, añade la URL
-  de desarrollo (`http://localhost:5173`) y la de producción en Vercel a
-  **Site URL** / **Redirect URLs**, o el enlace de acceso no redirigirá bien.
+1. **Vercel → Project Settings → Environment Variables:** añade todas las
+   `VITE_*` de la tabla anterior en **Production y Preview**, *antes* del
+   primer build. Un build sin estas variables no falla, pero la app mostrará
+   avisos de configuración en vez de datos reales (compruébalo en `/status`).
+2. **Supabase → Authentication → URL Configuration:** fija **Site URL** al
+   dominio de producción (`VITE_APP_URL`) y añade a **Redirect URLs** tanto
+   ese dominio como `http://localhost:5173`.
+3. **Emails de confirmación (SMTP propio, importante):** en
+   **Authentication → Emails → SMTP Settings**, configura Resend en vez del
+   proveedor por defecto de Supabase (límite muy bajo y cae en spam). Pasos:
+   - Crea una cuenta en [resend.com](https://resend.com), verifica tu dominio
+     remitente (añade los registros **SPF** y **DKIM** que te indique Resend
+     en el DNS del dominio) y genera un `RESEND_API_KEY`.
+   - En Supabase, host `smtp.resend.com`, puerto `465` (SSL) o `587`, usuario
+     `resend`, contraseña = tu `RESEND_API_KEY`, remitente con el dominio
+     verificado (p. ej. `no-reply@tudominio.com`).
+   - Personaliza las plantillas **"Confirm signup"** y **"Reset password"**
+     en castellano y confirma que los enlaces usan `{{ .SiteURL }}` (que
+     apuntará a `VITE_APP_URL` una vez configurado el Site URL del paso 2).
+4. **Primer deploy de verificación:** con solo las `VITE_*` configuradas,
+   despliega y visita `/status` — debe mostrar "OK" en las variables de
+   Supabase y en la conexión del cliente. Solo entonces continuar con el
+   resto de fases (Stripe, Resend en Edge Functions, etc.).
+5. **Stripe:** crea la cuenta en [stripe.com](https://stripe.com), activa el
+   modo test primero, obtén `STRIPE_SECRET_KEY` / `VITE_STRIPE_PUBLISHABLE_KEY`
+   en *Developers → API keys*, y configura el webhook (`Developers →
+   Webhooks`, endpoint = la URL de la Edge Function `stripe-webhook`) para
+   obtener `STRIPE_WEBHOOK_SECRET`. Detalle completo en la Fase 10.
 
 ## Estructura del proyecto
 
 ```
 src/
-  assets/logo/       Isotipo SVG de la marca
-  components/
-    brand/           Logo e isotipo
-    charts/          Gráficos Recharts reutilizables (línea, barras, donut)
-    dashboard/        KpiCard, InfoTooltip, CustomizePanel
-    export/          Botón de exportación a Excel
-    layout/          AppShell, RootLayout, MainNav, Disclaimer
-    tools/           Calculadoras educativas (interés compuesto, FIRE, deuda, 50/30/20)
-    ui/              Componentes de interfaz reutilizables
-  lib/
-    admin/           Tipos y hooks del panel de administrador (leads, citas, notas)
-    auth/            AuthProvider (sesión anónima + admin), useProfile, AdminRoute
-    booking/         Hooks de reserva de sesión (cliente público)
-    dashboard/       Preferencias de personalización del panel
-    export/          Generación del libro Excel (ExcelJS)
-    i18n/            Configuración i18next + locales (es, ca, en)
-    format/          Formateo de divisas por locale
-    query/           Cliente de TanStack Query
-    tools/           Funciones puras de cálculo (interés compuesto, amortización)
-    supabase/        Cliente de Supabase
-    wealth/          Tipos y hooks de ingresos, gastos, activos, pasivos, KPIs
-  components/
-    wealth/          EmailGate: pide nombre/email antes de usar el simulador
-  pages/
-    PublicLanding.tsx  One-page pública: hero, por qué, cómo funciona,
-                       herramientas embebidas, reserva de sesión
-    auth/            Login del admin (magic link, sin registro)
-    booking/         Página de reserva de sesión (embebida en la one-page)
-    onboarding/       Carrusel patrimonial (ingresos, gastos, activos, pasivos, resumen)
-    goals/           Objetivos financieros
-    strategy/        Constructor de estrategia de inversión
-    tools/           Página de herramientas educativas
-    glossary/        Glosario financiero
-    admin/           Panel de administrador: leads, ficha de lead, agenda
-  router.tsx         "/" pública + "/login", "/admin/*" protegidas para el admin
-
+  components/   Componentes reutilizables (brand, layout, ui, charts...)
+  features/     Lógica de dominio por área (auth, wealth, booking, admin...)
+  pages/        Páginas/rutas
+  lib/          Clientes (Supabase, Query), helpers, tipos
+  i18n/         Configuración react-i18next + locales es/ca/en
+  hooks/        Hooks compartidos
 supabase/
-  migrations/        Migraciones SQL (perfiles, roles, RLS, modelo patrimonial,
-                     estrategia, objetivos, citas y notas de admin, acceso
-                     público anónimo)
+  migrations/   Migraciones SQL (esquema + RLS)
+  functions/    Edge Functions (Stripe webhook, notificaciones de reserva)
 ```
 
 ## Despliegue en Vercel
 
-1. Importa el repositorio en Vercel.
-2. Framework preset: **Vite**.
-3. Build command: `npm run build` · Output directory: `dist`.
-4. Añade las variables de entorno de `.env.example` en *Project Settings > Environment Variables*
-   (`VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`).
-5. El archivo [`vercel.json`](./vercel.json) ya incluye la reescritura
-   necesaria para que las rutas de React Router (`/wealth`, `/admin`, etc.)
-   funcionen al recargar la página o acceder directamente por URL, en vez de
-   dar un 404.
-6. En **Authentication → URL Configuration** de Supabase, añade la URL de
-   producción (`https://tu-dominio.vercel.app`) a **Site URL** / **Redirect
-   URLs**, igual que hiciste con `localhost:5173` en desarrollo.
+1. Importa el repositorio en Vercel. Framework preset: **Vite**. Build
+   command: `npm run build`. Output directory: `dist`.
+2. Configura las variables de entorno (ver checklist arriba) en Production y
+   Preview antes del primer build.
+3. `vercel.json` ya incluye la reescritura para que las rutas de React
+   Router funcionen al recargar o acceder directamente por URL.
+4. Verifica `/status` tras el deploy.
 
 ## Marco legal del producto
 
 Julià Regader no está registrado como asesor financiero ni gestor de
-patrimonios. Por diseño, la aplicación **nunca genera recomendaciones de
-inversión**: el cliente define siempre su propia estrategia y sus propias
-clases de activo. Cualquier plantilla o ejemplo incluido en la app es
-genérico y educativo (nunca instrumentos financieros concretos). Antes de
-comercializar el producto, este enfoque debe validarse con un abogado
-especializado.
+patrimonios. La aplicación no genera recomendaciones de inversión: el
+usuario define siempre su propia estrategia. Ver la Fase 11 para el detalle
+de política de privacidad, términos y RGPD/LOPDGDD.
