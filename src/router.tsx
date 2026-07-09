@@ -1,10 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import { AdminLayout } from "@/components/layout/AdminLayout";
 import { PrivateLayout } from "@/components/layout/PrivateLayout";
 import { RootLayout } from "@/components/layout/RootLayout";
 import { AdminRoute } from "@/features/auth/AdminRoute";
 import { ProtectedRoute } from "@/features/auth/ProtectedRoute";
-import { AdminHome } from "@/pages/admin/AdminHome";
+import { AdminBookings } from "@/pages/admin/AdminBookings";
+import { AdminClientDetail } from "@/pages/admin/AdminClientDetail";
+import { AdminClients } from "@/pages/admin/AdminClients";
+import { AdminPayments } from "@/pages/admin/AdminPayments";
 import { Dashboard } from "@/pages/app/Dashboard";
 import { Perfil } from "@/pages/app/Perfil";
 import { RegistroMensual } from "@/pages/app/RegistroMensual";
@@ -61,7 +65,17 @@ export const router = createBrowserRouter([
           {
             path: "admin",
             element: <AdminRoute />,
-            children: [{ index: true, element: <AdminHome /> }],
+            children: [
+              {
+                element: <AdminLayout />,
+                children: [
+                  { index: true, element: <AdminClients /> },
+                  { path: "clientes/:id", element: <AdminClientDetail /> },
+                  { path: "reservas", element: <AdminBookings /> },
+                  { path: "pagos", element: <AdminPayments /> },
+                ],
+              },
+            ],
           },
         ],
       },

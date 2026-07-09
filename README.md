@@ -20,7 +20,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 - [x] Fase 4 — Dashboard financiero + indicadores
 - [x] Fase 5 — Estrategia de inversión
 - [x] Fase 6 — Registro mensual + evolución del patrimonio
-- [ ] Fase 7 — Panel de administrador
+- [x] Fase 7 — Panel de administrador
 - [ ] Fase 8 — i18n (es/ca/en) + divisas
 - [ ] Fase 9 — Calendario de reservas + notificaciones por email
 - [ ] Fase 10 — Stripe (Checkout + webhook)
@@ -223,6 +223,22 @@ y el último registro mensual:
   (línea), alimentado por `financial_snapshots`.
 - Paleta de los gráficos validada con el script de accesibilidad del skill
   de visualización de datos (separación CVD y contraste verificados).
+
+## Panel de administrador (Fase 7)
+
+`/app/admin` (solo accesible con `role = 'admin'`, protegido por `AdminRoute`):
+
+- **Clientes**: listado con búsqueda por nombre/email; ficha de detalle de
+  solo lectura por cliente (KPIs, activos, pasivos, objetivos), reutilizando
+  `useDashboardData` y los hooks de `features/wealth` con el `id` del
+  cliente en vez del usuario autenticado — funciona porque las políticas RLS
+  ya permiten `select` al admin sobre las tablas de cualquier usuario.
+- **Reservas**: listado de todas las reservas con cambio de estado.
+- **Pagos**: listado de pagos con botón "Marcar como pagado" (pensado para
+  la sesión de 80 € con pago diferido, Fase 10).
+
+No se usa la `service_role` key en el frontend en ningún momento: todo el
+acceso del admin pasa por RLS con el helper `is_admin()`.
 
 ## Estructura del proyecto
 
