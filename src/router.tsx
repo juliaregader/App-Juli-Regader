@@ -1,3 +1,4 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 import { AdminLayout } from "@/components/layout/AdminLayout";
@@ -5,32 +6,51 @@ import { PrivateLayout } from "@/components/layout/PrivateLayout";
 import { RootLayout } from "@/components/layout/RootLayout";
 import { AdminRoute } from "@/features/auth/AdminRoute";
 import { ProtectedRoute } from "@/features/auth/ProtectedRoute";
-import { AdminAvailability } from "@/pages/admin/AdminAvailability";
-import { AdminBookings } from "@/pages/admin/AdminBookings";
-import { AdminClientDetail } from "@/pages/admin/AdminClientDetail";
-import { AdminClients } from "@/pages/admin/AdminClients";
-import { AdminPayments } from "@/pages/admin/AdminPayments";
-import { Dashboard } from "@/pages/app/Dashboard";
-import { Perfil } from "@/pages/app/Perfil";
-import { RegistroMensual } from "@/pages/app/RegistroMensual";
-import { Strategy } from "@/pages/app/Strategy";
-import { ForgotPassword } from "@/pages/auth/ForgotPassword";
-import { Login } from "@/pages/auth/Login";
-import { Register } from "@/pages/auth/Register";
-import { ResetPassword } from "@/pages/auth/ResetPassword";
-import { Onboarding } from "@/pages/onboarding/Onboarding";
-import { Contacto } from "@/pages/Contacto";
-import { ConsultaPatrimonial } from "@/pages/ConsultaPatrimonial";
-import { Home } from "@/pages/Home";
-import { AvisoLegal } from "@/pages/legal/AvisoLegal";
-import { Privacidad } from "@/pages/legal/Privacidad";
-import { Terminos } from "@/pages/legal/Terminos";
-import { NotFound } from "@/pages/NotFound";
-import { PaymentCancelled } from "@/pages/payments/PaymentCancelled";
-import { PaymentSuccess } from "@/pages/payments/PaymentSuccess";
-import { Reservas } from "@/pages/Reservas";
-import { Servicios } from "@/pages/Servicios";
-import { Status } from "@/pages/Status";
+
+const Home = lazy(() => import("@/pages/Home").then((m) => ({ default: m.Home })));
+const Servicios = lazy(() => import("@/pages/Servicios").then((m) => ({ default: m.Servicios })));
+const ConsultaPatrimonial = lazy(() =>
+  import("@/pages/ConsultaPatrimonial").then((m) => ({ default: m.ConsultaPatrimonial })),
+);
+const Reservas = lazy(() => import("@/pages/Reservas").then((m) => ({ default: m.Reservas })));
+const Contacto = lazy(() => import("@/pages/Contacto").then((m) => ({ default: m.Contacto })));
+const PaymentSuccess = lazy(() =>
+  import("@/pages/payments/PaymentSuccess").then((m) => ({ default: m.PaymentSuccess })),
+);
+const PaymentCancelled = lazy(() =>
+  import("@/pages/payments/PaymentCancelled").then((m) => ({ default: m.PaymentCancelled })),
+);
+const Status = lazy(() => import("@/pages/Status").then((m) => ({ default: m.Status })));
+const Register = lazy(() => import("@/pages/auth/Register").then((m) => ({ default: m.Register })));
+const Login = lazy(() => import("@/pages/auth/Login").then((m) => ({ default: m.Login })));
+const ForgotPassword = lazy(() =>
+  import("@/pages/auth/ForgotPassword").then((m) => ({ default: m.ForgotPassword })),
+);
+const ResetPassword = lazy(() =>
+  import("@/pages/auth/ResetPassword").then((m) => ({ default: m.ResetPassword })),
+);
+const AvisoLegal = lazy(() => import("@/pages/legal/AvisoLegal").then((m) => ({ default: m.AvisoLegal })));
+const Privacidad = lazy(() => import("@/pages/legal/Privacidad").then((m) => ({ default: m.Privacidad })));
+const Terminos = lazy(() => import("@/pages/legal/Terminos").then((m) => ({ default: m.Terminos })));
+const NotFound = lazy(() => import("@/pages/NotFound").then((m) => ({ default: m.NotFound })));
+
+const Dashboard = lazy(() => import("@/pages/app/Dashboard").then((m) => ({ default: m.Dashboard })));
+const Onboarding = lazy(() => import("@/pages/onboarding/Onboarding").then((m) => ({ default: m.Onboarding })));
+const Perfil = lazy(() => import("@/pages/app/Perfil").then((m) => ({ default: m.Perfil })));
+const Strategy = lazy(() => import("@/pages/app/Strategy").then((m) => ({ default: m.Strategy })));
+const RegistroMensual = lazy(() =>
+  import("@/pages/app/RegistroMensual").then((m) => ({ default: m.RegistroMensual })),
+);
+
+const AdminClients = lazy(() => import("@/pages/admin/AdminClients").then((m) => ({ default: m.AdminClients })));
+const AdminClientDetail = lazy(() =>
+  import("@/pages/admin/AdminClientDetail").then((m) => ({ default: m.AdminClientDetail })),
+);
+const AdminBookings = lazy(() => import("@/pages/admin/AdminBookings").then((m) => ({ default: m.AdminBookings })));
+const AdminPayments = lazy(() => import("@/pages/admin/AdminPayments").then((m) => ({ default: m.AdminPayments })));
+const AdminAvailability = lazy(() =>
+  import("@/pages/admin/AdminAvailability").then((m) => ({ default: m.AdminAvailability })),
+);
 
 export const router = createBrowserRouter([
   {

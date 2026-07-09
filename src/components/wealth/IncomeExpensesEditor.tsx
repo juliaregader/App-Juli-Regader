@@ -1,6 +1,7 @@
 import { Plus, Trash2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+import { useToast } from "@/components/ui/useToast";
 import { useAssets, useLiabilities, useMonthSnapshot, useUpsertMonthSnapshot } from "@/features/wealth/queries";
 import type { FinancialSnapshot } from "@/features/wealth/types";
 import { formatMonthLabel } from "@/lib/dates";
@@ -29,6 +30,7 @@ interface IncomeExpensesEditorProps {
 }
 
 export function IncomeExpensesEditor({ userId, month, onSaved, saveLabel = "Guardar", prefillFrom }: IncomeExpensesEditorProps) {
+  const { showToast } = useToast();
   const { data: snapshot, isLoading } = useMonthSnapshot(userId, month);
   const { data: assets = [] } = useAssets(userId);
   const { data: liabilities = [] } = useLiabilities(userId);
@@ -75,6 +77,7 @@ export function IncomeExpensesEditor({ userId, month, onSaved, saveLabel = "Guar
       total_assets: totalAssets,
       total_liabilities: totalLiabilities,
     });
+    showToast("Registro guardado");
     onSaved?.();
   };
 

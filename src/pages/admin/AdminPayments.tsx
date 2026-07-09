@@ -1,3 +1,4 @@
+import { useToast } from "@/components/ui/useToast";
 import { useAllPayments, useMarkPaymentPaid } from "@/features/admin/queries";
 import { formatCurrency } from "@/lib/format/currency";
 
@@ -7,6 +8,7 @@ const serviceLabels: Record<string, string> = {
 };
 
 export function AdminPayments() {
+  const { showToast } = useToast();
   const { data: payments = [], isLoading } = useAllPayments();
   const markPaid = useMarkPaymentPaid();
 
@@ -37,7 +39,11 @@ export function AdminPayments() {
               <td className="p-4">{new Date(p.created_at).toLocaleDateString("es-ES")}</td>
               <td className="p-4">
                 {p.status !== "pagado" && (
-                  <button type="button" className="btn-secondary" onClick={() => markPaid.mutate(p.id)}>
+                  <button
+                    type="button"
+                    className="btn-secondary"
+                    onClick={() => markPaid.mutate(p.id, { onSuccess: () => showToast("Pago marcado como pagado") })}
+                  >
                     Marcar como pagado
                   </button>
                 )}

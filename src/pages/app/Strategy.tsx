@@ -2,6 +2,7 @@ import { Plus, Trash2 } from "lucide-react";
 import { useState } from "react";
 
 import { AssetAllocationChart } from "@/components/charts/AssetAllocationChart";
+import { useToast } from "@/components/ui/useToast";
 import { useAuth } from "@/features/auth/useAuth";
 import {
   useDeleteStrategyAsset,
@@ -13,6 +14,7 @@ import {
 import { formatCurrency } from "@/lib/format/currency";
 
 export function Strategy() {
+  const { showToast } = useToast();
   const { user, profile } = useAuth();
   const currency = profile?.currency ?? "EUR";
   const { data: strategy, isLoading: loadingStrategy } = useStrategy(user?.id);
@@ -54,7 +56,10 @@ export function Strategy() {
             className="input max-w-xs"
             value={monthlyContribution}
             onChange={(e) => setMonthlyContribution(Number(e.target.value))}
-            onBlur={() => updateStrategy.mutate({ id: strategy.id, monthly_contribution: monthlyContribution })}
+            onBlur={() => {
+              updateStrategy.mutate({ id: strategy.id, monthly_contribution: monthlyContribution });
+              showToast("Aportación mensual actualizada");
+            }}
           />
           <span className="text-sm text-content-muted">{currency} / mes</span>
         </div>

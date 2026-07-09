@@ -5,6 +5,7 @@ import { AssetsEditor } from "@/components/wealth/AssetsEditor";
 import { GoalsEditor } from "@/components/wealth/GoalsEditor";
 import { IncomeExpensesEditor } from "@/components/wealth/IncomeExpensesEditor";
 import { LiabilitiesEditor } from "@/components/wealth/LiabilitiesEditor";
+import { useToast } from "@/components/ui/useToast";
 import { useUpdateProfile } from "@/features/auth/profileQueries";
 import { useAuth } from "@/features/auth/useAuth";
 import { useDeleteAccount, useExportMyData } from "@/features/privacy/queries";
@@ -19,27 +20,43 @@ const languages: { value: "es" | "ca" | "en"; label: string }[] = [
 
 export function Perfil() {
   const navigate = useNavigate();
+  const { showToast } = useToast();
   const { user, profile, signOut } = useAuth();
   const updateProfile = useUpdateProfile(user?.id);
   const exportData = useExportMyData(user?.id);
   const deleteAccount = useDeleteAccount();
   const [fullName, setFullName] = useState(profile?.full_name ?? "");
   const [phone, setPhone] = useState(profile?.phone ?? "");
-  const [saved, setSaved] = useState(false);
   const [confirmingDelete, setConfirmingDelete] = useState(false);
 
   const month = firstOfMonth();
 
   const handleSavePersonalInfo = async () => {
-    await updateProfile.mutateAsync({ full_name: fullName, phone });
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2500);
+    try {
+      await updateProfile.mutateAsync({ full_name: fullName, phone });
+      showToast("Datos personales guardados");
+    } catch {
+      showToast("No se han podido guardar los cambios", "error");
+    }
+  };
+
+  const handleExport = async () => {
+    try {
+      await exportData.mutateAsync();
+      showToast("Datos exportados");
+    } catch {
+      showToast("No se han podido exportar los datos", "error");
+    }
   };
 
   const handleDeleteAccount = async () => {
-    await deleteAccount.mutateAsync();
-    await signOut();
-    navigate("/", { replace: true });
+    try {
+      await deleteAccount.mutateAsync();
+      await signOut();
+      navigate("/", { replace: true });
+    } catch {
+      showToast("No se ha podido eliminar la cuenta. Inténtalo de nuevo.", "error");
+    }
   };
 
   return (
@@ -104,7 +121,6 @@ export function Perfil() {
         <button type="button" className="btn-primary mt-4" onClick={handleSavePersonalInfo}>
           Guardar datos personales
         </button>
-        {saved && <span className="ml-3 text-sm text-emerald-600">Guardado</span>}
       </div>
 
       <div className="card">
@@ -131,12 +147,7 @@ export function Perfil() {
         </p>
 
         <div className="mt-4 flex flex-wrap gap-3">
-          <button
-            type="button"
-            className="btn-secondary"
-            onClick={() => exportData.mutate()}
-            disabled={exportData.isPending}
-          >
+          <button type="button" className="btn-secondary" onClick={handleExport} disabled={exportData.isPending}>
             {exportData.isPending ? "Exportando…" : "Exportar mis datos (JSON)"}
           </button>
         </div>

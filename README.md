@@ -25,7 +25,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 - [x] Fase 9 — Calendario de reservas + notificaciones por email
 - [x] Fase 10 — Stripe (Checkout + webhook)
 - [x] Fase 11 — Legal / RGPD / disclaimers finales
-- [ ] Fase 12 — Pulido, responsive, QA
+- [x] Fase 12 — Pulido, responsive, QA
 
 ## Stack técnico
 
@@ -381,31 +381,85 @@ supabase functions deploy delete-account
 `SUPABASE_SERVICE_ROLE_KEY` ya están disponibles automáticamente en toda
 Edge Function de Supabase.)
 
+## Pulido, rendimiento y QA (Fase 12)
+
+- **Toasts de confirmación** (`ToastProvider`/`useToast`) en las acciones
+  explícitas con feedback más relevante: guardar datos personales, registro
+  mensual, aportación de la estrategia, exportar datos, marcar reservas/pagos
+  desde el admin — con variante de error si la operación falla.
+- **Rutas con lazy-loading**: todas las páginas (`React.lazy` + un único
+  `<Suspense>` en `App.tsx`) se cargan bajo demanda. El bundle inicial bajó
+  de ~1.13 MB a ~560 kB gzip; Recharts (~340 kB) ya no se descarga hasta
+  entrar en una pantalla con gráficos (Dashboard, Estrategia).
+- **Responsive**: verificado sin scroll horizontal a 375 px de ancho en la
+  web pública, autenticación y páginas legales; capturas de Home y Servicios
+  revisadas visualmente en mobile.
+- **Estados de carga/vacío/error**: cuidados en editores, listados del admin
+  y calendario de reservas (mensajes explícitos, nunca una pantalla en
+  blanco — ver también el `ErrorBoundary` de la Fase 0).
+- **SEO básico**: `useDocumentTitle` en todas las páginas públicas, meta
+  description y Open Graph en `index.html` con el logo.
+
 ## Estructura del proyecto
 
 ```
 src/
   components/
-    brand/        Logo e isotipo ("J" geométrica)
-    layout/        RootLayout/Header/Footer (público), PrivateLayout (área cliente)
-    ui/            Componentes de interfaz reutilizables
+    admin/         (tablas y controles usados solo en pages/admin)
+    booking/       BookingCalendar
+    brand/         Logo e isotipo ("J" geométrica)
+    charts/        AssetAllocationChart, NetWorthEvolutionChart (Recharts)
+    dashboard/     KpiCard
+    home/          WhyOrganize, Method, Experience
+    layout/        RootLayout/Header/Footer (público), PrivateLayout, AdminLayout
+    ui/            LanguageSwitcher, SignOutButton, ToastProvider
+    wealth/        AssetsEditor, LiabilitiesEditor, GoalsEditor, IncomeExpensesEditor
+                   (reutilizados en onboarding, Mi perfil y registro mensual)
+    ErrorBoundary.tsx
   features/
+    admin/         Consultas del panel de administrador
     auth/          AuthProvider, useAuth, ProtectedRoute, AdminRoute, tipos
+    booking/       Slots de disponibilidad y reservas
+    dashboard/     useDashboardData (indicadores derivados)
+    payments/      Checkout de Stripe
+    privacy/       Exportar datos / eliminar cuenta
+    strategy/      Estrategia de inversión del cliente
+    wealth/        Activos, pasivos, objetivos, registro mensual
   pages/
-    Home, Status (público)
+    Home, Servicios, ConsultaPatrimonial, Contacto, Reservas, Status (público)
     auth/          Register, Login, ForgotPassword, ResetPassword
     legal/         Aviso legal, privacidad, términos
-    app/           Área privada de cliente (AppHome; onboarding/dashboard en fases siguientes)
-    admin/         Panel de administrador (placeholder; Fase 7)
+    payments/      PaymentSuccess, PaymentCancelled
+    app/           Dashboard, Perfil, Strategy, RegistroMensual (área privada)
+    onboarding/     Carrusel de onboarding
+    admin/         AdminClients, AdminClientDetail, AdminBookings, AdminPayments,
+                   AdminAvailability
   lib/
     supabase/      Cliente Supabase (defensivo ante env vars ausentes)
     query/         Cliente TanStack Query
+    format/        formatCurrency/formatPercent (Intl.NumberFormat + idioma activo)
+    dates.ts       Helpers de mes/fecha (registro mensual, calendario)
     env.ts         VITE_APP_URL, clave publicable de Stripe
   i18n/            Configuración react-i18next + locales es/ca/en
-  router.tsx       Árbol de rutas completo
+  hooks/           useDocumentTitle
+  router.tsx       Árbol de rutas (lazy-loaded)
 supabase/
   migrations/    Migraciones SQL (esquema + RLS), numeradas y aplicables en orden
-  functions/     Edge Functions (Stripe webhook, notificaciones de reserva — Fases 9-10)
+  functions/
+    _shared/                    cors, resend, notifyAdmin (punto de extensión WhatsApp)
+    notify-booking/             email de reserva (admin + cliente)
+    create-checkout-session/    Stripe Checkout
+    stripe-webhook/             confirmación de pago
+    delete-account/             derecho de supresión RGPD
+```
+
+### Desplegar todas las Edge Functions de una vez
+
+```bash
+supabase functions deploy notify-booking
+supabase functions deploy create-checkout-session
+supabase functions deploy stripe-webhook
+supabase functions deploy delete-account
 ```
 
 ## Despliegue en Vercel

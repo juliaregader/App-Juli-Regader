@@ -1,3 +1,4 @@
+import { useToast } from "@/components/ui/useToast";
 import { useAllBookings, useUpdateBookingStatus } from "@/features/admin/queries";
 
 const serviceLabels: Record<string, string> = {
@@ -6,6 +7,7 @@ const serviceLabels: Record<string, string> = {
 };
 
 export function AdminBookings() {
+  const { showToast } = useToast();
   const { data: bookings = [], isLoading } = useAllBookings();
   const updateStatus = useUpdateBookingStatus();
 
@@ -42,7 +44,12 @@ export function AdminBookings() {
                 <select
                   className="input"
                   value={b.status}
-                  onChange={(e) => updateStatus.mutate({ id: b.id, status: e.target.value })}
+                  onChange={(e) =>
+                    updateStatus.mutate(
+                      { id: b.id, status: e.target.value },
+                      { onSuccess: () => showToast("Estado de la reserva actualizado") },
+                    )
+                  }
                 >
                   <option value="reservada">Reservada</option>
                   <option value="confirmada">Confirmada</option>
