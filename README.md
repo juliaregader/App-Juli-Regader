@@ -18,7 +18,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 - [x] Fase 2 — Web pública (Home, Servicios, Consulta, Contacto, Legal)
 - [x] Fase 3 — Onboarding (carrusel) + Mi perfil
 - [x] Fase 4 — Dashboard financiero + indicadores
-- [ ] Fase 5 — Estrategia de inversión
+- [x] Fase 5 — Estrategia de inversión
 - [ ] Fase 6 — Registro mensual + evolución del patrimonio
 - [ ] Fase 7 — Panel de administrador
 - [ ] Fase 8 — i18n (es/ca/en) + divisas

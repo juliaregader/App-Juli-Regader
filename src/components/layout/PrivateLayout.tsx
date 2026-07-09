@@ -19,6 +19,9 @@ export function PrivateLayout() {
             <Link to="/app" className="hover:text-brand-900">
               Mi área
             </Link>
+            <Link to="/app/estrategia" className="hover:text-brand-900">
+              Estrategia
+            </Link>
             <Link to="/app/perfil" className="hover:text-brand-900">
               Mi perfil
             </Link>
