@@ -2,6 +2,7 @@ import { Plus, Trash2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { useAssets, useLiabilities, useMonthSnapshot, useUpsertMonthSnapshot } from "@/features/wealth/queries";
+import type { FinancialSnapshot } from "@/features/wealth/types";
 import { formatMonthLabel } from "@/lib/dates";
 
 interface ExpenseRow {
@@ -11,14 +12,23 @@ interface ExpenseRow {
 
 const DEFAULT_CATEGORIES = ["Vivienda", "Alimentación", "Transporte", "Ocio", "Otros"];
 
+function rowsFromExpenses(expenses: Record<string, number> | undefined) {
+  const entries = Object.entries(expenses || {});
+  return entries.length > 0
+    ? entries.map(([category, amount]) => ({ category, amount }))
+    : DEFAULT_CATEGORIES.map((category) => ({ category, amount: 0 }));
+}
+
 interface IncomeExpensesEditorProps {
   userId: string | undefined;
   month: string;
   onSaved?: () => void;
   saveLabel?: string;
+  /** Mes anterior (si existe) para prellenar un mes nuevo aún sin registro. */
+  prefillFrom?: FinancialSnapshot | null;
 }
 
-export function IncomeExpensesEditor({ userId, month, onSaved, saveLabel = "Guardar" }: IncomeExpensesEditorProps) {
+export function IncomeExpensesEditor({ userId, month, onSaved, saveLabel = "Guardar", prefillFrom }: IncomeExpensesEditorProps) {
   const { data: snapshot, isLoading } = useMonthSnapshot(userId, month);
   const { data: assets = [] } = useAssets(userId);
   const { data: liabilities = [] } = useLiabilities(userId);
@@ -34,13 +44,15 @@ export function IncomeExpensesEditor({ userId, month, onSaved, saveLabel = "Guar
 
     if (snapshot) {
       setNetIncome(snapshot.net_income);
-      const entries = Object.entries(snapshot.expenses || {});
-      setRows(entries.length > 0 ? entries.map(([category, amount]) => ({ category, amount })) : DEFAULT_CATEGORIES.map((category) => ({ category, amount: 0 })));
+      setRows(rowsFromExpenses(snapshot.expenses));
+    } else if (prefillFrom) {
+      setNetIncome(prefillFrom.net_income);
+      setRows(rowsFromExpenses(prefillFrom.expenses));
     } else {
       setNetIncome(0);
       setRows(DEFAULT_CATEGORIES.map((category) => ({ category, amount: 0 })));
     }
-  }, [snapshot, isLoading, month]);
+  }, [snapshot, isLoading, month, prefillFrom]);
 
   const totalAssets = assets.reduce((sum, a) => sum + a.value, 0);
   const totalLiabilities = liabilities.reduce((sum, l) => sum + l.balance, 0);
@@ -70,6 +82,9 @@ export function IncomeExpensesEditor({ userId, month, onSaved, saveLabel = "Guar
     <div className="space-y-6">
       <div>
         <h3 className="font-semibold text-content capitalize">{formatMonthLabel(month)}</h3>
+        {!snapshot && prefillFrom && (
+          <p className="help-text">Precargado con los datos del mes anterior: edítalos si han cambiado.</p>
+        )}
       </div>
 
       <div>

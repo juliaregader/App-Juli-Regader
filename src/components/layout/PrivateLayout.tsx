@@ -22,6 +22,9 @@ export function PrivateLayout() {
             <Link to="/app/estrategia" className="hover:text-brand-900">
               Estrategia
             </Link>
+            <Link to="/app/registro-mensual" className="hover:text-brand-900">
+              Registro mensual
+            </Link>
             <Link to="/app/perfil" className="hover:text-brand-900">
               Mi perfil
             </Link>

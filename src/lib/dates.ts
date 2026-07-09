@@ -13,3 +13,13 @@ export function formatMonthLabel(monthIso: string, locale = "es-ES"): string {
   const date = new Date(Date.UTC(year, month - 1, 1));
   return new Intl.DateTimeFormat(locale, { month: "long", year: "numeric", timeZone: "UTC" }).format(date);
 }
+
+export function monthRange(startIso: string, endIso: string): string[] {
+  const months: string[] = [];
+  let cursor = startIso;
+  while (cursor <= endIso) {
+    months.push(cursor);
+    cursor = shiftMonth(cursor, 1);
+  }
+  return months;
+}

@@ -19,7 +19,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 - [x] Fase 3 — Onboarding (carrusel) + Mi perfil
 - [x] Fase 4 — Dashboard financiero + indicadores
 - [x] Fase 5 — Estrategia de inversión
-- [ ] Fase 6 — Registro mensual + evolución del patrimonio
+- [x] Fase 6 — Registro mensual + evolución del patrimonio
 - [ ] Fase 7 — Panel de administrador
 - [ ] Fase 8 — i18n (es/ca/en) + divisas
 - [ ] Fase 9 — Calendario de reservas + notificaciones por email

@@ -7,6 +7,7 @@ import { ProtectedRoute } from "@/features/auth/ProtectedRoute";
 import { AdminHome } from "@/pages/admin/AdminHome";
 import { Dashboard } from "@/pages/app/Dashboard";
 import { Perfil } from "@/pages/app/Perfil";
+import { RegistroMensual } from "@/pages/app/RegistroMensual";
 import { Strategy } from "@/pages/app/Strategy";
 import { ForgotPassword } from "@/pages/auth/ForgotPassword";
 import { Login } from "@/pages/auth/Login";
@@ -56,6 +57,7 @@ export const router = createBrowserRouter([
           { path: "onboarding", element: <Onboarding /> },
           { path: "perfil", element: <Perfil /> },
           { path: "estrategia", element: <Strategy /> },
+          { path: "registro-mensual", element: <RegistroMensual /> },
           {
             path: "admin",
             element: <AdminRoute />,
