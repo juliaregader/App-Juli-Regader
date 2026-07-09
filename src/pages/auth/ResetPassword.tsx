@@ -2,6 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { z } from "zod";
 
 import { supabase } from "@/lib/supabase/client";
@@ -19,6 +20,7 @@ const schema = z
 type FormValues = z.infer<typeof schema>;
 
 export function ResetPassword() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [serverError, setServerError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
@@ -45,15 +47,15 @@ export function ResetPassword() {
   return (
     <section className="container-page flex min-h-[60vh] items-center justify-center py-16">
       <div className="card w-full max-w-md text-center">
-        <h1 className="font-display text-2xl font-bold text-brand-900">Nueva contraseña</h1>
+        <h1 className="font-display text-2xl font-bold text-brand-900">{t("auth.resetPassword.title")}</h1>
 
         {done ? (
-          <p className="mt-4 text-content-muted">Contraseña actualizada. Redirigiendo…</p>
+          <p className="mt-4 text-content-muted">{t("auth.resetPassword.done")}</p>
         ) : (
           <form className="mt-6 space-y-4 text-left" onSubmit={handleSubmit(onSubmit)} noValidate>
             <div>
               <label className="label" htmlFor="password">
-                Nueva contraseña
+                {t("auth.resetPassword.password")}
               </label>
               <input id="password" type="password" className="input" {...register("password")} />
               {errors.password && <p className="mt-1 text-xs text-red-600">{errors.password.message}</p>}
@@ -61,7 +63,7 @@ export function ResetPassword() {
 
             <div>
               <label className="label" htmlFor="confirmPassword">
-                Confirmar contraseña
+                {t("auth.resetPassword.confirmPassword")}
               </label>
               <input
                 id="confirmPassword"
@@ -77,7 +79,7 @@ export function ResetPassword() {
             {serverError && <p className="text-sm text-red-600">{serverError}</p>}
 
             <button type="submit" className="btn-primary w-full" disabled={isSubmitting}>
-              {isSubmitting ? "Guardando…" : "Guardar contraseña"}
+              {isSubmitting ? t("auth.resetPassword.submitting") : t("auth.resetPassword.submit")}
             </button>
           </form>
         )}

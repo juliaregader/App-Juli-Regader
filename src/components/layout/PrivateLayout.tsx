@@ -1,10 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { Logo } from "@/components/brand/Logo";
 import { SignOutButton } from "@/components/ui/SignOutButton";
 import { useAuth } from "@/features/auth/useAuth";
 
 export function PrivateLayout() {
+  const { t } = useTranslation();
   const { profile, isAdmin } = useAuth();
 
   return (
@@ -17,20 +19,20 @@ export function PrivateLayout() {
 
           <nav className="hidden items-center gap-6 text-sm font-medium text-content-muted md:flex">
             <Link to="/app" className="hover:text-brand-900">
-              Mi área
+              {t("nav.myArea")}
             </Link>
             <Link to="/app/estrategia" className="hover:text-brand-900">
-              Estrategia
+              {t("nav.strategy")}
             </Link>
             <Link to="/app/registro-mensual" className="hover:text-brand-900">
-              Registro mensual
+              {t("nav.monthlyRegistry")}
             </Link>
             <Link to="/app/perfil" className="hover:text-brand-900">
-              Mi perfil
+              {t("nav.myProfile")}
             </Link>
             {isAdmin && (
               <Link to="/app/admin" className="hover:text-brand-900">
-                Administración
+                {t("nav.admin")}
               </Link>
             )}
           </nav>

@@ -16,7 +16,13 @@
     "booking": "Reservas",
     "contact": "Contacto",
     "login": "Acceder",
-    "register": "Crear tu perfil"
+    "register": "Crear tu perfil",
+    "myArea": "Mi área",
+    "strategy": "Estrategia",
+    "monthlyRegistry": "Registro mensual",
+    "myProfile": "Mi perfil",
+    "admin": "Administración",
+    "signOut": "Cerrar sesión"
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
@@ -35,5 +41,140 @@
     "title": "Página no encontrada",
     "description": "La página que buscas no existe o se ha movido.",
     "backHome": "Volver al inicio"
+  },
+  "home": {
+    "heroTitle": "JuliusCapital",
+    "heroSubtitle": "Organización financiera para tomar mejores decisiones.",
+    "ctaCreateProfile": "Crea tu perfil patrimonial",
+    "ctaBookSession": "Reservar una sesión",
+    "whyTitle": "Por qué organizar tu patrimonio",
+    "why": [
+      { "title": "Claridad", "description": "Una foto clara de tu situación financiera real: qué tienes, qué debes y cuánto ahorras." },
+      { "title": "Control del ahorro", "description": "Entiende a dónde va tu dinero cada mes y toma decisiones sobre tu tasa de ahorro." },
+      { "title": "Reducir el endeudamiento", "description": "Identifica tu ratio de endeudamiento y prioriza qué deudas amortizar antes." },
+      { "title": "Decisiones informadas", "description": "Indicadores claros para decidir con datos, no con intuición o presión externa." },
+      { "title": "Planificar objetivos", "description": "Define metas concretas (fondo de emergencia, vivienda, jubilación) y sigue tu progreso." }
+    ],
+    "methodTitle": "El método JuliusCapital",
+    "method": [
+      { "title": "1. Reunión inicial", "description": "Hablamos de tu situación, tus objetivos y cómo puede ayudarte JuliusCapital. Sin compromiso." },
+      { "title": "2. Dashboard financiero en la app", "description": "Cargamos tus ingresos, gastos, activos y pasivos: obtienes un panel claro con tus indicadores clave." },
+      { "title": "3. Te explico a través de dónde puedes invertir", "description": "Repasamos juntos las opciones y herramientas para que definas tu propia estrategia de inversión." },
+      { "title": "4. Seguimiento mensual", "description": "Actualizas tu registro cada mes y ves la evolución real de tu patrimonio a lo largo del tiempo." }
+    ],
+    "methodDisclaimer": "JuliusCapital no ofrece asesoramiento de inversión personalizado: en la sesión repasamos opciones y herramientas para que definas tu propia estrategia.",
+    "experienceTitle": "Experiencia profesional",
+    "experienceBio": "Julià Regader combina la docencia universitaria con la educación financiera práctica. Como profesor universitario de organización y operaciones, y como inversor personal desde hace años, ayuda a personas y familias a poner en orden su patrimonio y a entender sus propias decisiones financieras, con un enfoque didáctico y sin tecnicismos innecesarios.",
+    "experienceHighlights": ["Profesor universitario de organización y operaciones", "Educador financiero", "Inversor personal"],
+    "finalCtaTitle": "Empieza a organizar tu patrimonio hoy",
+    "ctaSeeServices": "Ver servicios"
+  },
+  "services": {
+    "title": "Servicios",
+    "subtitle": "Elige cómo quieres empezar a organizar tu patrimonio con JuliusCapital.",
+    "recommended": "Recomendado",
+    "planTitle": "Plan de organización patrimonial",
+    "planSubtitle": "Para quien quiere poner en orden todo su patrimonio y tener un dashboard vivo.",
+    "planPriceSuffix": "pago único",
+    "planIncludes": [
+      "Reunión inicial para entender tu situación y tus objetivos",
+      "Configuración completa de tu dashboard financiero (ingresos, gastos, activos, pasivos)",
+      "Cálculo de tus indicadores clave: patrimonio neto, ahorro, endeudamiento, liquidez",
+      "Sesión para repasar opciones y herramientas de inversión y definir tu propia estrategia",
+      "Acceso a tu área privada: registro mensual y evolución de tu patrimonio"
+    ],
+    "planCta": "Comprar el plan",
+    "sessionTitle": "Sesión individual",
+    "sessionSubtitle": "Para una consulta puntual, sin necesidad de contratar el plan completo.",
+    "sessionPriceSuffix": "/ 1 hora",
+    "sessionIncludes": [
+      "Sesión de 1 hora, en persona o por videollamada",
+      "Resolución de dudas concretas sobre tu situación financiera",
+      "Ideal si ya usas la app y quieres revisar tu progreso o un tema puntual"
+    ],
+    "sessionCta": "Reservar sesión",
+    "faqTitle": "Preguntas frecuentes",
+    "faqs": [
+      { "q": "¿Necesito el plan de 329 € para reservar una sesión suelta?", "a": "No, la sesión individual de 80 € es independiente y puedes reservarla sin haber contratado el plan." },
+      { "q": "¿JuliusCapital me dice en qué invertir?", "a": "No. JuliusCapital es una herramienta de organización y educación patrimonial. En las sesiones repasamos opciones y herramientas para que definas tu propia estrategia; la decisión de inversión es siempre tuya." },
+      { "q": "¿Puedo pagar la sesión de 80 € más adelante?", "a": "Sí: puedes reservar día y hora sin pagar por adelantado, y abonar la sesión después (o en el momento, si lo prefieres)." }
+    ]
+  },
+  "consultation": {
+    "title": "Consulta patrimonial",
+    "subtitle": "Al crear tu perfil en JuliusCapital, tu área privada te da acceso a:",
+    "items": [
+      { "title": "Dashboard financiero", "description": "Tu patrimonio neto, ahorro, endeudamiento y liquidez, siempre a la vista." },
+      { "title": "Indicadores claros", "description": "Cada indicador con su fórmula, su explicación y un semáforo de riesgo fácil de leer." },
+      { "title": "Seguimiento mensual", "description": "Actualiza tu registro cada mes y observa la evolución real de tu patrimonio." },
+      { "title": "Estrategia de inversión propia", "description": "Define y sigue tu propia estrategia: activos, % objetivo y aportación mensual." }
+    ],
+    "ctaCreateProfile": "Crea tu perfil patrimonial",
+    "ctaLogin": "Ya tengo cuenta, acceder",
+    "disclaimer": "JuliusCapital es una herramienta de organización patrimonial con fines educativos e informativos. No constituye asesoramiento financiero, fiscal ni de inversión personalizado."
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes dudas antes de empezar? Escríbenos o contáctanos directamente.",
+    "email": "Email",
+    "call": "Llamar",
+    "whatsapp": "WhatsApp",
+    "formName": "Nombre",
+    "formEmail": "Email",
+    "formMessage": "Mensaje",
+    "formSubmit": "Enviar mensaje",
+    "sentMessage": "Se ha abierto tu cliente de correo con el mensaje listo para enviar. Si no ocurre nada, escríbenos directamente a {{email}}."
+  },
+  "reservations": {
+    "title": "Reservas",
+    "comingSoon": "El calendario de reservas estará disponible muy pronto. Mientras tanto, contáctanos directamente para concretar tu sesión.",
+    "goToContact": "Ir a contacto"
+  },
+  "auth": {
+    "register": {
+      "title": "Crea tu perfil patrimonial",
+      "subtitle": "En unos minutos tendrás acceso a tu área privada en JuliusCapital.",
+      "fullName": "Nombre completo",
+      "email": "Email",
+      "phone": "Teléfono (opcional)",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "consent": "Acepto la política de privacidad y los términos de uso.",
+      "submit": "Crear mi perfil",
+      "submitting": "Creando cuenta…",
+      "haveAccount": "¿Ya tienes cuenta?",
+      "goToLogin": "Accede",
+      "successTitle": "Revisa tu correo",
+      "successDescription": "Te hemos enviado un enlace de confirmación. Ábrelo para activar tu cuenta y poder acceder.",
+      "goToLoginButton": "Ir a acceder"
+    },
+    "login": {
+      "title": "Accede a tu cuenta",
+      "email": "Email",
+      "password": "Contraseña",
+      "forgotPassword": "¿Has olvidado tu contraseña?",
+      "submit": "Acceder",
+      "submitting": "Accediendo…",
+      "noAccount": "¿Aún no tienes cuenta?",
+      "goToRegister": "Crea tu perfil",
+      "notConfirmed": "Debes confirmar tu email antes de acceder. Revisa tu bandeja de entrada.",
+      "invalidCredentials": "Email o contraseña incorrectos."
+    },
+    "forgotPassword": {
+      "title": "Recuperar contraseña",
+      "email": "Email",
+      "submit": "Enviar enlace",
+      "submitting": "Enviando…",
+      "sent": "Si existe una cuenta con ese email, te hemos enviado un enlace para restablecer tu contraseña.",
+      "backToLogin": "Volver a acceder"
+    },
+    "resetPassword": {
+      "title": "Nueva contraseña",
+      "password": "Nueva contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "submit": "Guardar contraseña",
+      "submitting": "Guardando…",
+      "done": "Contraseña actualizada. Redirigiendo…"
+    }
   }
 }

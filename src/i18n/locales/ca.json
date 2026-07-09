@@ -16,7 +16,13 @@
     "booking": "Reserves",
     "contact": "Contacte",
     "login": "Accedir",
-    "register": "Crea el teu perfil"
+    "register": "Crea el teu perfil",
+    "myArea": "La meva àrea",
+    "strategy": "Estratègia",
+    "monthlyRegistry": "Registre mensual",
+    "myProfile": "El meu perfil",
+    "admin": "Administració",
+    "signOut": "Tancar sessió"
   },
   "footer": {
     "rights": "Tots els drets reservats.",
@@ -35,5 +41,140 @@
     "title": "Pàgina no trobada",
     "description": "La pàgina que busques no existeix o s'ha mogut.",
     "backHome": "Tornar a l'inici"
+  },
+  "home": {
+    "heroTitle": "JuliusCapital",
+    "heroSubtitle": "Organització financera per prendre millors decisions.",
+    "ctaCreateProfile": "Crea el teu perfil patrimonial",
+    "ctaBookSession": "Reservar una sessió",
+    "whyTitle": "Per què organitzar el teu patrimoni",
+    "why": [
+      { "title": "Claredat", "description": "Una foto clara de la teva situació financera real: què tens, què deus i quant estalvies." },
+      { "title": "Control de l'estalvi", "description": "Entén on va els teus diners cada mes i pren decisions sobre la teva taxa d'estalvi." },
+      { "title": "Reduir l'endeutament", "description": "Identifica el teu ràtio d'endeutament i prioritza quins deutes amortitzar abans." },
+      { "title": "Decisions informades", "description": "Indicadors clars per decidir amb dades, no amb intuïció o pressió externa." },
+      { "title": "Planificar objectius", "description": "Defineix metes concretes (fons d'emergència, habitatge, jubilació) i segueix el teu progrés." }
+    ],
+    "methodTitle": "El mètode JuliusCapital",
+    "method": [
+      { "title": "1. Reunió inicial", "description": "Parlem de la teva situació, els teus objectius i com pot ajudar-te JuliusCapital. Sense compromís." },
+      { "title": "2. Dashboard financer a l'app", "description": "Carreguem els teus ingressos, despeses, actius i passius: obtens un panell clar amb els teus indicadors clau." },
+      { "title": "3. T'explico a través d'on pots invertir", "description": "Repassem juntes les opcions i eines perquè defineixis la teva pròpia estratègia d'inversió." },
+      { "title": "4. Seguiment mensual", "description": "Actualitzes el teu registre cada mes i veus l'evolució real del teu patrimoni al llarg del temps." }
+    ],
+    "methodDisclaimer": "JuliusCapital no ofereix assessorament d'inversió personalitzat: a la sessió repassem opcions i eines perquè defineixis la teva pròpia estratègia.",
+    "experienceTitle": "Experiència professional",
+    "experienceBio": "Julià Regader combina la docència universitària amb l'educació financera pràctica. Com a professor universitari d'organització i operacions, i com a inversor personal des de fa anys, ajuda persones i famílies a posar en ordre el seu patrimoni i a entendre les seves pròpies decisions financeres, amb un enfocament didàctic i sense tecnicismes innecessaris.",
+    "experienceHighlights": ["Professor universitari d'organització i operacions", "Educador financer", "Inversor personal"],
+    "finalCtaTitle": "Comença a organitzar el teu patrimoni avui",
+    "ctaSeeServices": "Veure serveis"
+  },
+  "services": {
+    "title": "Serveis",
+    "subtitle": "Tria com vols començar a organitzar el teu patrimoni amb JuliusCapital.",
+    "recommended": "Recomanat",
+    "planTitle": "Pla d'organització patrimonial",
+    "planSubtitle": "Per a qui vol posar en ordre tot el seu patrimoni i tenir un dashboard viu.",
+    "planPriceSuffix": "pagament únic",
+    "planIncludes": [
+      "Reunió inicial per entendre la teva situació i els teus objectius",
+      "Configuració completa del teu dashboard financer (ingressos, despeses, actius, passius)",
+      "Càlcul dels teus indicadors clau: patrimoni net, estalvi, endeutament, liquiditat",
+      "Sessió per repassar opcions i eines d'inversió i definir la teva pròpia estratègia",
+      "Accés a la teva àrea privada: registre mensual i evolució del teu patrimoni"
+    ],
+    "planCta": "Comprar el pla",
+    "sessionTitle": "Sessió individual",
+    "sessionSubtitle": "Per a una consulta puntual, sense necessitat de contractar el pla complet.",
+    "sessionPriceSuffix": "/ 1 hora",
+    "sessionIncludes": [
+      "Sessió d'1 hora, en persona o per videotrucada",
+      "Resolució de dubtes concrets sobre la teva situació financera",
+      "Ideal si ja uses l'app i vols revisar el teu progrés o un tema puntual"
+    ],
+    "sessionCta": "Reservar sessió",
+    "faqTitle": "Preguntes freqüents",
+    "faqs": [
+      { "q": "Necessito el pla de 329 € per reservar una sessió solta?", "a": "No, la sessió individual de 80 € és independent i la pots reservar sense haver contractat el pla." },
+      { "q": "JuliusCapital em diu en què invertir?", "a": "No. JuliusCapital és una eina d'organització i educació patrimonial. A les sessions repassem opcions i eines perquè defineixis la teva pròpia estratègia; la decisió d'inversió és sempre teva." },
+      { "q": "Puc pagar la sessió de 80 € més endavant?", "a": "Sí: pots reservar dia i hora sense pagar per avançat, i abonar la sessió després (o en el moment, si ho prefereixes)." }
+    ]
+  },
+  "consultation": {
+    "title": "Consulta patrimonial",
+    "subtitle": "En crear el teu perfil a JuliusCapital, la teva àrea privada et dona accés a:",
+    "items": [
+      { "title": "Dashboard financer", "description": "El teu patrimoni net, estalvi, endeutament i liquiditat, sempre a la vista." },
+      { "title": "Indicadors clars", "description": "Cada indicador amb la seva fórmula, la seva explicació i un semàfor de risc fàcil de llegir." },
+      { "title": "Seguiment mensual", "description": "Actualitza el teu registre cada mes i observa l'evolució real del teu patrimoni." },
+      { "title": "Estratègia d'inversió pròpia", "description": "Defineix i segueix la teva pròpia estratègia: actius, % objectiu i aportació mensual." }
+    ],
+    "ctaCreateProfile": "Crea el teu perfil patrimonial",
+    "ctaLogin": "Ja tinc compte, accedir",
+    "disclaimer": "JuliusCapital és una eina d'organització patrimonial amb finalitats educatives i informatives. No constitueix assessorament financer, fiscal ni d'inversió personalitzat."
+  },
+  "contact": {
+    "title": "Contacte",
+    "subtitle": "Tens dubtes abans de començar? Escriu-nos o contacta'ns directament.",
+    "email": "Email",
+    "call": "Trucar",
+    "whatsapp": "WhatsApp",
+    "formName": "Nom",
+    "formEmail": "Email",
+    "formMessage": "Missatge",
+    "formSubmit": "Enviar missatge",
+    "sentMessage": "S'ha obert el teu client de correu amb el missatge llest per enviar. Si no passa res, escriu-nos directament a {{email}}."
+  },
+  "reservations": {
+    "title": "Reserves",
+    "comingSoon": "El calendari de reserves estarà disponible molt aviat. Mentrestant, contacta'ns directament per concretar la teva sessió.",
+    "goToContact": "Anar a contacte"
+  },
+  "auth": {
+    "register": {
+      "title": "Crea el teu perfil patrimonial",
+      "subtitle": "En pocs minuts tindràs accés a la teva àrea privada a JuliusCapital.",
+      "fullName": "Nom complet",
+      "email": "Email",
+      "phone": "Telèfon (opcional)",
+      "password": "Contrasenya",
+      "confirmPassword": "Confirmar contrasenya",
+      "consent": "Accepto la política de privacitat i els termes d'ús.",
+      "submit": "Crear el meu perfil",
+      "submitting": "Creant compte…",
+      "haveAccount": "Ja tens compte?",
+      "goToLogin": "Accedeix",
+      "successTitle": "Revisa el teu correu",
+      "successDescription": "T'hem enviat un enllaç de confirmació. Obre'l per activar el teu compte i poder accedir.",
+      "goToLoginButton": "Anar a accedir"
+    },
+    "login": {
+      "title": "Accedeix al teu compte",
+      "email": "Email",
+      "password": "Contrasenya",
+      "forgotPassword": "Has oblidat la contrasenya?",
+      "submit": "Accedir",
+      "submitting": "Accedint…",
+      "noAccount": "Encara no tens compte?",
+      "goToRegister": "Crea el teu perfil",
+      "notConfirmed": "Has de confirmar el teu email abans d'accedir. Revisa la teva bústia d'entrada.",
+      "invalidCredentials": "Email o contrasenya incorrectes."
+    },
+    "forgotPassword": {
+      "title": "Recuperar contrasenya",
+      "email": "Email",
+      "submit": "Enviar enllaç",
+      "submitting": "Enviant…",
+      "sent": "Si existeix un compte amb aquest email, t'hem enviat un enllaç per restablir la teva contrasenya.",
+      "backToLogin": "Tornar a accedir"
+    },
+    "resetPassword": {
+      "title": "Nova contrasenya",
+      "password": "Nova contrasenya",
+      "confirmPassword": "Confirmar contrasenya",
+      "submit": "Desar contrasenya",
+      "submitting": "Desant…",
+      "done": "Contrasenya actualitzada. Redirigint…"
+    }
   }
 }

@@ -1,21 +1,25 @@
+import i18n from "@/i18n";
+
 const localeByLanguage: Record<string, string> = {
   es: "es-ES",
   ca: "ca-ES",
   en: "en-GB",
 };
 
-export function formatCurrency(value: number, currency = "EUR", language = "es"): string {
-  const locale = localeByLanguage[language] ?? "es-ES";
-  return new Intl.NumberFormat(locale, {
+function resolveLocale(language?: string): string {
+  return localeByLanguage[language ?? i18n.language] ?? "es-ES";
+}
+
+export function formatCurrency(value: number, currency = "EUR", language?: string): string {
+  return new Intl.NumberFormat(resolveLocale(language), {
     style: "currency",
     currency,
     maximumFractionDigits: 0,
   }).format(value);
 }
 
-export function formatPercent(value: number, language = "es"): string {
-  const locale = localeByLanguage[language] ?? "es-ES";
-  return new Intl.NumberFormat(locale, {
+export function formatPercent(value: number, language?: string): string {
+  return new Intl.NumberFormat(resolveLocale(language), {
     style: "percent",
     maximumFractionDigits: 1,
   }).format(value);

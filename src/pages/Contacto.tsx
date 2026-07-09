@@ -2,6 +2,7 @@ import { Mail, MessageCircle, Phone } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslation } from "react-i18next";
 import { z } from "zod";
 
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
@@ -19,7 +20,8 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 export function Contacto() {
-  useDocumentTitle("Contacto");
+  const { t } = useTranslation();
+  useDocumentTitle(t("contact.title"));
   const [sent, setSent] = useState(false);
   const {
     register,
@@ -37,55 +39,52 @@ export function Contacto() {
   return (
     <section className="container-page py-16 sm:py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <h1 className="font-display text-3xl font-bold text-brand-900 sm:text-4xl">Contacto</h1>
-        <p className="mt-3 text-content-muted">
-          ¿Tienes dudas antes de empezar? Escríbenos o contáctanos directamente.
-        </p>
+        <h1 className="font-display text-3xl font-bold text-brand-900 sm:text-4xl">{t("contact.title")}</h1>
+        <p className="mt-3 text-content-muted">{t("contact.subtitle")}</p>
       </div>
 
       <div className="mx-auto mt-10 flex max-w-md flex-wrap justify-center gap-3">
         <a href={`mailto:${ADMIN_EMAIL}`} className="btn-secondary">
-          <Mail className="h-4 w-4" aria-hidden /> Email
+          <Mail className="h-4 w-4" aria-hidden /> {t("contact.email")}
         </a>
         <a href={`tel:${ADMIN_PHONE_DISPLAY.replace(/\s/g, "")}`} className="btn-secondary">
-          <Phone className="h-4 w-4" aria-hidden /> Llamar
+          <Phone className="h-4 w-4" aria-hidden /> {t("contact.call")}
         </a>
         <a href={ADMIN_WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-secondary">
-          <MessageCircle className="h-4 w-4" aria-hidden /> WhatsApp
+          <MessageCircle className="h-4 w-4" aria-hidden /> {t("contact.whatsapp")}
         </a>
       </div>
 
       <div className="card mx-auto mt-10 max-w-md">
         {sent ? (
           <p className="text-center text-content-muted">
-            Se ha abierto tu cliente de correo con el mensaje listo para enviar. Si no ocurre
-            nada, escríbenos directamente a {ADMIN_EMAIL}.
+            {t("contact.sentMessage", { email: ADMIN_EMAIL })}
           </p>
         ) : (
           <form className="space-y-4" onSubmit={handleSubmit(onSubmit)} noValidate>
             <div>
               <label className="label" htmlFor="name">
-                Nombre
+                {t("contact.formName")}
               </label>
               <input id="name" className="input" {...register("name")} />
               {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name.message}</p>}
             </div>
             <div>
               <label className="label" htmlFor="email">
-                Email
+                {t("contact.formEmail")}
               </label>
               <input id="email" type="email" className="input" {...register("email")} />
               {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email.message}</p>}
             </div>
             <div>
               <label className="label" htmlFor="message">
-                Mensaje
+                {t("contact.formMessage")}
               </label>
               <textarea id="message" rows={4} className="input" {...register("message")} />
               {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message.message}</p>}
             </div>
             <button type="submit" className="btn-primary w-full">
-              Enviar mensaje
+              {t("contact.formSubmit")}
             </button>
           </form>
         )}

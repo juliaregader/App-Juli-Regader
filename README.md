@@ -21,7 +21,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 - [x] Fase 5 — Estrategia de inversión
 - [x] Fase 6 — Registro mensual + evolución del patrimonio
 - [x] Fase 7 — Panel de administrador
-- [ ] Fase 8 — i18n (es/ca/en) + divisas
+- [x] Fase 8 — i18n (es/ca/en) + divisas
 - [ ] Fase 9 — Calendario de reservas + notificaciones por email
 - [ ] Fase 10 — Stripe (Checkout + webhook)
 - [ ] Fase 11 — Legal / RGPD / disclaimers finales
@@ -239,6 +239,27 @@ y el último registro mensual:
 
 No se usa la `service_role` key en el frontend en ningún momento: todo el
 acceso del admin pasa por RLS con el helper `is_admin()`.
+
+## Idiomas y divisas (Fase 8)
+
+Selector de idioma (`LanguageSwitcher`) con castellano (por defecto), català e
+English, usando `react-i18next` (`src/i18n`). **Cobertura de traducción en
+esta fase:** toda la web pública (Home, Servicios, Consulta patrimonial,
+Contacto, Reservas), las páginas de autenticación (registro, login,
+recuperación de contraseña) y la navegación (cabecera pública, menú del área
+privada, pestañas del admin) están completamente traducidas a los 3 idiomas,
+incluido el disclaimer legal. El **área de trabajo patrimonial en sí**
+(dashboard, estrategia, registro mensual, editores de activos/pasivos/
+objetivos, tablas del admin) se mantiene en castellano por ahora: la
+infraestructura i18n ya está lista (estructura de locales, `profile.language`
+guardado en Supabase) para traducirla sin cambios de arquitectura cuando se
+priorice.
+
+**Divisas:** selector en "Mi perfil" (EUR por defecto, USD, GBP, CHF),
+guardado en `profiles.currency`. `formatCurrency`/`formatPercent`
+(`src/lib/format/currency.ts`) usan `Intl.NumberFormat` y toman el idioma
+activo de la UI automáticamente, así que cualquier importe en la app respeta
+tanto la divisa elegida como el idioma seleccionado.
 
 ## Estructura del proyecto
 

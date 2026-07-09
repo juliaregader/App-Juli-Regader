@@ -16,7 +16,13 @@
     "booking": "Bookings",
     "contact": "Contact",
     "login": "Sign in",
-    "register": "Create your profile"
+    "register": "Create your profile",
+    "myArea": "My area",
+    "strategy": "Strategy",
+    "monthlyRegistry": "Monthly tracking",
+    "myProfile": "My profile",
+    "admin": "Administration",
+    "signOut": "Sign out"
   },
   "footer": {
     "rights": "All rights reserved.",
@@ -35,5 +41,140 @@
     "title": "Page not found",
     "description": "The page you're looking for doesn't exist or has moved.",
     "backHome": "Back to home"
+  },
+  "home": {
+    "heroTitle": "JuliusCapital",
+    "heroSubtitle": "Financial organization to make better decisions.",
+    "ctaCreateProfile": "Create your wealth profile",
+    "ctaBookSession": "Book a session",
+    "whyTitle": "Why organize your wealth",
+    "why": [
+      { "title": "Clarity", "description": "A clear picture of your real financial situation: what you have, what you owe and how much you save." },
+      { "title": "Savings control", "description": "Understand where your money goes each month and make decisions about your savings rate." },
+      { "title": "Reduce debt", "description": "Identify your debt ratio and prioritize which debts to pay off first." },
+      { "title": "Informed decisions", "description": "Clear indicators to decide with data, not intuition or outside pressure." },
+      { "title": "Plan your goals", "description": "Set concrete goals (emergency fund, home, early retirement) and track your progress." }
+    ],
+    "methodTitle": "The JuliusCapital method",
+    "method": [
+      { "title": "1. Initial meeting", "description": "We talk about your situation, your goals and how JuliusCapital can help. No commitment." },
+      { "title": "2. Financial dashboard in the app", "description": "We load your income, expenses, assets and liabilities: you get a clear panel with your key indicators." },
+      { "title": "3. I show you where you can invest", "description": "We go through options and tools together so you define your own investment strategy." },
+      { "title": "4. Monthly tracking", "description": "You update your record every month and see the real evolution of your wealth over time." }
+    ],
+    "methodDisclaimer": "JuliusCapital does not offer personalized investment advice: in the session we review options and tools so you define your own strategy.",
+    "experienceTitle": "Professional experience",
+    "experienceBio": "Julià Regader combines university teaching with practical financial education. As a university professor of organization and operations, and as a personal investor for years, he helps people and families put their wealth in order and understand their own financial decisions, with a hands-on approach and no unnecessary jargon.",
+    "experienceHighlights": ["University professor of organization and operations", "Financial educator", "Personal investor"],
+    "finalCtaTitle": "Start organizing your wealth today",
+    "ctaSeeServices": "See services"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Choose how you want to start organizing your wealth with JuliusCapital.",
+    "recommended": "Recommended",
+    "planTitle": "Wealth organization plan",
+    "planSubtitle": "For anyone who wants to put their whole wealth in order and have a living dashboard.",
+    "planPriceSuffix": "one-time payment",
+    "planIncludes": [
+      "Initial meeting to understand your situation and your goals",
+      "Full setup of your financial dashboard (income, expenses, assets, liabilities)",
+      "Calculation of your key indicators: net worth, savings, debt, liquidity",
+      "Session to review investment options and tools and define your own strategy",
+      "Access to your private area: monthly tracking and wealth evolution"
+    ],
+    "planCta": "Buy the plan",
+    "sessionTitle": "Individual session",
+    "sessionSubtitle": "For a one-off consultation, without needing to buy the full plan.",
+    "sessionPriceSuffix": "/ 1 hour",
+    "sessionIncludes": [
+      "1-hour session, in person or by video call",
+      "Answers to specific questions about your financial situation",
+      "Ideal if you already use the app and want to review your progress or a specific topic"
+    ],
+    "sessionCta": "Book a session",
+    "faqTitle": "Frequently asked questions",
+    "faqs": [
+      { "q": "Do I need the 329 € plan to book a single session?", "a": "No, the 80 € individual session is independent and you can book it without having bought the plan." },
+      { "q": "Does JuliusCapital tell me what to invest in?", "a": "No. JuliusCapital is a wealth organization and education tool. In sessions we review options and tools so you define your own strategy; the investment decision is always yours." },
+      { "q": "Can I pay for the 80 € session later?", "a": "Yes: you can book a day and time without paying in advance, and pay for the session afterwards (or on the spot, if you prefer)." }
+    ]
+  },
+  "consultation": {
+    "title": "Wealth consultation",
+    "subtitle": "When you create your profile on JuliusCapital, your private area gives you access to:",
+    "items": [
+      { "title": "Financial dashboard", "description": "Your net worth, savings, debt and liquidity, always in view." },
+      { "title": "Clear indicators", "description": "Every indicator with its formula, its explanation and an easy-to-read risk signal." },
+      { "title": "Monthly tracking", "description": "Update your record every month and watch the real evolution of your wealth." },
+      { "title": "Your own investment strategy", "description": "Define and track your own strategy: assets, target % and monthly contribution." }
+    ],
+    "ctaCreateProfile": "Create your wealth profile",
+    "ctaLogin": "I already have an account, sign in",
+    "disclaimer": "JuliusCapital is a wealth organization tool for educational and informational purposes. It does not constitute personalized financial, tax or investment advice."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Questions before you start? Write to us or contact us directly.",
+    "email": "Email",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message",
+    "formSubmit": "Send message",
+    "sentMessage": "Your email client has opened with the message ready to send. If nothing happens, write to us directly at {{email}}."
+  },
+  "reservations": {
+    "title": "Bookings",
+    "comingSoon": "The booking calendar will be available very soon. Meanwhile, contact us directly to arrange your session.",
+    "goToContact": "Go to contact"
+  },
+  "auth": {
+    "register": {
+      "title": "Create your wealth profile",
+      "subtitle": "In a few minutes you'll have access to your private area on JuliusCapital.",
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "consent": "I accept the privacy policy and the terms of use.",
+      "submit": "Create my profile",
+      "submitting": "Creating account…",
+      "haveAccount": "Already have an account?",
+      "goToLogin": "Sign in",
+      "successTitle": "Check your email",
+      "successDescription": "We've sent you a confirmation link. Open it to activate your account and sign in.",
+      "goToLoginButton": "Go to sign in"
+    },
+    "login": {
+      "title": "Sign in to your account",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot your password?",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "noAccount": "Don't have an account yet?",
+      "goToRegister": "Create your profile",
+      "notConfirmed": "You must confirm your email before signing in. Check your inbox.",
+      "invalidCredentials": "Incorrect email or password."
+    },
+    "forgotPassword": {
+      "title": "Recover password",
+      "email": "Email",
+      "submit": "Send link",
+      "submitting": "Sending…",
+      "sent": "If an account exists with that email, we've sent you a link to reset your password.",
+      "backToLogin": "Back to sign in"
+    },
+    "resetPassword": {
+      "title": "New password",
+      "password": "New password",
+      "confirmPassword": "Confirm password",
+      "submit": "Save password",
+      "submitting": "Saving…",
+      "done": "Password updated. Redirecting…"
+    }
   }
 }
