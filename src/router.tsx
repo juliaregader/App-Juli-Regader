@@ -6,10 +6,12 @@ import { AdminRoute } from "@/features/auth/AdminRoute";
 import { ProtectedRoute } from "@/features/auth/ProtectedRoute";
 import { AdminHome } from "@/pages/admin/AdminHome";
 import { AppHome } from "@/pages/app/AppHome";
+import { Perfil } from "@/pages/app/Perfil";
 import { ForgotPassword } from "@/pages/auth/ForgotPassword";
 import { Login } from "@/pages/auth/Login";
 import { Register } from "@/pages/auth/Register";
 import { ResetPassword } from "@/pages/auth/ResetPassword";
+import { Onboarding } from "@/pages/onboarding/Onboarding";
 import { Contacto } from "@/pages/Contacto";
 import { ConsultaPatrimonial } from "@/pages/ConsultaPatrimonial";
 import { Home } from "@/pages/Home";
@@ -50,6 +52,8 @@ export const router = createBrowserRouter([
         element: <PrivateLayout />,
         children: [
           { index: true, element: <AppHome /> },
+          { path: "onboarding", element: <Onboarding /> },
+          { path: "perfil", element: <Perfil /> },
           {
             path: "admin",
             element: <AdminRoute />,

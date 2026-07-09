@@ -16,7 +16,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 - [x] Fase 0 — Setup: scaffolding, marca, página de estado de env vars
 - [x] Fase 1 — Supabase: esquema, RLS, Auth, SMTP propio, rol admin
 - [x] Fase 2 — Web pública (Home, Servicios, Consulta, Contacto, Legal)
-- [ ] Fase 3 — Onboarding (carrusel) + Mi perfil
+- [x] Fase 3 — Onboarding (carrusel) + Mi perfil
 - [ ] Fase 4 — Dashboard financiero + indicadores
 - [ ] Fase 5 — Estrategia de inversión
 - [ ] Fase 6 — Registro mensual + evolución del patrimonio
@@ -191,6 +191,23 @@ obligatorio). `ProtectedRoute` protege `/app/*` (requiere sesión) y
 Site URL = `VITE_APP_URL` de producción; Redirect URLs = ese mismo dominio +
 `http://localhost:5173`. Sin esto, los enlaces de confirmación de email y de
 recuperación de contraseña no redirigirán correctamente.
+
+## Onboarding y Mi perfil (Fase 3)
+
+Al entrar por primera vez (`/app`), si `profile.onboarding_completed` es
+`false` el cliente es redirigido a `/app/onboarding`: un carrusel de 5 pasos
+(ingresos y gastos, activos, pasivos, objetivos, resumen) con barra de
+progreso, cada campo con texto de ejemplo orientativo, y un enlace "Rellenar
+más tarde" que marca el onboarding como completado sin exigir todos los
+datos. Assets, liabilities y goals se guardan fila a fila en cuanto se
+añaden/editan (sin esperar a un "Guardar" final); ingresos y gastos del mes
+en curso se guardan como un `financial_snapshot` al pasar al siguiente paso.
+
+Toda esta información es editable en cualquier momento desde **Mi perfil**
+(`/app/perfil`), que reutiliza exactamente los mismos componentes
+(`IncomeExpensesEditor`, `AssetsEditor`, `LiabilitiesEditor`, `GoalsEditor`)
+en una sola página, además de los datos personales (nombre, teléfono,
+idioma, divisa).
 
 ## Estructura del proyecto
 
