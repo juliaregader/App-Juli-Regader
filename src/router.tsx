@@ -5,6 +5,7 @@ import { PrivateLayout } from "@/components/layout/PrivateLayout";
 import { RootLayout } from "@/components/layout/RootLayout";
 import { AdminRoute } from "@/features/auth/AdminRoute";
 import { ProtectedRoute } from "@/features/auth/ProtectedRoute";
+import { AdminAvailability } from "@/pages/admin/AdminAvailability";
 import { AdminBookings } from "@/pages/admin/AdminBookings";
 import { AdminClientDetail } from "@/pages/admin/AdminClientDetail";
 import { AdminClients } from "@/pages/admin/AdminClients";
@@ -73,6 +74,7 @@ export const router = createBrowserRouter([
                   { path: "clientes/:id", element: <AdminClientDetail /> },
                   { path: "reservas", element: <AdminBookings /> },
                   { path: "pagos", element: <AdminPayments /> },
+                  { path: "disponibilidad", element: <AdminAvailability /> },
                 ],
               },
             ],

@@ -22,7 +22,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 - [x] Fase 6 — Registro mensual + evolución del patrimonio
 - [x] Fase 7 — Panel de administrador
 - [x] Fase 8 — i18n (es/ca/en) + divisas
-- [ ] Fase 9 — Calendario de reservas + notificaciones por email
+- [x] Fase 9 — Calendario de reservas + notificaciones por email
 - [ ] Fase 10 — Stripe (Checkout + webhook)
 - [ ] Fase 11 — Legal / RGPD / disclaimers finales
 - [ ] Fase 12 — Pulido, responsive, QA
@@ -260,6 +260,45 @@ guardado en `profiles.currency`. `formatCurrency`/`formatPercent`
 (`src/lib/format/currency.ts`) usan `Intl.NumberFormat` y toman el idioma
 activo de la UI automáticamente, así que cualquier importe en la app respeta
 tanto la divisa elegida como el idioma seleccionado.
+
+## Calendario de reservas y notificaciones (Fase 9)
+
+- **Disponibilidad configurable por el admin** (`/app/admin/disponibilidad`):
+  franjas semanales (día, hora de inicio/fin, duración del slot) y bloqueos
+  puntuales (día completo o un tramo horario). Seed inicial: L–V, 9:00–14:00
+  y 16:00–19:00, slots de 1h — ajustable desde el panel en cualquier momento.
+- **`public.get_available_slots(p_date)`**: función `security definer` que
+  cruza franjas, bloqueos y reservas activas y devuelve solo los huecos
+  libres, en la zona horaria `Europe/Madrid`. Es el único punto de lectura
+  de disponibilidad expuesto a `anon`/`authenticated`: las tablas
+  `availability_rules`/`availability_blocks`/`bookings` no son legibles
+  directamente por el público (verificado con RLS contra un Postgres real).
+- **Anti doble-reserva**: además del índice único parcial de la Fase 1, la
+  propia función excluye cualquier hueco que se solape con una reserva
+  activa, comprobado insertando una reserva y confirmando que ese hueco
+  desaparece de los resultados.
+- **Calendario público** (`/reservas`, `BookingCalendar`): selector de
+  servicio, tira de próximos 21 días y huecos disponibles del día
+  seleccionado; funciona con o sin sesión iniciada.
+- **Notificaciones por email**: al confirmar una reserva se invoca la Edge
+  Function `notify-booking`, que relee la reserva con la `service_role` key
+  (nunca confía en lo que envía el cliente) y envía, vía Resend:
+  (a) aviso al admin (`ADMIN_EMAIL`) y (b) confirmación al cliente.
+- **`notifyAdmin()`** (`supabase/functions/_shared/notifyAdmin.ts`) es el
+  único punto de notificación al admin. Hoy solo envía email; para añadir
+  WhatsApp más adelante (Twilio, ver `.env.example` — `ADMIN_PHONE` y
+  `TWILIO_*`, todavía sin configurar) solo hay que añadir una rama dentro de
+  esa función, sin tocar el resto del código.
+
+### Desplegar las Edge Functions
+
+```bash
+supabase functions deploy notify-booking
+supabase secrets set RESEND_API_KEY=... ADMIN_EMAIL=juliaregader@gmail.com RESEND_FROM="JuliusCapital <no-reply@tudominio.com>"
+```
+
+`RESEND_FROM` debe usar un dominio verificado en Resend (mismo SPF/DKIM que
+el SMTP de Supabase Auth, ver checklist de despliegue más arriba).
 
 ## Estructura del proyecto
 

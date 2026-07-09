@@ -5,6 +5,7 @@ const tabs = [
   { to: "/app/admin", label: "Clientes", end: true },
   { to: "/app/admin/reservas", label: "Reservas" },
   { to: "/app/admin/pagos", label: "Pagos" },
+  { to: "/app/admin/disponibilidad", label: "Disponibilidad" },
 ];
 
 export function AdminLayout() {
