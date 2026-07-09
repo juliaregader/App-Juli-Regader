@@ -24,7 +24,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 - [x] Fase 8 — i18n (es/ca/en) + divisas
 - [x] Fase 9 — Calendario de reservas + notificaciones por email
 - [x] Fase 10 — Stripe (Checkout + webhook)
-- [ ] Fase 11 — Legal / RGPD / disclaimers finales
+- [x] Fase 11 — Legal / RGPD / disclaimers finales
 - [ ] Fase 12 — Pulido, responsive, QA
 
 ## Stack técnico
@@ -345,6 +345,41 @@ el SMTP de Supabase Auth, ver checklist de despliegue más arriba).
 - La `STRIPE_SECRET_KEY` y el `STRIPE_WEBHOOK_SECRET` solo existen como
   secretos de Edge Functions; el frontend únicamente usa la publishable key
   a través de `VITE_STRIPE_PUBLISHABLE_KEY`.
+
+## Legal, RGPD y disclaimers (Fase 11)
+
+- **Aviso legal, privacidad y términos de uso** (`/legal/*`) con contenido
+  completo: naturaleza no regulada del servicio (sin asesoramiento MiFID
+  II), base legal del tratamiento, encargados de tratamiento (Supabase,
+  Stripe, Resend), derechos ARCO y cómo ejercerlos. **Quedan marcados como
+  editables** los datos fiscales exactos del titular (NIF, domicilio) —
+  búscalos como `[Marcador editable...]` en `src/pages/legal/*.tsx` y
+  sustitúyelos antes de publicar; se recomienda una revisión final por un
+  abogado antes de operar comercialmente.
+- **Checkbox de consentimiento obligatorio** en el registro (`/registro`),
+  enlazando a privacidad y términos.
+- **Disclaimer de inversión** visible en el pie de página (todas las
+  páginas) y en las secciones de inversión/estrategia (Home, Consulta
+  patrimonial, Estrategia de inversión), en los 3 idiomas.
+- **Derechos RGPD ejercitables desde la app** (`/app/perfil`):
+  - *Acceso/portabilidad:* botón "Exportar mis datos (JSON)" descarga
+    perfil, activos, pasivos, objetivos, registros mensuales y estrategia.
+  - *Supresión:* botón "Eliminar mi cuenta" invoca la Edge Function
+    `delete-account`, que verifica la sesión del propio usuario y borra su
+    `auth.users` con la `service_role` key. Al estar `profiles.id` definido
+    como `references auth.users (id) on delete cascade` (y el resto de
+    tablas patrimoniales como `references profiles (id) on delete
+    cascade`), un único borrado elimina realmente todos los datos —
+    verificado insertando datos de prueba y confirmando que desaparecen
+    tras el `delete` en un Postgres real.
+
+```bash
+supabase functions deploy delete-account
+```
+
+(No necesita secretos adicionales: `SUPABASE_URL`, `SUPABASE_ANON_KEY` y
+`SUPABASE_SERVICE_ROLE_KEY` ya están disponibles automáticamente en toda
+Edge Function de Supabase.)
 
 ## Estructura del proyecto
 
