@@ -1,16 +1,36 @@
 import { Check } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { useAuth } from "@/features/auth/useAuth";
+import { useCreateCheckout } from "@/features/payments/queries";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export function Servicios() {
   const { t } = useTranslation();
   useDocumentTitle(t("services.title"));
+  const { user, profile } = useAuth();
+  const createCheckout = useCreateCheckout();
+  const [checkoutError, setCheckoutError] = useState(false);
 
   const planIncludes = t("services.planIncludes", { returnObjects: true }) as string[];
   const sessionIncludes = t("services.sessionIncludes", { returnObjects: true }) as string[];
   const faqs = t("services.faqs", { returnObjects: true }) as { q: string; a: string }[];
+
+  const handleBuyPlan = async () => {
+    setCheckoutError(false);
+    try {
+      const { url } = await createCheckout.mutateAsync({
+        service: "plan_329",
+        userId: user!.id,
+        email: profile?.email ?? user!.email!,
+      });
+      window.location.assign(url);
+    } catch {
+      setCheckoutError(true);
+    }
+  };
 
   return (
     <section className="container-page py-16 sm:py-20">
@@ -39,9 +59,25 @@ export function Servicios() {
             ))}
           </ul>
 
-          <Link to="/registro?plan=329" className="btn-primary mt-8 w-full sm:w-auto">
-            {t("services.planCta")}
-          </Link>
+          {user ? (
+            <button
+              type="button"
+              className="btn-primary mt-8 w-full sm:w-auto"
+              onClick={handleBuyPlan}
+              disabled={createCheckout.isPending}
+            >
+              {createCheckout.isPending ? "Redirigiendo a pago…" : t("services.planCta")}
+            </button>
+          ) : (
+            <Link to="/registro?plan=329" className="btn-primary mt-8 w-full sm:w-auto">
+              {t("services.planCta")}
+            </Link>
+          )}
+          {checkoutError && (
+            <p className="mt-2 text-sm text-red-600">
+              No se ha podido iniciar el pago. Inténtalo de nuevo o contacta con soporte.
+            </p>
+          )}
         </div>
 
         <div className="card lg:col-span-2">

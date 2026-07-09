@@ -23,7 +23,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 - [x] Fase 7 — Panel de administrador
 - [x] Fase 8 — i18n (es/ca/en) + divisas
 - [x] Fase 9 — Calendario de reservas + notificaciones por email
-- [ ] Fase 10 — Stripe (Checkout + webhook)
+- [x] Fase 10 — Stripe (Checkout + webhook)
 - [ ] Fase 11 — Legal / RGPD / disclaimers finales
 - [ ] Fase 12 — Pulido, responsive, QA
 
@@ -78,9 +78,11 @@ empezar por `VITE_`** — cualquier otra variable NUNCA debe leerse desde
 | `VITE_APP_URL` | Frontend | URL pública de producción, p. ej. `https://juliuscapital.vercel.app` |
 | `VITE_STRIPE_PUBLISHABLE_KEY` | Frontend | Clave publicable de Stripe |
 | `SUPABASE_SERVICE_ROLE_KEY` | Edge Functions | Clave con privilegios totales — **nunca** en el frontend |
+| `APP_URL` | Edge Functions | Igual que `VITE_APP_URL` pero legible desde las Edge Functions (Stripe `success_url`/`cancel_url`) |
 | `STRIPE_SECRET_KEY` | Edge Functions | Clave secreta de Stripe |
 | `STRIPE_WEBHOOK_SECRET` | Edge Functions | Firma del webhook de Stripe |
 | `RESEND_API_KEY` | Edge Functions + SMTP Supabase | Envío de emails transaccionales |
+| `RESEND_FROM` | Edge Functions | Remitente verificado en Resend para los emails de reserva |
 | `ADMIN_EMAIL` | Migraciones + Edge Functions | Email que recibe el rol `admin` automáticamente y las notificaciones de reserva |
 | `ADMIN_PHONE` | Edge Functions (reservado) | Número de contacto del admin; hoy no se usa (ver WhatsApp más abajo) |
 | `TWILIO_*` | — | **Ampliación futura.** No configurar todavía; ver `notifyAdmin()` |
@@ -299,6 +301,50 @@ supabase secrets set RESEND_API_KEY=... ADMIN_EMAIL=juliaregader@gmail.com RESEN
 
 `RESEND_FROM` debe usar un dominio verificado en Resend (mismo SPF/DKIM que
 el SMTP de Supabase Auth, ver checklist de despliegue más arriba).
+
+## Pagos con Stripe (Fase 10)
+
+### Crear la cuenta de Stripe
+
+1. Crea una cuenta en [stripe.com](https://dashboard.stripe.com/register).
+   Empieza en **modo test** (no actives el modo real hasta haber probado
+   todo el flujo).
+2. En *Developers → API keys* copia la **Secret key** (`STRIPE_SECRET_KEY`,
+   Edge Functions) y la **Publishable key** (`VITE_STRIPE_PUBLISHABLE_KEY`,
+   frontend).
+3. Despliega las funciones y añade el resto de secretos:
+   ```bash
+   supabase functions deploy create-checkout-session
+   supabase functions deploy stripe-webhook
+   supabase secrets set STRIPE_SECRET_KEY=sk_test_... APP_URL=https://tu-dominio.vercel.app
+   ```
+4. En *Developers → Webhooks*, añade un endpoint apuntando a
+   `https://<tu-project-ref>.functions.supabase.co/stripe-webhook`, escucha
+   el evento **`checkout.session.completed`**, y copia el **Signing secret**
+   a `STRIPE_WEBHOOK_SECRET` (`supabase secrets set STRIPE_WEBHOOK_SECRET=whsec_...`).
+
+### Flujo de pago
+
+- **Plan de organización patrimonial (329 €):** compra online con Stripe
+  Checkout. El botón "Comprar el plan" en `/servicios` crea la sesión de
+  pago desde la Edge Function `create-checkout-session` (nunca desde el
+  frontend, que no conoce la clave secreta) y redirige a Stripe. Si el
+  usuario no ha iniciado sesión, primero pasa por `/registro?plan=329`.
+- **Sesión individual (80 €): reservar y pagar después.** La reserva en
+  `/reservas` **no exige pago por adelantado** (`bookings.status =
+  'reservada'`); tras confirmar, se ofrece un botón opcional "Pagar ahora"
+  que abre el mismo flujo de Checkout vinculado a esa reserva. Si el
+  cliente no paga online, el admin puede marcar el pago como recibido
+  (transferencia/en persona) desde `/app/admin/pagos`.
+- **Webhook (`stripe-webhook`):** verifica la firma con
+  `stripe.webhooks.constructEventAsync` (compatible con Deno/Edge Runtime),
+  y en `checkout.session.completed` marca el `payment` correspondiente como
+  `pagado` y, si la sesión llevaba `metadata.booking_id`, actualiza también
+  esa reserva a `status = 'pagada'`.
+- **Páginas de resultado:** `/pago/exito` y `/pago/cancelado`.
+- La `STRIPE_SECRET_KEY` y el `STRIPE_WEBHOOK_SECRET` solo existen como
+  secretos de Edge Functions; el frontend únicamente usa la publishable key
+  a través de `VITE_STRIPE_PUBLISHABLE_KEY`.
 
 ## Estructura del proyecto
 

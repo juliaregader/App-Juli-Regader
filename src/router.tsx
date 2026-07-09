@@ -26,6 +26,8 @@ import { AvisoLegal } from "@/pages/legal/AvisoLegal";
 import { Privacidad } from "@/pages/legal/Privacidad";
 import { Terminos } from "@/pages/legal/Terminos";
 import { NotFound } from "@/pages/NotFound";
+import { PaymentCancelled } from "@/pages/payments/PaymentCancelled";
+import { PaymentSuccess } from "@/pages/payments/PaymentSuccess";
 import { Reservas } from "@/pages/Reservas";
 import { Servicios } from "@/pages/Servicios";
 import { Status } from "@/pages/Status";
@@ -40,6 +42,8 @@ export const router = createBrowserRouter([
       { path: "consulta-patrimonial", element: <ConsultaPatrimonial /> },
       { path: "reservas", element: <Reservas /> },
       { path: "contacto", element: <Contacto /> },
+      { path: "pago/exito", element: <PaymentSuccess /> },
+      { path: "pago/cancelado", element: <PaymentCancelled /> },
       { path: "status", element: <Status /> },
       { path: "registro", element: <Register /> },
       { path: "login", element: <Login /> },

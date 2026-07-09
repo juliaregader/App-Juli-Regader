@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { useAuth } from "@/features/auth/useAuth";
 import { useAvailableSlots, useCreateBooking } from "@/features/booking/queries";
 import type { BookingService, Slot } from "@/features/booking/types";
+import { useCreateCheckout } from "@/features/payments/queries";
 
 const DAYS_AHEAD = 21;
 
@@ -37,14 +38,15 @@ export function BookingCalendar() {
   const [name, setName] = useState(profile?.full_name ?? "");
   const [email, setEmail] = useState(profile?.email ?? "");
   const [phone, setPhone] = useState(profile?.phone ?? "");
-  const [confirmed, setConfirmed] = useState(false);
+  const [confirmedBookingId, setConfirmedBookingId] = useState<string | null>(null);
 
   const { data: slots = [], isLoading } = useAvailableSlots(selectedDate);
   const createBooking = useCreateBooking();
+  const createCheckout = useCreateCheckout();
 
   const handleSubmit = async () => {
     if (!selectedSlot || !name || !email) return;
-    await createBooking.mutateAsync({
+    const booking = await createBooking.mutateAsync({
       userId: user?.id,
       name,
       email,
@@ -53,10 +55,21 @@ export function BookingCalendar() {
       startAt: selectedSlot.slot_start,
       endAt: selectedSlot.slot_end,
     });
-    setConfirmed(true);
+    setConfirmedBookingId(booking.id);
   };
 
-  if (confirmed && selectedSlot) {
+  const handlePayNow = async () => {
+    if (!confirmedBookingId) return;
+    const { url } = await createCheckout.mutateAsync({
+      service,
+      userId: user?.id,
+      email,
+      bookingId: confirmedBookingId,
+    });
+    window.location.assign(url);
+  };
+
+  if (confirmedBookingId && selectedSlot) {
     return (
       <div className="card text-center">
         <h3 className="font-display text-xl font-bold text-brand-900">Reserva confirmada</h3>
@@ -68,10 +81,18 @@ export function BookingCalendar() {
           })}
           .
         </p>
-        <p className="mt-2 text-sm text-content-muted">
-          Te hemos enviado un email de confirmación a {email}.
-          {service === "sesion_80" && " El pago se gestiona después de la sesión, sin necesidad de adelantarlo."}
-        </p>
+        <p className="mt-2 text-sm text-content-muted">Te hemos enviado un email de confirmación a {email}.</p>
+        {service === "sesion_80" && (
+          <div className="mt-4 space-y-2">
+            <p className="text-sm text-content-muted">
+              El pago se gestiona después de la sesión, sin necesidad de adelantarlo. Si prefieres
+              pagar ahora:
+            </p>
+            <button type="button" className="btn-secondary" onClick={handlePayNow} disabled={createCheckout.isPending}>
+              {createCheckout.isPending ? "Redirigiendo…" : "Pagar ahora"}
+            </button>
+          </div>
+        )}
       </div>
     );
   }
