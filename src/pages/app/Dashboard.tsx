@@ -1,4 +1,5 @@
 import { Navigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { AssetAllocationChart } from "@/components/charts/AssetAllocationChart";
 import { NetWorthEvolutionChart } from "@/components/charts/NetWorthEvolutionChart";
@@ -8,6 +9,7 @@ import { useDashboardData } from "@/features/dashboard/useDashboardData";
 import { formatCurrency, formatPercent } from "@/lib/format/currency";
 
 export function Dashboard() {
+  const { t } = useTranslation();
   const { user, profile } = useAuth();
   const currency = profile?.currency ?? "EUR";
   const data = useDashboardData(user?.id);
@@ -17,78 +19,82 @@ export function Dashboard() {
   }
 
   const debtRatioLabel =
-    data.debtRatioLevel === "good" ? "Saludable" : data.debtRatioLevel === "warning" ? "Atención" : "Riesgo";
+    data.debtRatioLevel === "good"
+      ? t("dashboard.debtLevelGood")
+      : data.debtRatioLevel === "warning"
+        ? t("dashboard.debtLevelWarning")
+        : t("dashboard.debtLevelRisk");
 
   return (
     <section className="container-page space-y-8 py-10">
       <div>
-        <h1 className="font-display text-2xl font-bold text-brand-900">Tu dashboard financiero</h1>
-        <p className="mt-1 text-content-muted">
-          Basado en tus activos/pasivos actuales y tu último registro mensual.
-        </p>
+        <h1 className="font-display text-2xl font-bold text-brand-900">{t("dashboard.title")}</h1>
+        <p className="mt-1 text-content-muted">{t("dashboard.subtitle")}</p>
       </div>
 
       {!data.hasSnapshot && (
         <p className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
-          Aún no tienes un registro mensual de ingresos y gastos: los indicadores de ahorro y
-          endeudamiento se mostrarán en 0 hasta que lo completes en "Mi perfil" o en el registro
-          mensual.
+          {t("dashboard.noSnapshotWarning")}
         </p>
       )}
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <KpiCard label="Ingresos mensuales" value={formatCurrency(data.monthlyIncome, currency)} />
-        <KpiCard label="Gastos mensuales" value={formatCurrency(data.monthlyExpenses, currency)} />
+        <KpiCard label={t("dashboard.income")} value={formatCurrency(data.monthlyIncome, currency)} />
+        <KpiCard label={t("dashboard.expenses")} value={formatCurrency(data.monthlyExpenses, currency)} />
         <KpiCard
-          label="Ahorro mensual"
+          label={t("dashboard.savings")}
           value={formatCurrency(data.monthlySavings, currency)}
-          formula="Ahorro = Ingresos − Gastos"
-          explanation={data.savingsRate !== null ? `Tasa de ahorro: ${formatPercent(data.savingsRate)}` : undefined}
+          formula={t("dashboard.savingsFormula")}
+          explanation={
+            data.savingsRate !== null
+              ? t("dashboard.savingsRate", { rate: formatPercent(data.savingsRate) })
+              : undefined
+          }
         />
         <KpiCard
-          label="Patrimonio neto"
+          label={t("dashboard.netWorth")}
           value={formatCurrency(data.netWorth, currency)}
-          formula="Patrimonio neto = Activos − Pasivos"
+          formula={t("dashboard.netWorthFormula")}
         />
         <KpiCard
-          label="Ratio de endeudamiento"
+          label={t("dashboard.debtRatio")}
           value={data.debtRatio !== null ? formatPercent(data.debtRatio) : "—"}
-          formula="Cuotas de deuda mensuales / Ingresos netos mensuales"
+          formula={t("dashboard.debtRatioFormula")}
           level={data.debtRatioLevel}
           levelLabel={debtRatioLabel}
-          explanation="Verde < 30 % · Ámbar 30–40 % · Rojo > 40 %"
+          explanation={t("dashboard.debtRatioExplain")}
         />
         <KpiCard
-          label="Cobertura fondo de emergencia"
-          value={data.emergencyFundMonths !== null ? `${data.emergencyFundMonths.toFixed(1)} meses` : "—"}
-          formula="Activos líquidos / Gastos mensuales"
+          label={t("dashboard.emergencyFund")}
+          value={data.emergencyFundMonths !== null ? t("dashboard.months", { count: Number(data.emergencyFundMonths.toFixed(1)) }) : "—"}
+          formula={t("dashboard.emergencyFundFormula")}
         />
         <KpiCard
-          label="Ratio de liquidez"
+          label={t("dashboard.liquidityRatio")}
           value={data.liquidityRatio !== null ? formatPercent(data.liquidityRatio) : "—"}
-          formula="Activos líquidos / Total activos"
+          formula={t("dashboard.liquidityRatioFormula")}
         />
         <KpiCard
-          label="Peso de la vivienda"
+          label={t("dashboard.realEstateWeight")}
           value={data.realEstateWeight !== null ? formatPercent(data.realEstateWeight) : "—"}
-          formula="Valor inmuebles / Total activos"
+          formula={t("dashboard.realEstateWeightFormula")}
         />
         <KpiCard
-          label="Ratio deuda / activos"
+          label={t("dashboard.debtToAssets")}
           value={data.debtToAssetsRatio !== null ? formatPercent(data.debtToAssetsRatio) : "—"}
-          formula="Total pasivos / Total activos"
+          formula={t("dashboard.debtToAssetsFormula")}
         />
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="card">
-          <h2 className="font-semibold text-content">Distribución de activos</h2>
+          <h2 className="font-semibold text-content">{t("dashboard.allocationTitle")}</h2>
           <div className="mt-4">
             <AssetAllocationChart data={data.assetAllocation} currency={currency} />
           </div>
         </div>
         <div className="card">
-          <h2 className="font-semibold text-content">Evolución del patrimonio neto</h2>
+          <h2 className="font-semibold text-content">{t("dashboard.evolutionTitle")}</h2>
           <div className="mt-4">
             <NetWorthEvolutionChart data={data.netWorthEvolution} currency={currency} />
           </div>

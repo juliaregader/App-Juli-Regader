@@ -245,17 +245,20 @@ acceso del admin pasa por RLS con el helper `is_admin()`.
 ## Idiomas y divisas (Fase 8)
 
 Selector de idioma (`LanguageSwitcher`) con castellano (por defecto), català e
-English, usando `react-i18next` (`src/i18n`). **Cobertura de traducción en
-esta fase:** toda la web pública (Home, Servicios, Consulta patrimonial,
-Contacto, Reservas), las páginas de autenticación (registro, login,
-recuperación de contraseña) y la navegación (cabecera pública, menú del área
-privada, pestañas del admin) están completamente traducidas a los 3 idiomas,
-incluido el disclaimer legal. El **área de trabajo patrimonial en sí**
-(dashboard, estrategia, registro mensual, editores de activos/pasivos/
-objetivos, tablas del admin) se mantiene en castellano por ahora: la
-infraestructura i18n ya está lista (estructura de locales, `profile.language`
-guardado en Supabase) para traducirla sin cambios de arquitectura cuando se
-priorice.
+English, usando `react-i18next` (`src/i18n`). **Cobertura de traducción:**
+toda la web pública (Home, Servicios, Consulta patrimonial, Contacto,
+Reservas), las páginas de autenticación, la navegación (cabecera pública,
+menú del área privada, pestañas del admin) **y toda el área de trabajo
+patrimonial del cliente** — dashboard con sus indicadores y fórmulas,
+estrategia de inversión, registro mensual, onboarding, Mi perfil y los
+editores compartidos de activos/pasivos/objetivos/ingresos-gastos, además
+del calendario de reservas — están completamente traducidos a los 3 idiomas,
+incluido el disclaimer legal. Verificado con un script que compara cada
+clave `t(...)` referenciada en el código contra los tres ficheros de locale
+(sin claves huérfanas) y con Playwright cambiando de idioma en tiempo real.
+Las **tablas internas del panel de administrador** (uso exclusivo de Julià)
+se mantienen en castellano de forma deliberada — no aportan valor
+traducirlas ya que solo las usa un administrador hispanohablante.
 
 **Divisas:** selector en "Mi perfil" (EUR por defecto, USD, GBP, CHF),
 guardado en `profiles.currency`. `formatCurrency`/`formatPercent`

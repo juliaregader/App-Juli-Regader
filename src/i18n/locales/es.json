@@ -49,23 +49,54 @@
     "ctaBookSession": "Reservar una sesión",
     "whyTitle": "Por qué organizar tu patrimonio",
     "why": [
-      { "title": "Claridad", "description": "Una foto clara de tu situación financiera real: qué tienes, qué debes y cuánto ahorras." },
-      { "title": "Control del ahorro", "description": "Entiende a dónde va tu dinero cada mes y toma decisiones sobre tu tasa de ahorro." },
-      { "title": "Reducir el endeudamiento", "description": "Identifica tu ratio de endeudamiento y prioriza qué deudas amortizar antes." },
-      { "title": "Decisiones informadas", "description": "Indicadores claros para decidir con datos, no con intuición o presión externa." },
-      { "title": "Planificar objetivos", "description": "Define metas concretas (fondo de emergencia, vivienda, jubilación) y sigue tu progreso." }
+      {
+        "title": "Claridad",
+        "description": "Una foto clara de tu situación financiera real: qué tienes, qué debes y cuánto ahorras."
+      },
+      {
+        "title": "Control del ahorro",
+        "description": "Entiende a dónde va tu dinero cada mes y toma decisiones sobre tu tasa de ahorro."
+      },
+      {
+        "title": "Reducir el endeudamiento",
+        "description": "Identifica tu ratio de endeudamiento y prioriza qué deudas amortizar antes."
+      },
+      {
+        "title": "Decisiones informadas",
+        "description": "Indicadores claros para decidir con datos, no con intuición o presión externa."
+      },
+      {
+        "title": "Planificar objetivos",
+        "description": "Define metas concretas (fondo de emergencia, vivienda, jubilación) y sigue tu progreso."
+      }
     ],
     "methodTitle": "El método JuliusCapital",
     "method": [
-      { "title": "1. Reunión inicial", "description": "Hablamos de tu situación, tus objetivos y cómo puede ayudarte JuliusCapital. Sin compromiso." },
-      { "title": "2. Dashboard financiero en la app", "description": "Cargamos tus ingresos, gastos, activos y pasivos: obtienes un panel claro con tus indicadores clave." },
-      { "title": "3. Te explico a través de dónde puedes invertir", "description": "Repasamos juntos las opciones y herramientas para que definas tu propia estrategia de inversión." },
-      { "title": "4. Seguimiento mensual", "description": "Actualizas tu registro cada mes y ves la evolución real de tu patrimonio a lo largo del tiempo." }
+      {
+        "title": "1. Reunión inicial",
+        "description": "Hablamos de tu situación, tus objetivos y cómo puede ayudarte JuliusCapital. Sin compromiso."
+      },
+      {
+        "title": "2. Dashboard financiero en la app",
+        "description": "Cargamos tus ingresos, gastos, activos y pasivos: obtienes un panel claro con tus indicadores clave."
+      },
+      {
+        "title": "3. Te explico a través de dónde puedes invertir",
+        "description": "Repasamos juntos las opciones y herramientas para que definas tu propia estrategia de inversión."
+      },
+      {
+        "title": "4. Seguimiento mensual",
+        "description": "Actualizas tu registro cada mes y ves la evolución real de tu patrimonio a lo largo del tiempo."
+      }
     ],
     "methodDisclaimer": "JuliusCapital no ofrece asesoramiento de inversión personalizado: en la sesión repasamos opciones y herramientas para que definas tu propia estrategia.",
     "experienceTitle": "Experiencia profesional",
     "experienceBio": "Julià Regader combina la docencia universitaria con la educación financiera práctica. Como profesor universitario de organización y operaciones, y como inversor personal desde hace años, ayuda a personas y familias a poner en orden su patrimonio y a entender sus propias decisiones financieras, con un enfoque didáctico y sin tecnicismos innecesarios.",
-    "experienceHighlights": ["Profesor universitario de organización y operaciones", "Educador financiero", "Inversor personal"],
+    "experienceHighlights": [
+      "Profesor universitario de organización y operaciones",
+      "Educador financiero",
+      "Inversor personal"
+    ],
     "finalCtaTitle": "Empieza a organizar tu patrimonio hoy",
     "ctaSeeServices": "Ver servicios"
   },
@@ -95,19 +126,40 @@
     "sessionCta": "Reservar sesión",
     "faqTitle": "Preguntas frecuentes",
     "faqs": [
-      { "q": "¿Necesito el plan de 329 € para reservar una sesión suelta?", "a": "No, la sesión individual de 80 € es independiente y puedes reservarla sin haber contratado el plan." },
-      { "q": "¿JuliusCapital me dice en qué invertir?", "a": "No. JuliusCapital es una herramienta de organización y educación patrimonial. En las sesiones repasamos opciones y herramientas para que definas tu propia estrategia; la decisión de inversión es siempre tuya." },
-      { "q": "¿Puedo pagar la sesión de 80 € más adelante?", "a": "Sí: puedes reservar día y hora sin pagar por adelantado, y abonar la sesión después (o en el momento, si lo prefieres)." }
+      {
+        "q": "¿Necesito el plan de 329 € para reservar una sesión suelta?",
+        "a": "No, la sesión individual de 80 € es independiente y puedes reservarla sin haber contratado el plan."
+      },
+      {
+        "q": "¿JuliusCapital me dice en qué invertir?",
+        "a": "No. JuliusCapital es una herramienta de organización y educación patrimonial. En las sesiones repasamos opciones y herramientas para que definas tu propia estrategia; la decisión de inversión es siempre tuya."
+      },
+      {
+        "q": "¿Puedo pagar la sesión de 80 € más adelante?",
+        "a": "Sí: puedes reservar día y hora sin pagar por adelantado, y abonar la sesión después (o en el momento, si lo prefieres)."
+      }
     ]
   },
   "consultation": {
     "title": "Consulta patrimonial",
     "subtitle": "Al crear tu perfil en JuliusCapital, tu área privada te da acceso a:",
     "items": [
-      { "title": "Dashboard financiero", "description": "Tu patrimonio neto, ahorro, endeudamiento y liquidez, siempre a la vista." },
-      { "title": "Indicadores claros", "description": "Cada indicador con su fórmula, su explicación y un semáforo de riesgo fácil de leer." },
-      { "title": "Seguimiento mensual", "description": "Actualiza tu registro cada mes y observa la evolución real de tu patrimonio." },
-      { "title": "Estrategia de inversión propia", "description": "Define y sigue tu propia estrategia: activos, % objetivo y aportación mensual." }
+      {
+        "title": "Dashboard financiero",
+        "description": "Tu patrimonio neto, ahorro, endeudamiento y liquidez, siempre a la vista."
+      },
+      {
+        "title": "Indicadores claros",
+        "description": "Cada indicador con su fórmula, su explicación y un semáforo de riesgo fácil de leer."
+      },
+      {
+        "title": "Seguimiento mensual",
+        "description": "Actualiza tu registro cada mes y observa la evolución real de tu patrimonio."
+      },
+      {
+        "title": "Estrategia de inversión propia",
+        "description": "Define y sigue tu propia estrategia: activos, % objetivo y aportación mensual."
+      }
     ],
     "ctaCreateProfile": "Crea tu perfil patrimonial",
     "ctaLogin": "Ya tengo cuenta, acceder",
@@ -128,7 +180,8 @@
   "reservations": {
     "title": "Reservas",
     "comingSoon": "El calendario de reservas estará disponible muy pronto. Mientras tanto, contáctanos directamente para concretar tu sesión.",
-    "goToContact": "Ir a contacto"
+    "goToContact": "Ir a contacto",
+    "subtitle": "Elige el servicio, el día y la hora que mejor te vengan. No hace falta tener cuenta."
   },
   "auth": {
     "register": {
@@ -176,5 +229,190 @@
       "submitting": "Guardando…",
       "done": "Contraseña actualizada. Redirigiendo…"
     }
+  },
+  "dashboard": {
+    "title": "Tu dashboard financiero",
+    "subtitle": "Basado en tus activos/pasivos actuales y tu último registro mensual.",
+    "noSnapshotWarning": "Aún no tienes un registro mensual de ingresos y gastos: los indicadores de ahorro y endeudamiento se mostrarán en 0 hasta que lo completes en \"Mi perfil\" o en el registro mensual.",
+    "income": "Ingresos mensuales",
+    "expenses": "Gastos mensuales",
+    "savings": "Ahorro mensual",
+    "savingsFormula": "Ahorro = Ingresos − Gastos",
+    "savingsRate": "Tasa de ahorro: {{rate}}",
+    "netWorth": "Patrimonio neto",
+    "netWorthFormula": "Patrimonio neto = Activos − Pasivos",
+    "debtRatio": "Ratio de endeudamiento",
+    "debtRatioFormula": "Cuotas de deuda mensuales / Ingresos netos mensuales",
+    "debtRatioExplain": "Verde < 30 % · Ámbar 30–40 % · Rojo > 40 %",
+    "debtLevelGood": "Saludable",
+    "debtLevelWarning": "Atención",
+    "debtLevelRisk": "Riesgo",
+    "emergencyFund": "Cobertura fondo de emergencia",
+    "emergencyFundFormula": "Activos líquidos / Gastos mensuales",
+    "months": "{{count}} meses",
+    "liquidityRatio": "Ratio de liquidez",
+    "liquidityRatioFormula": "Activos líquidos / Total activos",
+    "realEstateWeight": "Peso de la vivienda",
+    "realEstateWeightFormula": "Valor inmuebles / Total activos",
+    "debtToAssets": "Ratio deuda / activos",
+    "debtToAssetsFormula": "Total pasivos / Total activos",
+    "allocationTitle": "Distribución de activos",
+    "evolutionTitle": "Evolución del patrimonio neto"
+  },
+  "strategy": {
+    "title": "Estrategia de inversión",
+    "subtitle": "Esta es tu propia estrategia: tú decides los activos, el % objetivo y la aportación mensual. JuliusCapital no recomienda productos financieros concretos.",
+    "contributionTitle": "Aportación mensual planificada",
+    "perMonth": "/ mes",
+    "assetsTitle": "Activos de tu estrategia",
+    "assetsSubtitle": "% objetivo, importe respecto al total y aportación mensual sugerida.",
+    "addAsset": "Añadir activo",
+    "pctWarning": "La suma de los porcentajes objetivo es {{pct}}%, no 100%. Ajusta los valores para que cuadren.",
+    "loading": "Cargando…",
+    "emptyAssets": "Añade el primer activo de tu estrategia.",
+    "assetName": "Nombre del activo",
+    "targetPct": "% objetivo",
+    "amount": "Importe",
+    "suggestedContribution": "Aportación sugerida",
+    "deleteAsset": "Eliminar activo",
+    "allocationTitle": "Reparto por importe",
+    "contributionUpdated": "Aportación mensual actualizada"
+  },
+  "monthlyRegistry": {
+    "title": "Registro mensual",
+    "subtitle": "Añade tus ingresos y gastos cada mes desde enero de 2026 para ver la evolución real de tu patrimonio.",
+    "month": "Mes",
+    "registered": "· registrado",
+    "historyTitle": "Histórico",
+    "colMonth": "Mes",
+    "colIncome": "Ingresos",
+    "colExpenses": "Gastos",
+    "colSavings": "Ahorro",
+    "colNetWorth": "Patrimonio neto"
+  },
+  "profile": {
+    "title": "Mi perfil",
+    "subtitle": "Edita tus datos personales y toda tu información patrimonial cuando quieras.",
+    "personalDataTitle": "Datos personales",
+    "fullName": "Nombre completo",
+    "phone": "Teléfono",
+    "language": "Idioma",
+    "currency": "Divisa",
+    "save": "Guardar datos personales",
+    "saved": "Datos personales guardados",
+    "saveError": "No se han podido guardar los cambios",
+    "privacyTitle": "Privacidad y datos",
+    "privacyDescription": "Puedes exportar toda tu información en cualquier momento, o eliminar tu cuenta y todos tus datos de forma permanente (derecho de acceso y supresión, RGPD).",
+    "exportButton": "Exportar mis datos (JSON)",
+    "exporting": "Exportando…",
+    "exported": "Datos exportados",
+    "exportError": "No se han podido exportar los datos",
+    "dangerZoneTitle": "Zona de peligro",
+    "deleteAccountButton": "Eliminar mi cuenta",
+    "deleteConfirm": "Esta acción borra tu cuenta y todos tus datos patrimoniales de forma permanente e irreversible. ¿Seguro que quieres continuar?",
+    "deleteYes": "Sí, eliminar definitivamente",
+    "deleting": "Eliminando…",
+    "deleteCancel": "Cancelar",
+    "deleteError": "No se ha podido eliminar la cuenta. Inténtalo de nuevo."
+  },
+  "onboarding": {
+    "stepOf": "Paso {{step}} de {{total}}: {{title}}",
+    "fillLater": "Rellenar más tarde",
+    "stepTitles": [
+      "Ingresos y gastos",
+      "Activos",
+      "Pasivos y deudas",
+      "Objetivos financieros",
+      "Resumen"
+    ],
+    "allDoneTitle": "Todo listo, {{name}}",
+    "welcomeFallback": "bienvenido/a",
+    "assetsCount": "{{count}} activo(s) registrado(s)",
+    "liabilitiesCount": "{{count}} deuda(s) registrada(s)",
+    "goalsCount": "{{count}} objetivo(s) financiero(s)",
+    "editLaterNote": "Podrás editar toda esta información en cualquier momento desde \"Mi perfil\".",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "finish": "Finalizar",
+    "saveAndContinue": "Guardar y continuar"
+  },
+  "wealth": {
+    "assetsTitle": "Activos",
+    "assetsExamples": "Ej.: cuenta corriente 5.000 €, fondo indexado 12.000 €, piso 180.000 €, coche 9.000 €",
+    "addAsset": "Añadir",
+    "loading": "Cargando…",
+    "emptyAssets": "Aún no has añadido ningún activo.",
+    "assetName": "Nombre del activo",
+    "assetType": "Tipo de activo",
+    "value": "Valor",
+    "liquid": "Líquido",
+    "deleteAsset": "Eliminar activo",
+    "assetTypes": {
+      "liquido": "Líquido (cuentas, efectivo)",
+      "inversion": "Inversión (fondos, acciones...)",
+      "inmueble": "Inmueble",
+      "otros": "Otros"
+    },
+    "liabilitiesTitle": "Pasivos / deudas",
+    "liabilitiesExamples": "Ej.: hipoteca 120.000 € (cuota 650 €/mes), préstamo coche 6.000 € (cuota 180 €/mes)",
+    "addLiability": "Añadir",
+    "emptyLiabilities": "No tienes deudas registradas.",
+    "liabilityName": "Nombre de la deuda",
+    "balance": "Saldo pendiente",
+    "monthlyPayment": "Cuota mensual",
+    "deleteLiability": "Eliminar deuda",
+    "goalsTitle": "Objetivos financieros",
+    "goalsExamples": "Ej.: fondo de emergencia de 6 meses, comprar vivienda en 3 años, jubilación anticipada",
+    "addGoal": "Añadir",
+    "emptyGoals": "Aún no has definido objetivos.",
+    "goalTitle": "Objetivo",
+    "targetAmount": "Importe objetivo",
+    "targetDate": "Fecha objetivo",
+    "deleteGoal": "Eliminar objetivo",
+    "incomeExpenses": {
+      "netIncome": "Ingresos mensuales netos",
+      "netIncomeExample": "Ej.: 2.400 € de nómina + 300 € de alquiler = 2.700 €",
+      "expensesTitle": "Gastos mensuales",
+      "expensesExample": "Ej.: vivienda 800 €, alimentación 400 €, transporte 150 €, ocio 200 €…",
+      "category": "Categoría de gasto",
+      "amount": "Importe",
+      "addCategory": "Categoría",
+      "deleteCategory": "Eliminar categoría",
+      "totalExpenses": "Total gastos: {{total}}",
+      "save": "Guardar",
+      "saving": "Guardando…",
+      "saved": "Registro guardado",
+      "prefillNote": "Precargado con los datos del mes anterior: edítalos si han cambiado.",
+      "defaultCategories": [
+        "Vivienda",
+        "Alimentación",
+        "Transporte",
+        "Ocio",
+        "Otros"
+      ],
+      "newCategory": "Nueva categoría"
+    },
+    "newAsset": "Nuevo activo",
+    "newLiability": "Nueva deuda",
+    "newGoal": "Nuevo objetivo"
+  },
+  "booking": {
+    "service": "Servicio",
+    "day": "Día",
+    "hour": "Hora",
+    "loadingSlots": "Cargando huecos disponibles…",
+    "noSlots": "No hay huecos disponibles este día. Prueba otro día.",
+    "name": "Nombre",
+    "email": "Email",
+    "phone": "Teléfono (opcional)",
+    "confirm": "Confirmar reserva",
+    "confirming": "Confirmando…",
+    "confirmError": "No se ha podido confirmar la reserva (puede que alguien la haya ocupado justo ahora). Elige otro hueco.",
+    "confirmedTitle": "Reserva confirmada",
+    "confirmedOn": "{{service}} el {{date}}.",
+    "confirmationEmailSent": "Te hemos enviado un email de confirmación a {{email}}.",
+    "payLaterNote": "El pago se gestiona después de la sesión, sin necesidad de adelantarlo. Si prefieres pagar ahora:",
+    "payNow": "Pagar ahora",
+    "redirecting": "Redirigiendo…"
   }
 }

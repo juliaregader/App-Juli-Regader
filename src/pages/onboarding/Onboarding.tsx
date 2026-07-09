@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { AssetsEditor } from "@/components/wealth/AssetsEditor";
 import { GoalsEditor } from "@/components/wealth/GoalsEditor";
@@ -10,14 +11,15 @@ import { useAuth } from "@/features/auth/useAuth";
 import { useAssets, useGoals, useLiabilities } from "@/features/wealth/queries";
 import { firstOfMonth } from "@/lib/dates";
 
-const STEP_TITLES = ["Ingresos y gastos", "Activos", "Pasivos y deudas", "Objetivos financieros", "Resumen"];
-
 export function Onboarding() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { user, profile } = useAuth();
   const updateProfile = useUpdateProfile(user?.id);
   const [step, setStep] = useState(0);
   const month = firstOfMonth();
+
+  const stepTitles = t("onboarding.stepTitles", { returnObjects: true }) as string[];
 
   const { data: assets = [] } = useAssets(user?.id);
   const { data: liabilities = [] } = useLiabilities(user?.id);
@@ -36,17 +38,15 @@ export function Onboarding() {
   return (
     <section className="container-page max-w-2xl py-12">
       <div className="mb-2 flex items-center justify-between text-sm text-content-muted">
-        <span>
-          Paso {step + 1} de {STEP_TITLES.length}: {STEP_TITLES[step]}
-        </span>
+        <span>{t("onboarding.stepOf", { step: step + 1, total: stepTitles.length, title: stepTitles[step] })}</span>
         <button type="button" onClick={skip} className="underline hover:text-brand-900">
-          Rellenar más tarde
+          {t("onboarding.fillLater")}
         </button>
       </div>
       <div className="h-1.5 w-full overflow-hidden rounded-full bg-brand-100">
         <div
           className="h-full rounded-full bg-brand-900 transition-all"
-          style={{ width: `${((step + 1) / STEP_TITLES.length) * 100}%` }}
+          style={{ width: `${((step + 1) / stepTitles.length) * 100}%` }}
         />
       </div>
 
@@ -55,7 +55,7 @@ export function Onboarding() {
           <IncomeExpensesEditor
             userId={user?.id}
             month={month}
-            saveLabel="Guardar y continuar"
+            saveLabel={t("onboarding.saveAndContinue")}
             onSaved={() => setStep(1)}
           />
         )}
@@ -64,30 +64,30 @@ export function Onboarding() {
         {step === 3 && <GoalsEditor userId={user?.id} />}
         {step === 4 && (
           <div>
-            <h3 className="font-semibold text-content">Todo listo, {profile?.full_name || "bienvenido/a"}</h3>
+            <h3 className="font-semibold text-content">
+              {t("onboarding.allDoneTitle", { name: profile?.full_name || t("onboarding.welcomeFallback") })}
+            </h3>
             <ul className="mt-4 space-y-1 text-sm text-content-muted">
-              <li>{assets.length} activo(s) registrado(s)</li>
-              <li>{liabilities.length} deuda(s) registrada(s)</li>
-              <li>{goals.length} objetivo(s) financiero(s)</li>
+              <li>{t("onboarding.assetsCount", { count: assets.length })}</li>
+              <li>{t("onboarding.liabilitiesCount", { count: liabilities.length })}</li>
+              <li>{t("onboarding.goalsCount", { count: goals.length })}</li>
             </ul>
-            <p className="mt-4 text-sm text-content-muted">
-              Podrás editar toda esta información en cualquier momento desde "Mi perfil".
-            </p>
+            <p className="mt-4 text-sm text-content-muted">{t("onboarding.editLaterNote")}</p>
           </div>
         )}
 
         {step > 0 && (
           <div className="mt-6 flex justify-between border-t border-border pt-4">
             <button type="button" className="btn-secondary" onClick={() => setStep((s) => s - 1)}>
-              Atrás
+              {t("onboarding.back")}
             </button>
-            {step < STEP_TITLES.length - 1 ? (
+            {step < stepTitles.length - 1 ? (
               <button type="button" className="btn-primary" onClick={() => setStep((s) => s + 1)}>
-                Siguiente
+                {t("onboarding.next")}
               </button>
             ) : (
               <button type="button" className="btn-primary" onClick={finish} disabled={updateProfile.isPending}>
-                Finalizar
+                {t("onboarding.finish")}
               </button>
             )}
           </div>

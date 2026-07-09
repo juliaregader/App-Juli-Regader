@@ -49,23 +49,54 @@
     "ctaBookSession": "Reservar una sessió",
     "whyTitle": "Per què organitzar el teu patrimoni",
     "why": [
-      { "title": "Claredat", "description": "Una foto clara de la teva situació financera real: què tens, què deus i quant estalvies." },
-      { "title": "Control de l'estalvi", "description": "Entén on va els teus diners cada mes i pren decisions sobre la teva taxa d'estalvi." },
-      { "title": "Reduir l'endeutament", "description": "Identifica el teu ràtio d'endeutament i prioritza quins deutes amortitzar abans." },
-      { "title": "Decisions informades", "description": "Indicadors clars per decidir amb dades, no amb intuïció o pressió externa." },
-      { "title": "Planificar objectius", "description": "Defineix metes concretes (fons d'emergència, habitatge, jubilació) i segueix el teu progrés." }
+      {
+        "title": "Claredat",
+        "description": "Una foto clara de la teva situació financera real: què tens, què deus i quant estalvies."
+      },
+      {
+        "title": "Control de l'estalvi",
+        "description": "Entén on va els teus diners cada mes i pren decisions sobre la teva taxa d'estalvi."
+      },
+      {
+        "title": "Reduir l'endeutament",
+        "description": "Identifica el teu ràtio d'endeutament i prioritza quins deutes amortitzar abans."
+      },
+      {
+        "title": "Decisions informades",
+        "description": "Indicadors clars per decidir amb dades, no amb intuïció o pressió externa."
+      },
+      {
+        "title": "Planificar objectius",
+        "description": "Defineix metes concretes (fons d'emergència, habitatge, jubilació) i segueix el teu progrés."
+      }
     ],
     "methodTitle": "El mètode JuliusCapital",
     "method": [
-      { "title": "1. Reunió inicial", "description": "Parlem de la teva situació, els teus objectius i com pot ajudar-te JuliusCapital. Sense compromís." },
-      { "title": "2. Dashboard financer a l'app", "description": "Carreguem els teus ingressos, despeses, actius i passius: obtens un panell clar amb els teus indicadors clau." },
-      { "title": "3. T'explico a través d'on pots invertir", "description": "Repassem juntes les opcions i eines perquè defineixis la teva pròpia estratègia d'inversió." },
-      { "title": "4. Seguiment mensual", "description": "Actualitzes el teu registre cada mes i veus l'evolució real del teu patrimoni al llarg del temps." }
+      {
+        "title": "1. Reunió inicial",
+        "description": "Parlem de la teva situació, els teus objectius i com pot ajudar-te JuliusCapital. Sense compromís."
+      },
+      {
+        "title": "2. Dashboard financer a l'app",
+        "description": "Carreguem els teus ingressos, despeses, actius i passius: obtens un panell clar amb els teus indicadors clau."
+      },
+      {
+        "title": "3. T'explico a través d'on pots invertir",
+        "description": "Repassem juntes les opcions i eines perquè defineixis la teva pròpia estratègia d'inversió."
+      },
+      {
+        "title": "4. Seguiment mensual",
+        "description": "Actualitzes el teu registre cada mes i veus l'evolució real del teu patrimoni al llarg del temps."
+      }
     ],
     "methodDisclaimer": "JuliusCapital no ofereix assessorament d'inversió personalitzat: a la sessió repassem opcions i eines perquè defineixis la teva pròpia estratègia.",
     "experienceTitle": "Experiència professional",
     "experienceBio": "Julià Regader combina la docència universitària amb l'educació financera pràctica. Com a professor universitari d'organització i operacions, i com a inversor personal des de fa anys, ajuda persones i famílies a posar en ordre el seu patrimoni i a entendre les seves pròpies decisions financeres, amb un enfocament didàctic i sense tecnicismes innecessaris.",
-    "experienceHighlights": ["Professor universitari d'organització i operacions", "Educador financer", "Inversor personal"],
+    "experienceHighlights": [
+      "Professor universitari d'organització i operacions",
+      "Educador financer",
+      "Inversor personal"
+    ],
     "finalCtaTitle": "Comença a organitzar el teu patrimoni avui",
     "ctaSeeServices": "Veure serveis"
   },
@@ -95,19 +126,40 @@
     "sessionCta": "Reservar sessió",
     "faqTitle": "Preguntes freqüents",
     "faqs": [
-      { "q": "Necessito el pla de 329 € per reservar una sessió solta?", "a": "No, la sessió individual de 80 € és independent i la pots reservar sense haver contractat el pla." },
-      { "q": "JuliusCapital em diu en què invertir?", "a": "No. JuliusCapital és una eina d'organització i educació patrimonial. A les sessions repassem opcions i eines perquè defineixis la teva pròpia estratègia; la decisió d'inversió és sempre teva." },
-      { "q": "Puc pagar la sessió de 80 € més endavant?", "a": "Sí: pots reservar dia i hora sense pagar per avançat, i abonar la sessió després (o en el moment, si ho prefereixes)." }
+      {
+        "q": "Necessito el pla de 329 € per reservar una sessió solta?",
+        "a": "No, la sessió individual de 80 € és independent i la pots reservar sense haver contractat el pla."
+      },
+      {
+        "q": "JuliusCapital em diu en què invertir?",
+        "a": "No. JuliusCapital és una eina d'organització i educació patrimonial. A les sessions repassem opcions i eines perquè defineixis la teva pròpia estratègia; la decisió d'inversió és sempre teva."
+      },
+      {
+        "q": "Puc pagar la sessió de 80 € més endavant?",
+        "a": "Sí: pots reservar dia i hora sense pagar per avançat, i abonar la sessió després (o en el moment, si ho prefereixes)."
+      }
     ]
   },
   "consultation": {
     "title": "Consulta patrimonial",
     "subtitle": "En crear el teu perfil a JuliusCapital, la teva àrea privada et dona accés a:",
     "items": [
-      { "title": "Dashboard financer", "description": "El teu patrimoni net, estalvi, endeutament i liquiditat, sempre a la vista." },
-      { "title": "Indicadors clars", "description": "Cada indicador amb la seva fórmula, la seva explicació i un semàfor de risc fàcil de llegir." },
-      { "title": "Seguiment mensual", "description": "Actualitza el teu registre cada mes i observa l'evolució real del teu patrimoni." },
-      { "title": "Estratègia d'inversió pròpia", "description": "Defineix i segueix la teva pròpia estratègia: actius, % objectiu i aportació mensual." }
+      {
+        "title": "Dashboard financer",
+        "description": "El teu patrimoni net, estalvi, endeutament i liquiditat, sempre a la vista."
+      },
+      {
+        "title": "Indicadors clars",
+        "description": "Cada indicador amb la seva fórmula, la seva explicació i un semàfor de risc fàcil de llegir."
+      },
+      {
+        "title": "Seguiment mensual",
+        "description": "Actualitza el teu registre cada mes i observa l'evolució real del teu patrimoni."
+      },
+      {
+        "title": "Estratègia d'inversió pròpia",
+        "description": "Defineix i segueix la teva pròpia estratègia: actius, % objectiu i aportació mensual."
+      }
     ],
     "ctaCreateProfile": "Crea el teu perfil patrimonial",
     "ctaLogin": "Ja tinc compte, accedir",
@@ -128,7 +180,8 @@
   "reservations": {
     "title": "Reserves",
     "comingSoon": "El calendari de reserves estarà disponible molt aviat. Mentrestant, contacta'ns directament per concretar la teva sessió.",
-    "goToContact": "Anar a contacte"
+    "goToContact": "Anar a contacte",
+    "subtitle": "Tria el servei, el dia i l’hora que et vagin millor. No cal tenir compte."
   },
   "auth": {
     "register": {
@@ -176,5 +229,190 @@
       "submitting": "Desant…",
       "done": "Contrasenya actualitzada. Redirigint…"
     }
+  },
+  "dashboard": {
+    "title": "El teu dashboard financer",
+    "subtitle": "Basat en els teus actius/passius actuals i el teu últim registre mensual.",
+    "noSnapshotWarning": "Encara no tens un registre mensual d'ingressos i despeses: els indicadors d'estalvi i endeutament es mostraran a 0 fins que el completis a \"El meu perfil\" o al registre mensual.",
+    "income": "Ingressos mensuals",
+    "expenses": "Despeses mensuals",
+    "savings": "Estalvi mensual",
+    "savingsFormula": "Estalvi = Ingressos − Despeses",
+    "savingsRate": "Taxa d'estalvi: {{rate}}",
+    "netWorth": "Patrimoni net",
+    "netWorthFormula": "Patrimoni net = Actius − Passius",
+    "debtRatio": "Ràtio d'endeutament",
+    "debtRatioFormula": "Quotes de deute mensuals / Ingressos nets mensuals",
+    "debtRatioExplain": "Verd < 30 % · Ambre 30–40 % · Vermell > 40 %",
+    "debtLevelGood": "Saludable",
+    "debtLevelWarning": "Atenció",
+    "debtLevelRisk": "Risc",
+    "emergencyFund": "Cobertura fons d'emergència",
+    "emergencyFundFormula": "Actius líquids / Despeses mensuals",
+    "months": "{{count}} mesos",
+    "liquidityRatio": "Ràtio de liquiditat",
+    "liquidityRatioFormula": "Actius líquids / Total actius",
+    "realEstateWeight": "Pes de l'habitatge",
+    "realEstateWeightFormula": "Valor immobles / Total actius",
+    "debtToAssets": "Ràtio deute / actius",
+    "debtToAssetsFormula": "Total passius / Total actius",
+    "allocationTitle": "Distribució d'actius",
+    "evolutionTitle": "Evolució del patrimoni net"
+  },
+  "strategy": {
+    "title": "Estratègia d'inversió",
+    "subtitle": "Aquesta és la teva pròpia estratègia: tu decideixes els actius, el % objectiu i l'aportació mensual. JuliusCapital no recomana productes financers concrets.",
+    "contributionTitle": "Aportació mensual planificada",
+    "perMonth": "/ mes",
+    "assetsTitle": "Actius de la teva estratègia",
+    "assetsSubtitle": "% objectiu, import respecte al total i aportació mensual suggerida.",
+    "addAsset": "Afegir actiu",
+    "pctWarning": "La suma dels percentatges objectiu és {{pct}}%, no 100%. Ajusta els valors perquè quadrin.",
+    "loading": "Carregant…",
+    "emptyAssets": "Afegeix el primer actiu de la teva estratègia.",
+    "assetName": "Nom de l'actiu",
+    "targetPct": "% objectiu",
+    "amount": "Import",
+    "suggestedContribution": "Aportació suggerida",
+    "deleteAsset": "Eliminar actiu",
+    "allocationTitle": "Repartiment per import",
+    "contributionUpdated": "Aportació mensual actualitzada"
+  },
+  "monthlyRegistry": {
+    "title": "Registre mensual",
+    "subtitle": "Afegeix els teus ingressos i despeses cada mes des de gener de 2026 per veure l'evolució real del teu patrimoni.",
+    "month": "Mes",
+    "registered": "· registrat",
+    "historyTitle": "Històric",
+    "colMonth": "Mes",
+    "colIncome": "Ingressos",
+    "colExpenses": "Despeses",
+    "colSavings": "Estalvi",
+    "colNetWorth": "Patrimoni net"
+  },
+  "profile": {
+    "title": "El meu perfil",
+    "subtitle": "Edita les teves dades personals i tota la teva informació patrimonial quan vulguis.",
+    "personalDataTitle": "Dades personals",
+    "fullName": "Nom complet",
+    "phone": "Telèfon",
+    "language": "Idioma",
+    "currency": "Divisa",
+    "save": "Desar dades personals",
+    "saved": "Dades personals desades",
+    "saveError": "No s'han pogut desar els canvis",
+    "privacyTitle": "Privacitat i dades",
+    "privacyDescription": "Pots exportar tota la teva informació en qualsevol moment, o eliminar el teu compte i totes les teves dades de forma permanent (dret d'accés i supressió, RGPD).",
+    "exportButton": "Exportar les meves dades (JSON)",
+    "exporting": "Exportant…",
+    "exported": "Dades exportades",
+    "exportError": "No s'han pogut exportar les dades",
+    "dangerZoneTitle": "Zona de perill",
+    "deleteAccountButton": "Eliminar el meu compte",
+    "deleteConfirm": "Aquesta acció esborra el teu compte i totes les teves dades patrimonials de forma permanent i irreversible. Segur que vols continuar?",
+    "deleteYes": "Sí, eliminar definitivament",
+    "deleting": "Eliminant…",
+    "deleteCancel": "Cancel·lar",
+    "deleteError": "No s'ha pogut eliminar el compte. Torna-ho a provar."
+  },
+  "onboarding": {
+    "stepOf": "Pas {{step}} de {{total}}: {{title}}",
+    "fillLater": "Emplenar més tard",
+    "stepTitles": [
+      "Ingressos i despeses",
+      "Actius",
+      "Passius i deutes",
+      "Objectius financers",
+      "Resum"
+    ],
+    "allDoneTitle": "Tot a punt, {{name}}",
+    "welcomeFallback": "benvingut/da",
+    "assetsCount": "{{count}} actiu(s) registrat(s)",
+    "liabilitiesCount": "{{count}} deute(s) registrat(s)",
+    "goalsCount": "{{count}} objectiu(s) financer(s)",
+    "editLaterNote": "Podràs editar tota aquesta informació en qualsevol moment des de \"El meu perfil\".",
+    "back": "Enrere",
+    "next": "Següent",
+    "finish": "Finalitzar",
+    "saveAndContinue": "Desar i continuar"
+  },
+  "wealth": {
+    "assetsTitle": "Actius",
+    "assetsExamples": "Ex.: compte corrent 5.000 €, fons indexat 12.000 €, pis 180.000 €, cotxe 9.000 €",
+    "addAsset": "Afegir",
+    "loading": "Carregant…",
+    "emptyAssets": "Encara no has afegit cap actiu.",
+    "assetName": "Nom de l'actiu",
+    "assetType": "Tipus d'actiu",
+    "value": "Valor",
+    "liquid": "Líquid",
+    "deleteAsset": "Eliminar actiu",
+    "assetTypes": {
+      "liquido": "Líquid (comptes, efectiu)",
+      "inversion": "Inversió (fons, accions...)",
+      "inmueble": "Immoble",
+      "otros": "Altres"
+    },
+    "liabilitiesTitle": "Passius / deutes",
+    "liabilitiesExamples": "Ex.: hipoteca 120.000 € (quota 650 €/mes), préstec cotxe 6.000 € (quota 180 €/mes)",
+    "addLiability": "Afegir",
+    "emptyLiabilities": "No tens deutes registrats.",
+    "liabilityName": "Nom del deute",
+    "balance": "Saldo pendent",
+    "monthlyPayment": "Quota mensual",
+    "deleteLiability": "Eliminar deute",
+    "goalsTitle": "Objectius financers",
+    "goalsExamples": "Ex.: fons d'emergència de 6 mesos, comprar habitatge en 3 anys, jubilació anticipada",
+    "addGoal": "Afegir",
+    "emptyGoals": "Encara no has definit objectius.",
+    "goalTitle": "Objectiu",
+    "targetAmount": "Import objectiu",
+    "targetDate": "Data objectiu",
+    "deleteGoal": "Eliminar objectiu",
+    "incomeExpenses": {
+      "netIncome": "Ingressos mensuals nets",
+      "netIncomeExample": "Ex.: 2.400 € de nòmina + 300 € de lloguer = 2.700 €",
+      "expensesTitle": "Despeses mensuals",
+      "expensesExample": "Ex.: habitatge 800 €, alimentació 400 €, transport 150 €, oci 200 €…",
+      "category": "Categoria de despesa",
+      "amount": "Import",
+      "addCategory": "Categoria",
+      "deleteCategory": "Eliminar categoria",
+      "totalExpenses": "Total despeses: {{total}}",
+      "save": "Desar",
+      "saving": "Desant…",
+      "saved": "Registre desat",
+      "prefillNote": "Precarregat amb les dades del mes anterior: edita-les si han canviat.",
+      "defaultCategories": [
+        "Habitatge",
+        "Alimentació",
+        "Transport",
+        "Oci",
+        "Altres"
+      ],
+      "newCategory": "Nova categoria"
+    },
+    "newAsset": "Nou actiu",
+    "newLiability": "Nou deute",
+    "newGoal": "Nou objectiu"
+  },
+  "booking": {
+    "service": "Servei",
+    "day": "Dia",
+    "hour": "Hora",
+    "loadingSlots": "Carregant hores disponibles…",
+    "noSlots": "No hi ha hores disponibles aquest dia. Prova un altre dia.",
+    "name": "Nom",
+    "email": "Email",
+    "phone": "Telèfon (opcional)",
+    "confirm": "Confirmar reserva",
+    "confirming": "Confirmant…",
+    "confirmError": "No s'ha pogut confirmar la reserva (potser algú l'ha ocupat just ara). Tria una altra hora.",
+    "confirmedTitle": "Reserva confirmada",
+    "confirmedOn": "{{service}} el {{date}}.",
+    "confirmationEmailSent": "T'hem enviat un email de confirmació a {{email}}.",
+    "payLaterNote": "El pagament es gestiona després de la sessió, sense necessitat d'avançar-lo. Si prefereixes pagar ara:",
+    "payNow": "Pagar ara",
+    "redirecting": "Redirigint…"
   }
 }

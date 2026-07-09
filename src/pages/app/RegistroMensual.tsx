@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { IncomeExpensesEditor } from "@/components/wealth/IncomeExpensesEditor";
 import { useAuth } from "@/features/auth/useAuth";
@@ -9,6 +10,7 @@ import { formatCurrency } from "@/lib/format/currency";
 const TRACKING_START = "2026-01-01";
 
 export function RegistroMensual() {
+  const { t } = useTranslation();
   const { user, profile } = useAuth();
   const currency = profile?.currency ?? "EUR";
   const { data: snapshots = [] } = useFinancialSnapshots(user?.id);
@@ -26,16 +28,13 @@ export function RegistroMensual() {
   return (
     <section className="container-page max-w-3xl space-y-8 py-10">
       <div>
-        <h1 className="font-display text-2xl font-bold text-brand-900">Registro mensual</h1>
-        <p className="mt-1 text-content-muted">
-          Añade tus ingresos y gastos cada mes desde enero de 2026 para ver la evolución real de
-          tu patrimonio.
-        </p>
+        <h1 className="font-display text-2xl font-bold text-brand-900">{t("monthlyRegistry.title")}</h1>
+        <p className="mt-1 text-content-muted">{t("monthlyRegistry.subtitle")}</p>
       </div>
 
       <div className="card">
         <label className="label" htmlFor="month-select">
-          Mes
+          {t("monthlyRegistry.month")}
         </label>
         <select
           id="month-select"
@@ -45,7 +44,7 @@ export function RegistroMensual() {
         >
           {months.map((m) => (
             <option key={m} value={m} className="capitalize">
-              {formatMonthLabel(m)} {snapshotByMonth.has(m) ? "· registrado" : ""}
+              {formatMonthLabel(m)} {snapshotByMonth.has(m) ? t("monthlyRegistry.registered") : ""}
             </option>
           ))}
         </select>
@@ -62,15 +61,15 @@ export function RegistroMensual() {
 
       {snapshots.length > 0 && (
         <div className="card overflow-x-auto">
-          <h2 className="font-semibold text-content">Histórico</h2>
+          <h2 className="font-semibold text-content">{t("monthlyRegistry.historyTitle")}</h2>
           <table className="mt-4 w-full text-left text-sm">
             <thead>
               <tr className="border-b border-border text-content-muted">
-                <th className="py-2 pr-4 font-medium">Mes</th>
-                <th className="py-2 pr-4 font-medium">Ingresos</th>
-                <th className="py-2 pr-4 font-medium">Gastos</th>
-                <th className="py-2 pr-4 font-medium">Ahorro</th>
-                <th className="py-2 font-medium">Patrimonio neto</th>
+                <th className="py-2 pr-4 font-medium">{t("monthlyRegistry.colMonth")}</th>
+                <th className="py-2 pr-4 font-medium">{t("monthlyRegistry.colIncome")}</th>
+                <th className="py-2 pr-4 font-medium">{t("monthlyRegistry.colExpenses")}</th>
+                <th className="py-2 pr-4 font-medium">{t("monthlyRegistry.colSavings")}</th>
+                <th className="py-2 font-medium">{t("monthlyRegistry.colNetWorth")}</th>
               </tr>
             </thead>
             <tbody>

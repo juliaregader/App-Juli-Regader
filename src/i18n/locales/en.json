@@ -49,23 +49,54 @@
     "ctaBookSession": "Book a session",
     "whyTitle": "Why organize your wealth",
     "why": [
-      { "title": "Clarity", "description": "A clear picture of your real financial situation: what you have, what you owe and how much you save." },
-      { "title": "Savings control", "description": "Understand where your money goes each month and make decisions about your savings rate." },
-      { "title": "Reduce debt", "description": "Identify your debt ratio and prioritize which debts to pay off first." },
-      { "title": "Informed decisions", "description": "Clear indicators to decide with data, not intuition or outside pressure." },
-      { "title": "Plan your goals", "description": "Set concrete goals (emergency fund, home, early retirement) and track your progress." }
+      {
+        "title": "Clarity",
+        "description": "A clear picture of your real financial situation: what you have, what you owe and how much you save."
+      },
+      {
+        "title": "Savings control",
+        "description": "Understand where your money goes each month and make decisions about your savings rate."
+      },
+      {
+        "title": "Reduce debt",
+        "description": "Identify your debt ratio and prioritize which debts to pay off first."
+      },
+      {
+        "title": "Informed decisions",
+        "description": "Clear indicators to decide with data, not intuition or outside pressure."
+      },
+      {
+        "title": "Plan your goals",
+        "description": "Set concrete goals (emergency fund, home, early retirement) and track your progress."
+      }
     ],
     "methodTitle": "The JuliusCapital method",
     "method": [
-      { "title": "1. Initial meeting", "description": "We talk about your situation, your goals and how JuliusCapital can help. No commitment." },
-      { "title": "2. Financial dashboard in the app", "description": "We load your income, expenses, assets and liabilities: you get a clear panel with your key indicators." },
-      { "title": "3. I show you where you can invest", "description": "We go through options and tools together so you define your own investment strategy." },
-      { "title": "4. Monthly tracking", "description": "You update your record every month and see the real evolution of your wealth over time." }
+      {
+        "title": "1. Initial meeting",
+        "description": "We talk about your situation, your goals and how JuliusCapital can help. No commitment."
+      },
+      {
+        "title": "2. Financial dashboard in the app",
+        "description": "We load your income, expenses, assets and liabilities: you get a clear panel with your key indicators."
+      },
+      {
+        "title": "3. I show you where you can invest",
+        "description": "We go through options and tools together so you define your own investment strategy."
+      },
+      {
+        "title": "4. Monthly tracking",
+        "description": "You update your record every month and see the real evolution of your wealth over time."
+      }
     ],
     "methodDisclaimer": "JuliusCapital does not offer personalized investment advice: in the session we review options and tools so you define your own strategy.",
     "experienceTitle": "Professional experience",
     "experienceBio": "Julià Regader combines university teaching with practical financial education. As a university professor of organization and operations, and as a personal investor for years, he helps people and families put their wealth in order and understand their own financial decisions, with a hands-on approach and no unnecessary jargon.",
-    "experienceHighlights": ["University professor of organization and operations", "Financial educator", "Personal investor"],
+    "experienceHighlights": [
+      "University professor of organization and operations",
+      "Financial educator",
+      "Personal investor"
+    ],
     "finalCtaTitle": "Start organizing your wealth today",
     "ctaSeeServices": "See services"
   },
@@ -95,19 +126,40 @@
     "sessionCta": "Book a session",
     "faqTitle": "Frequently asked questions",
     "faqs": [
-      { "q": "Do I need the 329 € plan to book a single session?", "a": "No, the 80 € individual session is independent and you can book it without having bought the plan." },
-      { "q": "Does JuliusCapital tell me what to invest in?", "a": "No. JuliusCapital is a wealth organization and education tool. In sessions we review options and tools so you define your own strategy; the investment decision is always yours." },
-      { "q": "Can I pay for the 80 € session later?", "a": "Yes: you can book a day and time without paying in advance, and pay for the session afterwards (or on the spot, if you prefer)." }
+      {
+        "q": "Do I need the 329 € plan to book a single session?",
+        "a": "No, the 80 € individual session is independent and you can book it without having bought the plan."
+      },
+      {
+        "q": "Does JuliusCapital tell me what to invest in?",
+        "a": "No. JuliusCapital is a wealth organization and education tool. In sessions we review options and tools so you define your own strategy; the investment decision is always yours."
+      },
+      {
+        "q": "Can I pay for the 80 € session later?",
+        "a": "Yes: you can book a day and time without paying in advance, and pay for the session afterwards (or on the spot, if you prefer)."
+      }
     ]
   },
   "consultation": {
     "title": "Wealth consultation",
     "subtitle": "When you create your profile on JuliusCapital, your private area gives you access to:",
     "items": [
-      { "title": "Financial dashboard", "description": "Your net worth, savings, debt and liquidity, always in view." },
-      { "title": "Clear indicators", "description": "Every indicator with its formula, its explanation and an easy-to-read risk signal." },
-      { "title": "Monthly tracking", "description": "Update your record every month and watch the real evolution of your wealth." },
-      { "title": "Your own investment strategy", "description": "Define and track your own strategy: assets, target % and monthly contribution." }
+      {
+        "title": "Financial dashboard",
+        "description": "Your net worth, savings, debt and liquidity, always in view."
+      },
+      {
+        "title": "Clear indicators",
+        "description": "Every indicator with its formula, its explanation and an easy-to-read risk signal."
+      },
+      {
+        "title": "Monthly tracking",
+        "description": "Update your record every month and watch the real evolution of your wealth."
+      },
+      {
+        "title": "Your own investment strategy",
+        "description": "Define and track your own strategy: assets, target % and monthly contribution."
+      }
     ],
     "ctaCreateProfile": "Create your wealth profile",
     "ctaLogin": "I already have an account, sign in",
@@ -128,7 +180,8 @@
   "reservations": {
     "title": "Bookings",
     "comingSoon": "The booking calendar will be available very soon. Meanwhile, contact us directly to arrange your session.",
-    "goToContact": "Go to contact"
+    "goToContact": "Go to contact",
+    "subtitle": "Choose the service, day and time that suit you best. No account needed."
   },
   "auth": {
     "register": {
@@ -176,5 +229,190 @@
       "submitting": "Saving…",
       "done": "Password updated. Redirecting…"
     }
+  },
+  "dashboard": {
+    "title": "Your financial dashboard",
+    "subtitle": "Based on your current assets/liabilities and your latest monthly entry.",
+    "noSnapshotWarning": "You don't have a monthly income/expenses entry yet: savings and debt indicators will show as 0 until you complete one in \"My profile\" or the monthly tracking page.",
+    "income": "Monthly income",
+    "expenses": "Monthly expenses",
+    "savings": "Monthly savings",
+    "savingsFormula": "Savings = Income − Expenses",
+    "savingsRate": "Savings rate: {{rate}}",
+    "netWorth": "Net worth",
+    "netWorthFormula": "Net worth = Assets − Liabilities",
+    "debtRatio": "Debt ratio",
+    "debtRatioFormula": "Monthly debt payments / Monthly net income",
+    "debtRatioExplain": "Green < 30% · Amber 30–40% · Red > 40%",
+    "debtLevelGood": "Healthy",
+    "debtLevelWarning": "Caution",
+    "debtLevelRisk": "Risk",
+    "emergencyFund": "Emergency fund coverage",
+    "emergencyFundFormula": "Liquid assets / Monthly expenses",
+    "months": "{{count}} months",
+    "liquidityRatio": "Liquidity ratio",
+    "liquidityRatioFormula": "Liquid assets / Total assets",
+    "realEstateWeight": "Real estate weight",
+    "realEstateWeightFormula": "Real estate value / Total assets",
+    "debtToAssets": "Debt / assets ratio",
+    "debtToAssetsFormula": "Total liabilities / Total assets",
+    "allocationTitle": "Asset allocation",
+    "evolutionTitle": "Net worth evolution"
+  },
+  "strategy": {
+    "title": "Investment strategy",
+    "subtitle": "This is your own strategy: you decide the assets, the target % and the monthly contribution. JuliusCapital does not recommend specific financial products.",
+    "contributionTitle": "Planned monthly contribution",
+    "perMonth": "/ month",
+    "assetsTitle": "Assets in your strategy",
+    "assetsSubtitle": "Target %, amount relative to the total, and suggested monthly contribution.",
+    "addAsset": "Add asset",
+    "pctWarning": "The target percentages add up to {{pct}}%, not 100%. Adjust the values so they match.",
+    "loading": "Loading…",
+    "emptyAssets": "Add the first asset of your strategy.",
+    "assetName": "Asset name",
+    "targetPct": "Target %",
+    "amount": "Amount",
+    "suggestedContribution": "Suggested contribution",
+    "deleteAsset": "Delete asset",
+    "allocationTitle": "Breakdown by amount",
+    "contributionUpdated": "Monthly contribution updated"
+  },
+  "monthlyRegistry": {
+    "title": "Monthly tracking",
+    "subtitle": "Add your income and expenses every month from January 2026 onward to see the real evolution of your wealth.",
+    "month": "Month",
+    "registered": "· recorded",
+    "historyTitle": "History",
+    "colMonth": "Month",
+    "colIncome": "Income",
+    "colExpenses": "Expenses",
+    "colSavings": "Savings",
+    "colNetWorth": "Net worth"
+  },
+  "profile": {
+    "title": "My profile",
+    "subtitle": "Edit your personal details and all your wealth information whenever you like.",
+    "personalDataTitle": "Personal details",
+    "fullName": "Full name",
+    "phone": "Phone",
+    "language": "Language",
+    "currency": "Currency",
+    "save": "Save personal details",
+    "saved": "Personal details saved",
+    "saveError": "Could not save your changes",
+    "privacyTitle": "Privacy and data",
+    "privacyDescription": "You can export all your information at any time, or delete your account and all your data permanently (right of access and erasure, GDPR).",
+    "exportButton": "Export my data (JSON)",
+    "exporting": "Exporting…",
+    "exported": "Data exported",
+    "exportError": "Could not export your data",
+    "dangerZoneTitle": "Danger zone",
+    "deleteAccountButton": "Delete my account",
+    "deleteConfirm": "This permanently and irreversibly deletes your account and all your wealth data. Are you sure you want to continue?",
+    "deleteYes": "Yes, delete permanently",
+    "deleting": "Deleting…",
+    "deleteCancel": "Cancel",
+    "deleteError": "Could not delete the account. Please try again."
+  },
+  "onboarding": {
+    "stepOf": "Step {{step}} of {{total}}: {{title}}",
+    "fillLater": "Fill in later",
+    "stepTitles": [
+      "Income and expenses",
+      "Assets",
+      "Liabilities and debts",
+      "Financial goals",
+      "Summary"
+    ],
+    "allDoneTitle": "All set, {{name}}",
+    "welcomeFallback": "welcome",
+    "assetsCount": "{{count}} asset(s) recorded",
+    "liabilitiesCount": "{{count}} debt(s) recorded",
+    "goalsCount": "{{count}} financial goal(s)",
+    "editLaterNote": "You can edit all of this information at any time from \"My profile\".",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "saveAndContinue": "Save and continue"
+  },
+  "wealth": {
+    "assetsTitle": "Assets",
+    "assetsExamples": "E.g.: checking account €5,000, index fund €12,000, flat €180,000, car €9,000",
+    "addAsset": "Add",
+    "loading": "Loading…",
+    "emptyAssets": "You haven't added any assets yet.",
+    "assetName": "Asset name",
+    "assetType": "Asset type",
+    "value": "Value",
+    "liquid": "Liquid",
+    "deleteAsset": "Delete asset",
+    "assetTypes": {
+      "liquido": "Liquid (accounts, cash)",
+      "inversion": "Investment (funds, stocks...)",
+      "inmueble": "Real estate",
+      "otros": "Other"
+    },
+    "liabilitiesTitle": "Liabilities / debts",
+    "liabilitiesExamples": "E.g.: mortgage €120,000 (payment €650/month), car loan €6,000 (payment €180/month)",
+    "addLiability": "Add",
+    "emptyLiabilities": "You don't have any debts recorded.",
+    "liabilityName": "Debt name",
+    "balance": "Outstanding balance",
+    "monthlyPayment": "Monthly payment",
+    "deleteLiability": "Delete debt",
+    "goalsTitle": "Financial goals",
+    "goalsExamples": "E.g.: 6-month emergency fund, buy a home in 3 years, early retirement",
+    "addGoal": "Add",
+    "emptyGoals": "You haven't set any goals yet.",
+    "goalTitle": "Goal",
+    "targetAmount": "Target amount",
+    "targetDate": "Target date",
+    "deleteGoal": "Delete goal",
+    "incomeExpenses": {
+      "netIncome": "Net monthly income",
+      "netIncomeExample": "E.g.: €2,400 salary + €300 rental income = €2,700",
+      "expensesTitle": "Monthly expenses",
+      "expensesExample": "E.g.: housing €800, food €400, transport €150, leisure €200…",
+      "category": "Expense category",
+      "amount": "Amount",
+      "addCategory": "Category",
+      "deleteCategory": "Delete category",
+      "totalExpenses": "Total expenses: {{total}}",
+      "save": "Save",
+      "saving": "Saving…",
+      "saved": "Entry saved",
+      "prefillNote": "Pre-filled with last month's data: edit it if things have changed.",
+      "defaultCategories": [
+        "Housing",
+        "Food",
+        "Transport",
+        "Leisure",
+        "Other"
+      ],
+      "newCategory": "New category"
+    },
+    "newAsset": "New asset",
+    "newLiability": "New debt",
+    "newGoal": "New goal"
+  },
+  "booking": {
+    "service": "Service",
+    "day": "Day",
+    "hour": "Time",
+    "loadingSlots": "Loading available slots…",
+    "noSlots": "No slots available this day. Try another day.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "confirm": "Confirm booking",
+    "confirming": "Confirming…",
+    "confirmError": "Could not confirm the booking (someone may have just taken it). Choose another slot.",
+    "confirmedTitle": "Booking confirmed",
+    "confirmedOn": "{{service}} on {{date}}.",
+    "confirmationEmailSent": "We've sent a confirmation email to {{email}}.",
+    "payLaterNote": "Payment is handled after the session, no need to pay in advance. If you'd rather pay now:",
+    "payNow": "Pay now",
+    "redirecting": "Redirecting…"
   }
 }

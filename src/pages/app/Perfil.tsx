@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { AssetsEditor } from "@/components/wealth/AssetsEditor";
 import { GoalsEditor } from "@/components/wealth/GoalsEditor";
@@ -19,6 +20,7 @@ const languages: { value: "es" | "ca" | "en"; label: string }[] = [
 ];
 
 export function Perfil() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { showToast } = useToast();
   const { user, profile, signOut } = useAuth();
@@ -34,18 +36,18 @@ export function Perfil() {
   const handleSavePersonalInfo = async () => {
     try {
       await updateProfile.mutateAsync({ full_name: fullName, phone });
-      showToast("Datos personales guardados");
+      showToast(t("profile.saved"));
     } catch {
-      showToast("No se han podido guardar los cambios", "error");
+      showToast(t("profile.saveError"), "error");
     }
   };
 
   const handleExport = async () => {
     try {
       await exportData.mutateAsync();
-      showToast("Datos exportados");
+      showToast(t("profile.exported"));
     } catch {
-      showToast("No se han podido exportar los datos", "error");
+      showToast(t("profile.exportError"), "error");
     }
   };
 
@@ -55,37 +57,35 @@ export function Perfil() {
       await signOut();
       navigate("/", { replace: true });
     } catch {
-      showToast("No se ha podido eliminar la cuenta. Inténtalo de nuevo.", "error");
+      showToast(t("profile.deleteError"), "error");
     }
   };
 
   return (
     <section className="container-page max-w-3xl space-y-10 py-10">
       <div>
-        <h1 className="font-display text-2xl font-bold text-brand-900">Mi perfil</h1>
-        <p className="mt-1 text-content-muted">
-          Edita tus datos personales y toda tu información patrimonial cuando quieras.
-        </p>
+        <h1 className="font-display text-2xl font-bold text-brand-900">{t("profile.title")}</h1>
+        <p className="mt-1 text-content-muted">{t("profile.subtitle")}</p>
       </div>
 
       <div className="card">
-        <h2 className="font-semibold text-content">Datos personales</h2>
+        <h2 className="font-semibold text-content">{t("profile.personalDataTitle")}</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div>
             <label className="label" htmlFor="full_name">
-              Nombre completo
+              {t("profile.fullName")}
             </label>
             <input id="full_name" className="input" value={fullName} onChange={(e) => setFullName(e.target.value)} />
           </div>
           <div>
             <label className="label" htmlFor="phone">
-              Teléfono
+              {t("profile.phone")}
             </label>
             <input id="phone" className="input" value={phone} onChange={(e) => setPhone(e.target.value)} />
           </div>
           <div>
             <label className="label" htmlFor="language">
-              Idioma
+              {t("profile.language")}
             </label>
             <select
               id="language"
@@ -102,7 +102,7 @@ export function Perfil() {
           </div>
           <div>
             <label className="label" htmlFor="currency">
-              Divisa
+              {t("profile.currency")}
             </label>
             <select
               id="currency"
@@ -119,7 +119,7 @@ export function Perfil() {
           </div>
         </div>
         <button type="button" className="btn-primary mt-4" onClick={handleSavePersonalInfo}>
-          Guardar datos personales
+          {t("profile.save")}
         </button>
       </div>
 
@@ -140,34 +140,28 @@ export function Perfil() {
       </div>
 
       <div className="card">
-        <h2 className="font-semibold text-content">Privacidad y datos</h2>
-        <p className="help-text">
-          Puedes exportar toda tu información en cualquier momento, o eliminar tu cuenta y todos
-          tus datos de forma permanente (derecho de acceso y supresión, RGPD).
-        </p>
+        <h2 className="font-semibold text-content">{t("profile.privacyTitle")}</h2>
+        <p className="help-text">{t("profile.privacyDescription")}</p>
 
         <div className="mt-4 flex flex-wrap gap-3">
           <button type="button" className="btn-secondary" onClick={handleExport} disabled={exportData.isPending}>
-            {exportData.isPending ? "Exportando…" : "Exportar mis datos (JSON)"}
+            {exportData.isPending ? t("profile.exporting") : t("profile.exportButton")}
           </button>
         </div>
 
         <div className="mt-6 border-t border-border pt-6">
-          <h3 className="text-sm font-semibold text-red-700">Zona de peligro</h3>
+          <h3 className="text-sm font-semibold text-red-700">{t("profile.dangerZoneTitle")}</h3>
           {!confirmingDelete ? (
             <button
               type="button"
               className="mt-3 rounded-xl border border-red-300 px-4 py-2 text-sm font-semibold text-red-700 hover:bg-red-50"
               onClick={() => setConfirmingDelete(true)}
             >
-              Eliminar mi cuenta
+              {t("profile.deleteAccountButton")}
             </button>
           ) : (
             <div className="mt-3 space-y-3">
-              <p className="text-sm text-content-muted">
-                Esta acción borra tu cuenta y todos tus datos patrimoniales de forma permanente e
-                irreversible. ¿Seguro que quieres continuar?
-              </p>
+              <p className="text-sm text-content-muted">{t("profile.deleteConfirm")}</p>
               <div className="flex gap-3">
                 <button
                   type="button"
@@ -175,10 +169,10 @@ export function Perfil() {
                   onClick={handleDeleteAccount}
                   disabled={deleteAccount.isPending}
                 >
-                  {deleteAccount.isPending ? "Eliminando…" : "Sí, eliminar definitivamente"}
+                  {deleteAccount.isPending ? t("profile.deleting") : t("profile.deleteYes")}
                 </button>
                 <button type="button" className="btn-secondary" onClick={() => setConfirmingDelete(false)}>
-                  Cancelar
+                  {t("profile.deleteCancel")}
                 </button>
               </div>
             </div>
