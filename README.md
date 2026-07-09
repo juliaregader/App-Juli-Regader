@@ -15,7 +15,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 
 - [x] Fase 0 — Setup: scaffolding, marca, página de estado de env vars
 - [x] Fase 1 — Supabase: esquema, RLS, Auth, SMTP propio, rol admin
-- [ ] Fase 2 — Web pública (Home, Servicios, Consulta, Contacto, Legal)
+- [x] Fase 2 — Web pública (Home, Servicios, Consulta, Contacto, Legal)
 - [ ] Fase 3 — Onboarding (carrusel) + Mi perfil
 - [ ] Fase 4 — Dashboard financiero + indicadores
 - [ ] Fase 5 — Estrategia de inversión
