@@ -14,7 +14,7 @@ con calendario, pagos con Stripe y multi-idioma (es/ca/en).
 ## Estado del proyecto
 
 - [x] Fase 0 — Setup: scaffolding, marca, página de estado de env vars
-- [ ] Fase 1 — Supabase: esquema, RLS, Auth, SMTP propio, rol admin
+- [x] Fase 1 — Supabase: esquema, RLS, Auth, SMTP propio, rol admin
 - [ ] Fase 2 — Web pública (Home, Servicios, Consulta, Contacto, Legal)
 - [ ] Fase 3 — Onboarding (carrusel) + Mi perfil
 - [ ] Fase 4 — Dashboard financiero + indicadores
@@ -116,19 +116,107 @@ empezar por `VITE_`** — cualquier otra variable NUNCA debe leerse desde
    Webhooks`, endpoint = la URL de la Edge Function `stripe-webhook`) para
    obtener `STRIPE_WEBHOOK_SECRET`. Detalle completo en la Fase 10.
 
+## Base de datos, RLS y autenticación (Fase 1)
+
+Las migraciones SQL están en [`supabase/migrations`](./supabase/migrations),
+numeradas y aplicables en orden. Para aplicarlas:
+
+```bash
+supabase link --project-ref <tu-project-ref>
+supabase db push
+```
+
+O copia el contenido de cada `.sql` (en orden) en el **SQL Editor** del panel
+de Supabase.
+
+### Esquema
+
+- `app_settings` — fila única con el email que recibe el rol admin
+  (`admin_email`, por defecto `juliaregader@gmail.com`). Sin políticas RLS:
+  solo la lee el trigger `handle_new_user` (security definer).
+- `profiles` — 1:1 con `auth.users`. `role` ('admin'|'client'), `language`,
+  `currency`, `onboarding_completed`.
+- `assets`, `liabilities`, `goals`, `financial_snapshots` (registro mensual,
+  desde enero 2026), `investment_strategy`, `investment_assets` — datos
+  patrimoniales del cliente.
+- `bookings`, `payments` — reservas y pagos (detalle de calendario y Stripe
+  en las Fases 9 y 10).
+
+### Rol de administrador (seed automático)
+
+Al registrarse, el trigger `handle_new_user` crea el perfil y le asigna
+`role = 'admin'` automáticamente **si el email coincide con
+`app_settings.admin_email`** (`juliaregader@gmail.com` por defecto); cualquier
+otro email recibe `role = 'client'`. Julià puede registrarse desde `/registro`
+igual que cualquier cliente y entra como admin sin pasos manuales. Para
+cambiar el email admin más adelante:
+
+```sql
+update public.app_settings set admin_email = 'nuevo-email@ejemplo.com';
+```
+
+(Esto solo afecta a **nuevos** registros; para promocionar una cuenta ya
+existente, actualiza su `role` directamente como admin desde el panel de
+administración, cuando esté disponible en la Fase 7, o vía SQL.)
+
+### RLS (Row Level Security)
+
+Todas las tablas de datos de usuario tienen RLS habilitado y verificado:
+
+- Cada cliente solo lee/escribe sus propias filas (`auth.uid() = user_id`,
+  o `= id` en `profiles`).
+- El helper `public.is_admin(uid)` (security definer) permite políticas de
+  **lectura** para el admin sin caer en recursión de RLS.
+- Un cliente no puede auto-promocionarse a `admin`: el trigger
+  `enforce_profile_role_change` revierte cualquier cambio a la columna
+  `role` que no provenga de un admin, aunque la política de UPDATE permita
+  la operación en general.
+- `bookings` admite `user_id` nulo (reserva sin cuenta) pero el `insert`
+  exige `user_id is null or auth.uid() = user_id`: nadie puede reservar en
+  nombre de otro usuario. Un índice único parcial (`bookings_unique_active_slot`)
+  impide dos reservas activas en el mismo `start_at`.
+- `payments` solo lo escribe el admin o la Edge Function del webhook de
+  Stripe (con la `service_role` key, que bypassa RLS) — nunca el cliente.
+
+### Autenticación
+
+Registro con nombre, email, teléfono (opcional) y contraseña
+(`/registro`), login (`/login`), recuperación de contraseña
+(`/recuperar-contrasena` → `/restablecer-contrasena`). El registro exige
+aceptar la política de privacidad y los términos de uso (checkbox
+obligatorio). `ProtectedRoute` protege `/app/*` (requiere sesión) y
+`AdminRoute` protege `/app/admin/*` (requiere `role = 'admin'`).
+
+**Configuración obligatoria en Supabase → Authentication → URL Configuration:**
+Site URL = `VITE_APP_URL` de producción; Redirect URLs = ese mismo dominio +
+`http://localhost:5173`. Sin esto, los enlaces de confirmación de email y de
+recuperación de contraseña no redirigirán correctamente.
+
 ## Estructura del proyecto
 
 ```
 src/
-  components/   Componentes reutilizables (brand, layout, ui, charts...)
-  features/     Lógica de dominio por área (auth, wealth, booking, admin...)
-  pages/        Páginas/rutas
-  lib/          Clientes (Supabase, Query), helpers, tipos
-  i18n/         Configuración react-i18next + locales es/ca/en
-  hooks/        Hooks compartidos
+  components/
+    brand/        Logo e isotipo ("J" geométrica)
+    layout/        RootLayout/Header/Footer (público), PrivateLayout (área cliente)
+    ui/            Componentes de interfaz reutilizables
+  features/
+    auth/          AuthProvider, useAuth, ProtectedRoute, AdminRoute, tipos
+  pages/
+    Home, Status (público)
+    auth/          Register, Login, ForgotPassword, ResetPassword
+    legal/         Aviso legal, privacidad, términos
+    app/           Área privada de cliente (AppHome; onboarding/dashboard en fases siguientes)
+    admin/         Panel de administrador (placeholder; Fase 7)
+  lib/
+    supabase/      Cliente Supabase (defensivo ante env vars ausentes)
+    query/         Cliente TanStack Query
+    env.ts         VITE_APP_URL, clave publicable de Stripe
+  i18n/            Configuración react-i18next + locales es/ca/en
+  router.tsx       Árbol de rutas completo
 supabase/
-  migrations/   Migraciones SQL (esquema + RLS)
-  functions/    Edge Functions (Stripe webhook, notificaciones de reserva)
+  migrations/    Migraciones SQL (esquema + RLS), numeradas y aplicables en orden
+  functions/     Edge Functions (Stripe webhook, notificaciones de reserva — Fases 9-10)
 ```
 
 ## Despliegue en Vercel
